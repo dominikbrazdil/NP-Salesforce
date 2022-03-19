@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cislo_smlouvy_manual__c</fullName>
+    <description>Číslo smlouvy určené protistranou nebo v případě, že slouží pro identifikaci splátek a je odlišné od automatického čísla smlouvy. Použijte pouze v nutném případě.</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Číslo smlouvy určené protistranou nebo v případě, že slouží pro identifikaci splátek a je odlišné od automatického čísla smlouvy. Použijte pouze v nutném případě.</inlineHelpText>
+    <label>Vlastní číslo smlouvy</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

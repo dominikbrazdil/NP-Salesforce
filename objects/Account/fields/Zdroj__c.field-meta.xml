@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zdroj__c</fullName>
+    <externalId>false</externalId>
+    <label>Zdroj</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Akce</fullName>
+                <default>false</default>
+                <label>Akce</label>
+            </value>
+            <value>
+                <fullName>Doporučení od známého</fullName>
+                <default>false</default>
+                <label>Doporučení od známého</label>
+            </value>
+            <value>
+                <fullName>Historický kontakt</fullName>
+                <default>false</default>
+                <label>Historický kontakt</label>
+            </value>
+            <value>
+                <fullName>Koupená databáze</fullName>
+                <default>false</default>
+                <label>Koupená databáze</label>
+            </value>
+            <value>
+                <fullName>Newsletter</fullName>
+                <default>false</default>
+                <label>Newsletter</label>
+            </value>
+            <value>
+                <fullName>Osobní kontakt</fullName>
+                <default>false</default>
+                <label>Osobní kontakt</label>
+            </value>
+            <value>
+                <fullName>PR</fullName>
+                <default>false</default>
+                <label>PR</label>
+            </value>
+            <value>
+                <fullName>Reference zákazníka nebo partnera</fullName>
+                <default>false</default>
+                <label>Reference zákazníka nebo partnera</label>
+            </value>
+            <value>
+                <fullName>Reklama</fullName>
+                <default>false</default>
+                <label>Reklama</label>
+            </value>
+            <value>
+                <fullName>Seminář, konference</fullName>
+                <default>false</default>
+                <label>Seminář, konference</label>
+            </value>
+            <value>
+                <fullName>Sociální sítě</fullName>
+                <default>false</default>
+                <label>Sociální sítě</label>
+            </value>
+            <value>
+                <fullName>Veletrh</fullName>
+                <default>false</default>
+                <label>Veletrh</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>Zaměstnanec</fullName>
+                <default>false</default>
+                <label>Zaměstnanec</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

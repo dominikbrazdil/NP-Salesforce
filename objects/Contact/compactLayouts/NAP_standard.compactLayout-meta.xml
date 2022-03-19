@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NAP_standard</fullName>
+    <fields>Name</fields>
+    <fields>AccountId</fields>
+    <fields>Email</fields>
+    <fields>MobilePhone</fields>
+    <fields>Funkce_ve_firme__c</fields>
+    <fields>Posledni_Akce__c</fields>
+    <fields>S_kym_se_zna__c</fields>
+    <label>NAP standard</label>
+</CompactLayout>

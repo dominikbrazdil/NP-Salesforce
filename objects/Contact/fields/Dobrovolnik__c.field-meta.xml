@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dobrovolnik__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Kontakt je dobrovolníkem OZ/NAP</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Kontakt je dobrovolníkem OZ/NAP</inlineHelpText>
+    <label>Dobrovolník</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

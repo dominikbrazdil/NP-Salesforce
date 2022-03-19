@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Castka_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>Castka__c  &lt;= 0</errorConditionFormula>
+    <errorDisplayField>Castka__c</errorDisplayField>
+    <errorMessage>Částka nesmí být nulová</errorMessage>
+</ValidationRule>

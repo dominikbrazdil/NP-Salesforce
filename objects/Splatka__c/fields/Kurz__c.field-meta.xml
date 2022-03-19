@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kurz__c</fullName>
+    <description>Určuje kurz přepočtu do CZK v čase uhrazení splátky, když je smlouva v zahraniční měně.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Určuje kurz přepočtu do CZK v čase uhrazení splátky, když je smlouva v zahraniční měně.</inlineHelpText>
+    <label>Kurz</label>
+    <precision>9</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

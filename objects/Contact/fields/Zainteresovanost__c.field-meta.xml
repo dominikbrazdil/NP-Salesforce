@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zainteresovanost__c</fullName>
+    <externalId>false</externalId>
+    <label>Zainteresovanost</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nezná NAP</fullName>
+                <default>false</default>
+                <label>Nezná NAP</label>
+            </value>
+            <value>
+                <fullName>Zná NAP</fullName>
+                <default>false</default>
+                <label>Zná NAP</label>
+            </value>
+            <value>
+                <fullName>Účastnil se akce</fullName>
+                <default>false</default>
+                <label>Účastnil se akce</label>
+            </value>
+            <value>
+                <fullName>Pracoval s námi</fullName>
+                <default>false</default>
+                <label>Pracoval s námi</label>
+            </value>
+            <value>
+                <fullName>Pracoval pro nás</fullName>
+                <default>false</default>
+                <label>Pracoval pro nás</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zbyva_uhradit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (  Obdobi_zaplaceno_do__c &gt;= TODAY(), 0,
+
+IF( Zbyva_uhradit_dle_splatek__c &gt; (Castka_plneni__c - Uhrazena_castka__c),  Zbyva_uhradit_dle_splatek__c,
+
+IF( Castka_plneni__c - Uhrazena_castka__c &lt; 0, 0 ,  Castka_plneni__c - Uhrazena_castka__c)
+
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Zbývá uhradit</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

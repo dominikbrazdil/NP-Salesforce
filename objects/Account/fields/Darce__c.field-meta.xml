@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Darce__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( Pocet_aktivnich_darcovskych_smluv__c  &gt; 0, &quot;Ano&quot;, &quot;Ne&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Dárce</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

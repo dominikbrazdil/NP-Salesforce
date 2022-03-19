@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aktualni_obdobi_cena__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( ISBLANK(Castka_plneni_1__c ), 
+Castka_plneni__c
+
+,
+
+IF( ISBLANK(  dluh_callback__c), Castka_plneni_1__c   , Castka_plneni__c) 
+
+ )</formula>
+    <label>Cena za aktuální období</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kraj_firmy__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Account.BillingState == null, &quot;není vyplněno u firmy&quot;, Account.BillingState)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Kraj - firma</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

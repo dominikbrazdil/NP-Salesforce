@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Popis_prubehu__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Prosím, zadejte informace  o průběhu kontroly. V případě negativního výsledku kontroly doplňte informace o tom, proč.</inlineHelpText>
+    <label>Popis průběhu</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

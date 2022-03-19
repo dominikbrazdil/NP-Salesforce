@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PSC_firmy__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Account.BillingPostalCode == null, &quot;není vyplněno u firmy&quot;, Account.BillingPostalCode)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PSČ - firma</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

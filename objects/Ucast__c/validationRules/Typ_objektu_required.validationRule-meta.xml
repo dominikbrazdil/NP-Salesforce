@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_objektu_required</fullName>
+    <active>false</active>
+    <errorConditionFormula>$RecordType.DeveloperName == &quot;Certifikace&quot;
+&amp;&amp;
+TEXT(Typ_objektu__c)  == &quot;&quot;</errorConditionFormula>
+    <errorDisplayField>Typ_objektu__c</errorDisplayField>
+    <errorMessage>Typ objektu musí být vyplněn.</errorMessage>
+</ValidationRule>

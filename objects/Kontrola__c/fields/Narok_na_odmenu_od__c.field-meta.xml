@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Narok_na_odmenu_od__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( TEXT(Vysledek_kontroly__c) = &quot;&quot;, null, 
+
+IF (Ucast__r.Zaplacene_obdobi_smlouvy_o_certifikaci__c &gt;=  Datum_kontroly__c, Datum_kontroly__c, null)
+
+)</formula>
+    <label>Nárok na odměnu od</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

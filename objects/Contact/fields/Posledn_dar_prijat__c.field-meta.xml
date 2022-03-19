@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Posledn_dar_prijat__c</fullName>
+    <description>Datum, kdy jsme přijali poslední ossobní dar.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Datum, kdy jsme přijali poslední ossobní dar.</inlineHelpText>
+    <label>Poslední dar přijat</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

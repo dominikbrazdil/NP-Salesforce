@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Charakteristika__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>doplňující informace o firmě</description>
+    <externalId>false</externalId>
+    <label>Účet</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Účty</relationshipLabel>
+    <relationshipName>ty</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

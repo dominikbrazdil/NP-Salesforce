@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stav__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISBLANK( Datum_odstoupeni__c ),
+
+
+IF (Stav_schvalovani__c  == &quot;Schváleno&quot;,
+
+
+CASE(TEXT(Nabidka_stav__c), &quot;Objednáno&quot;, &quot;Platná&quot;, &quot;Dodáno&quot;, &quot;Uzavřeno&quot;, &quot;Nezájem&quot;, &quot;Uzavřená&quot;,  
+
+IF ( Platnost__c == &quot;Platná&quot;, &quot;Platná&quot;,
+IF ( Platnost__c == &quot;Uzavřená&quot;, &quot;Uzavřená&quot;,
+IF ( !ISBLANK( Platnost_od__c ), 
+&quot;Připravena&quot;,
+&quot;V přípravě&quot;
+)))
+
+
+)
+
+
+,
+
+
+&quot;V přípravě&quot;
+
+)
+
+,
+&quot;Uzavřená&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stav</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

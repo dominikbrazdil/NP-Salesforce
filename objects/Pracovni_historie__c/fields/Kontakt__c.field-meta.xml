@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kontakt__c</fullName>
+    <description>Ke kterému kontaktu se pracovní historie (firma) vztahuje.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Ke kterému kontaktu se pracovní historie (firma) vztahuje.</inlineHelpText>
+    <label>Kontakt</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Pracovní historie</relationshipLabel>
+    <relationshipName>Pracovni_historie</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

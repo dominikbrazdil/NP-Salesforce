@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Media_zamereni__c</fullName>
+    <description>Oblast nebo cílová skupina</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Oblast nebo cílová skupina</inlineHelpText>
+    <label>Zaměření</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Architektura, stavitelství</fullName>
+                <default>false</default>
+                <label>Architektura, stavitelství</label>
+            </value>
+            <value>
+                <fullName>Bulvár</fullName>
+                <default>false</default>
+                <label>Bulvár</label>
+            </value>
+            <value>
+                <fullName>Cyklistické</fullName>
+                <default>false</default>
+                <label>Cyklistické</label>
+            </value>
+            <value>
+                <fullName>Doprava</fullName>
+                <default>false</default>
+                <label>Doprava</label>
+            </value>
+            <value>
+                <fullName>Ekologické</fullName>
+                <default>false</default>
+                <label>Ekologické</label>
+            </value>
+            <value>
+                <fullName>Ekonomické</fullName>
+                <default>false</default>
+                <label>Ekonomické</label>
+            </value>
+            <value>
+                <fullName>Foto</fullName>
+                <default>false</default>
+                <label>Foto</label>
+            </value>
+            <value>
+                <fullName>Gastro</fullName>
+                <default>false</default>
+                <label>Gastro</label>
+            </value>
+            <value>
+                <fullName>Hobby</fullName>
+                <default>false</default>
+                <label>Hobby</label>
+            </value>
+            <value>
+                <fullName>Hospodářství</fullName>
+                <default>false</default>
+                <label>Hospodářství</label>
+            </value>
+            <value>
+                <fullName>Instituce</fullName>
+                <default>false</default>
+                <label>Instituce</label>
+            </value>
+            <value>
+                <fullName>Kultura</fullName>
+                <default>false</default>
+                <label>Kultura</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Pedagogické</fullName>
+                <default>false</default>
+                <label>Pedagogické</label>
+            </value>
+            <value>
+                <fullName>Příroda</fullName>
+                <default>false</default>
+                <label>Příroda</label>
+            </value>
+            <value>
+                <fullName>Mužské</fullName>
+                <default>false</default>
+                <label>Pro muže</label>
+            </value>
+            <value>
+                <fullName>Pro ženy</fullName>
+                <default>false</default>
+                <label>Pro ženy</label>
+            </value>
+            <value>
+                <fullName>Regionální</fullName>
+                <default>false</default>
+                <label>Regionální</label>
+            </value>
+            <value>
+                <fullName>Společenské</fullName>
+                <default>false</default>
+                <label>Společenské</label>
+            </value>
+            <value>
+                <fullName>Turistické / Cestování</fullName>
+                <default>false</default>
+                <label>Turistické / Cestování</label>
+            </value>
+            <value>
+                <fullName>Veřejná správa</fullName>
+                <default>false</default>
+                <label>Veřejná správa</label>
+            </value>
+            <value>
+                <fullName>Veřejné prostory</fullName>
+                <default>false</default>
+                <label>Veřejné prostory</label>
+            </value>
+            <value>
+                <fullName>Vinařské</fullName>
+                <default>false</default>
+                <label>Vinařské</label>
+            </value>
+            <value>
+                <fullName>Zahraniční zajímavosti</fullName>
+                <default>false</default>
+                <label>Zahraniční zajímavosti</label>
+            </value>
+            <value>
+                <fullName>Zěměpis, cestopis</fullName>
+                <default>false</default>
+                <label>Zěměpis, cestopis</label>
+            </value>
+            <value>
+                <fullName>Zpravodajství</fullName>
+                <default>false</default>
+                <label>Zpravodajství</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

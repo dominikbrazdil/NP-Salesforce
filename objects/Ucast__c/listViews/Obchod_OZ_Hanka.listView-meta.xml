@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obchod_OZ_Hanka</fullName>
+    <booleanFilter>1 AND (2 OR 3 OR 4)</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Ucet__c</columns>
+    <columns>Primarni_kontakt_email__c</columns>
+    <columns>Primarni_kontakt__c</columns>
+    <columns>Primarni_kontakt_telefon__c</columns>
+    <columns>Produkt_OZ__c</columns>
+    <columns>Castka_prilezitosti__c</columns>
+    <columns>Reagovat_znovu_do__c</columns>
+    <columns>Poznamka__c</columns>
+    <columns>Pracovnik__c</columns>
+    <columns>Uroven_spoluprace__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Ucast__c.Obchod_OZ</value>
+    </filters>
+    <filters>
+        <field>Pracovnik__c</field>
+        <operation>equals</operation>
+        <value>Hana Ralenovská</value>
+    </filters>
+    <filters>
+        <field>Pracovnik__c</field>
+        <operation>equals</operation>
+        <value>Monika Cabicarová</value>
+    </filters>
+    <filters>
+        <field>Pracovnik__c</field>
+        <operation>equals</operation>
+        <value>Juraj Háder</value>
+    </filters>
+    <label>Obchod OZ</label>
+    <language>cs</language>
+</ListView>

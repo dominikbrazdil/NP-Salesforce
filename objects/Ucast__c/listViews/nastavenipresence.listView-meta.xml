@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>nastavenipresence</fullName>
+    <columns>Akce__c</columns>
+    <columns>Primarni_kontakt__c</columns>
+    <columns>Uroven_spoluprace__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Akce__c</field>
+        <operation>contains</operation>
+        <value>vernisáž</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Ucast__c.Darcovstvi</value>
+    </filters>
+    <label>Nastavení presence</label>
+    <language>cs</language>
+</ListView>

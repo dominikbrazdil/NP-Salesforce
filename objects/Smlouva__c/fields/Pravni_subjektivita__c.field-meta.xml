@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pravni_subjektivita__c</fullName>
+    <externalId>false</externalId>
+    <label>Právní subjektivita</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nadace Partnerství</fullName>
+                <default>true</default>
+                <label>Nadace Partnerství</label>
+            </value>
+            <value>
+                <fullName>Partnerství o. p. s.</fullName>
+                <default>false</default>
+                <label>Partnerství o. p. s.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

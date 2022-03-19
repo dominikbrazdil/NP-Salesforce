@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pristi_splatka_ocekavana__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Obdobi_pristi_konec__c &lt; Datum_dalsi_uhrady_splatka__c  || ISBLANK(Datum_dalsi_uhrady_splatka__c) ,
+
+IF(ISBLANK(Obdobi_zaplaceno_do__c),  Pocatek_predplaceneho_obdobi__c+20,Obdobi_zaplaceno_do__c   - 30 )
+
+,
+
+Datum_dalsi_uhrady_splatka__c
+)</formula>
+    <label>Příští splátka očekávána</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

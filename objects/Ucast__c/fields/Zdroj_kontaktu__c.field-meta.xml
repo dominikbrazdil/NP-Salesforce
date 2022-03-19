@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zdroj_kontaktu__c</fullName>
+    <externalId>false</externalId>
+    <label>Zdroj kontaktu</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rádce</fullName>
+                <default>false</default>
+                <label>Rádce</label>
+            </value>
+            <value>
+                <fullName>Poradna (formulář)</fullName>
+                <default>false</default>
+                <label>Poradna (formulář)</label>
+            </value>
+            <value>
+                <fullName>Poradna (mail)</fullName>
+                <default>false</default>
+                <label>Poradna (mail)</label>
+            </value>
+            <value>
+                <fullName>Jiné</fullName>
+                <default>false</default>
+                <label>Jiné</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

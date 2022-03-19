@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verejna_sprava_dotace</fullName>
+    <columns>Ucet_del_del__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>NAME</columns>
+    <columns>Stav__c</columns>
+    <columns>Ucast__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Smlouva__c.O_poskytnuti_dotace</value>
+    </filters>
+    <label>Veřejná správa - Dotace</label>
+    <language>cs</language>
+</ListView>

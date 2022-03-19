@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Statutarni_organ__c</fullName>
+    <externalId>false</externalId>
+    <label>SR nebo DR NAP</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Správní rada Nadace Partnerství</fullName>
+                <default>false</default>
+                <label>Správní rada Nadace Partnerství</label>
+            </value>
+            <value>
+                <fullName>Dozorčí rada Nadace Partnerství</fullName>
+                <default>false</default>
+                <label>Dozorčí rada Nadace Partnerství</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

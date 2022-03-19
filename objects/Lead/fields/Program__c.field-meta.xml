@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program__c</fullName>
+    <externalId>false</externalId>
+    <label>Program</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>fos</fullName>
+                <default>false</default>
+                <label>FOS</label>
+            </value>
+            <value>
+                <fullName>mvs</fullName>
+                <default>false</default>
+                <label>MVS</label>
+            </value>
+            <value>
+                <fullName>vzb</fullName>
+                <default>false</default>
+                <label>VZB</label>
+            </value>
+            <value>
+                <fullName>RunCzech</fullName>
+                <default>false</default>
+                <label>RunCzech</label>
+            </value>
+            <value>
+                <fullName>Pro vodu</fullName>
+                <default>false</default>
+                <label>Pro vodu</label>
+            </value>
+            <value>
+                <fullName>Bylinková dílna</fullName>
+                <default>false</default>
+                <label>Bylinková dílna</label>
+            </value>
+            <value>
+                <fullName>Stromy svobody</fullName>
+                <default>false</default>
+                <label>Stromy svobody</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

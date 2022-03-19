@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Produkt_OZ__c</fullName>
+    <externalId>false</externalId>
+    <label>Produkt OZ</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Jen pronájem prostor</fullName>
+                <default>false</default>
+                <label>Jen pronájem prostor</label>
+            </value>
+            <value>
+                <fullName>Workshop</fullName>
+                <default>false</default>
+                <label>Workshop</label>
+            </value>
+            <value>
+                <fullName>Webinář (-50%)</fullName>
+                <default>false</default>
+                <label>Webinář (-50%)</label>
+            </value>
+            <value>
+                <fullName>Webinář</fullName>
+                <default>false</default>
+                <label>Webinář</label>
+            </value>
+            <value>
+                <fullName>konference</fullName>
+                <default>false</default>
+                <label>Konference</label>
+            </value>
+            <value>
+                <fullName>seminář</fullName>
+                <default>true</default>
+                <label>Seminář</label>
+            </value>
+            <value>
+                <fullName>soukromá oslava</fullName>
+                <default>false</default>
+                <label>Soukromá oslava</label>
+            </value>
+            <value>
+                <fullName>firemní večírek</fullName>
+                <default>false</default>
+                <label>Firemní večírek</label>
+            </value>
+            <value>
+                <fullName>team-building</fullName>
+                <default>false</default>
+                <label>Team-building</label>
+            </value>
+            <value>
+                <fullName>bylinková dílna</fullName>
+                <default>false</default>
+                <label>Bylinková dílna</label>
+            </value>
+            <value>
+                <fullName>Víno z blízka</fullName>
+                <default>false</default>
+                <label>Víno z blízka</label>
+            </value>
+            <value>
+                <fullName>Den v OZ</fullName>
+                <default>false</default>
+                <label>Den v OZ</label>
+            </value>
+            <value>
+                <fullName>Duel vinařů</fullName>
+                <default>false</default>
+                <label>Duel vinařů</label>
+            </value>
+            <value>
+                <fullName>Engagement v OZ</fullName>
+                <default>false</default>
+                <label>Engagement v OZ</label>
+            </value>
+            <value>
+                <fullName>Rodinný den</fullName>
+                <default>false</default>
+                <label>Rodinný den</label>
+            </value>
+            <value>
+                <fullName>Tajemství ukryté v OZ</fullName>
+                <default>false</default>
+                <label>Tajemství ukryté v OZ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

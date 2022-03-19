@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_ucastnika__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ účastníka</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sázející</fullName>
+                <default>false</default>
+                <label>Sázející</label>
+            </value>
+            <value>
+                <fullName>Panelista</fullName>
+                <default>false</default>
+                <label>Panelista</label>
+            </value>
+            <value>
+                <fullName>Fotograf</fullName>
+                <default>false</default>
+                <label>Fotograf</label>
+            </value>
+            <value>
+                <fullName>Odborný dozor</fullName>
+                <default>false</default>
+                <label>Odborný dozor</label>
+            </value>
+            <value>
+                <fullName>Novinář</fullName>
+                <default>false</default>
+                <label>Novinář</label>
+            </value>
+            <value>
+                <fullName>Škola</fullName>
+                <default>false</default>
+                <label>Škola</label>
+            </value>
+            <value>
+                <fullName>Individuál</fullName>
+                <default>false</default>
+                <label>Individuál</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

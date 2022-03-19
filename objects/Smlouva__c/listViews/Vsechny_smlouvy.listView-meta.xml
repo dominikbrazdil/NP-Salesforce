@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vsechny_smlouvy</fullName>
+    <columns>Cislo_smlouvy_manual__c</columns>
+    <columns>NAME</columns>
+    <columns>Ucet_del_del__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Platnost_od__c</columns>
+    <columns>Castka_plneni__c</columns>
+    <columns>Stav_plateb__c</columns>
+    <columns>Ucast__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Všechny smlovy</label>
+    <language>en_US</language>
+</ListView>

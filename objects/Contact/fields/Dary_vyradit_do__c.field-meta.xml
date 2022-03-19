@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dary_vyradit_do__c</fullName>
+    <description>Do kdy vyřadit kontakt z konverze na dárcovství</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do kdy vyřadit kontakt z konverze na dárcovství</inlineHelpText>
+    <label>Vyřadit z konverze do</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

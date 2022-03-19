@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Web_objektu__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;http://www.cyklistevitani.cz/cyklistevitani/cykliste-vitani-detail.php3?id=&quot; + TEXT(ID_Objektu__c), &quot;Cyklisté vítáni - &quot; + TEXT(ID_Objektu__c) + &quot; - &quot; + Nazev_objektu__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Detail na Cyklisté vítáni</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

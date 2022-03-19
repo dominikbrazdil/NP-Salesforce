@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_media__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ média</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agentura</fullName>
+                <default>false</default>
+                <label>Agentura</label>
+            </value>
+            <value>
+                <fullName>Čtrnáctideník</fullName>
+                <default>false</default>
+                <label>Čtrnáctideník</label>
+            </value>
+            <value>
+                <fullName>Dvouměsíčník</fullName>
+                <default>false</default>
+                <label>Dvouměsíčník</label>
+            </value>
+            <value>
+                <fullName>Měsíčník</fullName>
+                <default>false</default>
+                <label>Měsíčník</label>
+            </value>
+            <value>
+                <fullName>Neznámý</fullName>
+                <default>false</default>
+                <label>Neznámý</label>
+            </value>
+            <value>
+                <fullName>Organizace</fullName>
+                <default>false</default>
+                <label>Organizace</label>
+            </value>
+            <value>
+                <fullName>Rozhlas</fullName>
+                <default>false</default>
+                <label>Rozhlas</label>
+            </value>
+            <value>
+                <fullName>Tisk</fullName>
+                <default>false</default>
+                <label>Tisk</label>
+            </value>
+            <value>
+                <fullName>Tisk 10x ročně</fullName>
+                <default>false</default>
+                <label>Tisk 10x ročně</label>
+            </value>
+            <value>
+                <fullName>Tisk 14deníky</fullName>
+                <default>false</default>
+                <label>Tisk 14deníky</label>
+            </value>
+            <value>
+                <fullName>Tisk 2měsíčníky</fullName>
+                <default>false</default>
+                <label>Tisk 2měsíčníky</label>
+            </value>
+            <value>
+                <fullName>Tisk 2x týdně</fullName>
+                <default>false</default>
+                <label>Tisk 2x týdně</label>
+            </value>
+            <value>
+                <fullName>Tisk deníky</fullName>
+                <default>false</default>
+                <label>Tisk deníky</label>
+            </value>
+            <value>
+                <fullName>Tisk měsíčníky</fullName>
+                <default>false</default>
+                <label>Tisk měsíčníky</label>
+            </value>
+            <value>
+                <fullName>Tisk týdeníky</fullName>
+                <default>false</default>
+                <label>Tisk týdeníky</label>
+            </value>
+            <value>
+                <fullName>TV</fullName>
+                <default>false</default>
+                <label>TV</label>
+            </value>
+            <value>
+                <fullName>Týdeník</fullName>
+                <default>false</default>
+                <label>Týdeník</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>Zpravodaje městských částí</fullName>
+                <default>false</default>
+                <label>Zpravodaje městských částí</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

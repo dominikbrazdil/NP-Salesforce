@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_objektu__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ objektu</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ubytovací</fullName>
+                <default>false</default>
+                <label>Ubytovací</label>
+            </value>
+            <value>
+                <fullName>Stravování</fullName>
+                <default>false</default>
+                <label>Stravování</label>
+            </value>
+            <value>
+                <fullName>Kempy</fullName>
+                <default>false</default>
+                <label>Kempy</label>
+            </value>
+            <value>
+                <fullName>Turistický cíl</fullName>
+                <default>false</default>
+                <label>Turistický cíl</label>
+            </value>
+            <value>
+                <fullName>Přírodní památka</fullName>
+                <default>false</default>
+                <label>Přírodní památka</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

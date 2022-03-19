@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dar_sliben_od__c</fullName>
+    <description>Kdy má přijít dar</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Kdy má přijít dar</inlineHelpText>
+    <label>Dar slíbený od</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Date</type>
+</CustomField>

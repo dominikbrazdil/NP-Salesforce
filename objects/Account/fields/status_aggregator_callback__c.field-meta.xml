@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>status_aggregator_callback__c</fullName>
+    <externalId>false</externalId>
+    <label>_status_aggregator_callback</label>
+    <summarizedField>Ucast__c.status_aggregator__c</summarizedField>
+    <summaryForeignKey>Ucast__c.Ucet__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Firmy</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Posledni_ucast__c</columns>
+    <columns>Datum_vytvoreni__c</columns>
+    <columns>ACCOUNT.RECORDTYPE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Account.Firma</value>
+    </filters>
+    <label>Firmy</label>
+    <language>cs</language>
+</ListView>

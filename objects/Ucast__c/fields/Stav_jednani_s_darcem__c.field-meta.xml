@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stav_jednani_s_darcem__c</fullName>
+    <externalId>false</externalId>
+    <label>Stav jednání s dárcem</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Návrh</fullName>
+                <default>false</default>
+                <label>Návrh</label>
+            </value>
+            <value>
+                <fullName>Prověřen</fullName>
+                <default>false</default>
+                <label>Prověřen</label>
+            </value>
+            <value>
+                <fullName>Vyhodnocen jako prospect</fullName>
+                <default>false</default>
+                <label>Vyhodnocen jako prospect</label>
+            </value>
+            <value>
+                <fullName>Návrh na schůzku</fullName>
+                <default>false</default>
+                <label>Návrh na schůzku</label>
+            </value>
+            <value>
+                <fullName>Schůzka</fullName>
+                <default>false</default>
+                <label>Schůzka</label>
+            </value>
+            <value>
+                <fullName>Přislíben dar</fullName>
+                <default>false</default>
+                <label>Přislíben dar</label>
+            </value>
+            <value>
+                <fullName>Smlouva</fullName>
+                <default>false</default>
+                <label>Smlouva</label>
+            </value>
+            <value>
+                <fullName>Dárce</fullName>
+                <default>false</default>
+                <label>Dárce</label>
+            </value>
+            <value>
+                <fullName>Ztracen</fullName>
+                <default>false</default>
+                <label>Ztracen</label>
+            </value>
+            <value>
+                <fullName>Zamítnut</fullName>
+                <default>false</default>
+                <label>Zamítnut</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

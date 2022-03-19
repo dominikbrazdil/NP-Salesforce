@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>result_aggregator__c</fullName>
+    <externalId>false</externalId>
+    <formula>(
+YEAR( Datum_kontroly__c )*10000
++
+MONTH(Datum_kontroly__c)*100
++
+DAY(Datum_kontroly__c)
+) * 1000
+
++
+
+IF(ISPICKVAL( Vysledek_kontroly__c , &quot;OK&quot;), 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>_result_aggregator</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

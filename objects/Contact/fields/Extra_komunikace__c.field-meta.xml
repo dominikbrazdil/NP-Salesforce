@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Extra_komunikace__c</fullName>
+    <externalId>false</externalId>
+    <label>Extra nastavení komunikace</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Je VIP partner</fullName>
+                <default>false</default>
+                <label>Je VIP partner</label>
+            </value>
+            <value>
+                <fullName>Je VIP partner, když účet splňuje VIP</fullName>
+                <default>false</default>
+                <label>Je VIP partner, když účet splňuje VIP</label>
+            </value>
+            <value>
+                <fullName>Není VIP partner</fullName>
+                <default>false</default>
+                <label>Není VIP partner</label>
+            </value>
+            <value>
+                <fullName>Je příjemcem výroční zprávy</fullName>
+                <default>false</default>
+                <label>Je příjemcem výroční zprávy</label>
+            </value>
+            <value>
+                <fullName>Není příjemcem výroční zprávy</fullName>
+                <default>false</default>
+                <label>Není příjemcem výroční zprávy</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

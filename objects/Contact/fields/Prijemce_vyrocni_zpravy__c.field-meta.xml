@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prijemce_vyrocni_zpravy__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( INCLUDES(Extra_komunikace__c, &quot;Je příjemcem výroční zprávy&quot;), &quot;Ano&quot;, 
+IF( INCLUDES(Extra_komunikace__c, &quot;Není příjemcem výroční zprávy&quot;), &quot;Ne&quot;, 
+
+IF ( VIP_partner__c  = &quot;Ano&quot;, &quot;Ano&quot;,
+IF ( Account.RecordTypeId = &quot;012F0000000qHrv&quot;  &amp;&amp; Account.Stav__c = &quot;Aktivní&quot; &amp;&amp;  Account.Darce__c = &quot;Ano&quot;,  &quot;Ano&quot;,
+IF ( LOWER(Funkce_ve_firme__c) = &quot;ministr&quot;, &quot;Ano&quot; , 
+IF ( Account.RecordTypeId = &quot;012F0000000qHpG&quot; &amp;&amp; LOWER(Funkce_ve_firme__c) = &quot;děkan&quot;, &quot;Ano&quot; , 
+IF ( Account.RecordTypeId = &quot;012F0000000qHpG&quot; &amp;&amp; LOWER(Funkce_ve_firme__c) = &quot;hejtman&quot;, &quot;Ano&quot; , 
+IF ( Account.RecordTypeId = &quot;012F0000000qHpG&quot; &amp;&amp; LOWER(Funkce_ve_firme__c) = &quot;rektor&quot;, &quot;Ano&quot; , 
+
+&quot;Ne&quot;
+
+))))))
+
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Příjemce výroční zprávy</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

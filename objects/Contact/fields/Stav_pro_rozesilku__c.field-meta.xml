@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stav_pro_rozesilku__c</fullName>
+    <externalId>false</externalId>
+    <label>Stav pro rozesílku</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Plná schránka</fullName>
+                <default>false</default>
+                <label>Plná schránka</label>
+            </value>
+            <value>
+                <fullName>Email neexistuje</fullName>
+                <default>false</default>
+                <label>Email neexistuje</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zamereni_kontaktu__c</fullName>
+    <description>Používá se pro kontakty z médií.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Používá se pro kontakty z médií.</inlineHelpText>
+    <label>Zaměření kontaktu</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Architektura/Zelene staveni</fullName>
+                <default>false</default>
+                <label>Architektura/zelené stavění</label>
+            </value>
+            <value>
+                <fullName>bez zaměření</fullName>
+                <default>false</default>
+                <label>Bez zaměření</label>
+            </value>
+            <value>
+                <fullName>Bulvár</fullName>
+                <default>false</default>
+                <label>Bulvár</label>
+            </value>
+            <value>
+                <fullName>Cyklistické</fullName>
+                <default>false</default>
+                <label>Cyklistické</label>
+            </value>
+            <value>
+                <fullName>Domácí politika</fullName>
+                <default>false</default>
+                <label>Domácí politika</label>
+            </value>
+            <value>
+                <fullName>Domaci zpravodajstvi</fullName>
+                <default>false</default>
+                <label>Domácí zpravodajství</label>
+            </value>
+            <value>
+                <fullName>Doprava</fullName>
+                <default>false</default>
+                <label>Doprava</label>
+            </value>
+            <value>
+                <fullName>Doprava a veřejná prostranství</fullName>
+                <default>false</default>
+                <label>Doprava a veřejná prostranství</label>
+            </value>
+            <value>
+                <fullName>Ekonomie</fullName>
+                <default>false</default>
+                <label>Ekonomie a finance</label>
+            </value>
+            <value>
+                <fullName>Foto/Film/Hudba</fullName>
+                <default>false</default>
+                <label>Foto/Film/Hudba</label>
+            </value>
+            <value>
+                <fullName>Gastro</fullName>
+                <default>false</default>
+                <label>Gastro</label>
+            </value>
+            <value>
+                <fullName>Historie</fullName>
+                <default>false</default>
+                <label>Historie</label>
+            </value>
+            <value>
+                <fullName>Hlavolamy/zábava</fullName>
+                <default>false</default>
+                <label>Hlavolamy/zábava</label>
+            </value>
+            <value>
+                <fullName>Hobby</fullName>
+                <default>false</default>
+                <label>Hobby</label>
+            </value>
+            <value>
+                <fullName>jiné</fullName>
+                <default>false</default>
+                <label>Jiné</label>
+            </value>
+            <value>
+                <fullName>Kultura</fullName>
+                <default>false</default>
+                <label>Kultura</label>
+            </value>
+            <value>
+                <fullName>Lifestyle muzske</fullName>
+                <default>false</default>
+                <label>Lifestyle mužské</label>
+            </value>
+            <value>
+                <fullName>Lifestyle zenske</fullName>
+                <default>false</default>
+                <label>Lifestyle ženské</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing a komunikace</label>
+            </value>
+            <value>
+                <fullName>Mateřství a rodina</fullName>
+                <default>false</default>
+                <label>Mateřství a rodina</label>
+            </value>
+            <value>
+                <fullName>Móda</fullName>
+                <default>false</default>
+                <label>Móda</label>
+            </value>
+            <value>
+                <fullName>Pedagogické</fullName>
+                <default>false</default>
+                <label>Pedagogické</label>
+            </value>
+            <value>
+                <fullName>Priroda/ekologie</fullName>
+                <default>false</default>
+                <label>Příroda/ekologie</label>
+            </value>
+            <value>
+                <fullName>Společenské</fullName>
+                <default>false</default>
+                <label>Společenské</label>
+            </value>
+            <value>
+                <fullName>sport</fullName>
+                <default>false</default>
+                <label>Sport</label>
+            </value>
+            <value>
+                <fullName>Turisticke/Cestovani</fullName>
+                <default>false</default>
+                <label>Turistika/cestování</label>
+            </value>
+            <value>
+                <fullName>Věda/Technika</fullName>
+                <default>false</default>
+                <label>Věda/Technika</label>
+            </value>
+            <value>
+                <fullName>Veřejná správa</fullName>
+                <default>false</default>
+                <label>Veřejná správa</label>
+            </value>
+            <value>
+                <fullName>Vinařské</fullName>
+                <default>false</default>
+                <label>Vinařské</label>
+            </value>
+            <value>
+                <fullName>Zahrádkářství</fullName>
+                <default>false</default>
+                <label>Zahrádkářství</label>
+            </value>
+            <value>
+                <fullName>Zahraniční politika</fullName>
+                <default>false</default>
+                <label>Zahraniční politika</label>
+            </value>
+            <value>
+                <fullName>Zahranicni zpravodajstvi</fullName>
+                <default>false</default>
+                <label>Zahraniční zpravodajství</label>
+            </value>
+            <value>
+                <fullName>Zdraví a životní styl</fullName>
+                <default>false</default>
+                <label>Zdraví a životní styl</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vypoved_odstoupeni</fullName>
+    <active>true</active>
+    <errorConditionFormula>(!ISBLANK(TEXT(Vypoved_odstoupeni__c )) &amp;&amp; ISBLANK( Datum_odstoupeni__c ))
+
+||
+
+(ISBLANK( TEXT(Vypoved_odstoupeni__c )) &amp;&amp; !ISBLANK( Datum_odstoupeni__c ))</errorConditionFormula>
+    <errorDisplayField>Vypoved_odstoupeni__c</errorDisplayField>
+    <errorMessage>Při výpovědi/odstrupení musí být nastaveno datum i typ ukončení smlouvy.</errorMessage>
+</ValidationRule>

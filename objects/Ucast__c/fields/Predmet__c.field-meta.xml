@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Predmet__c</fullName>
+    <externalId>false</externalId>
+    <label>Předmět</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pachtovní smlouva</fullName>
+                <default>false</default>
+                <label>Pachtovní smlouva</label>
+            </value>
+            <value>
+                <fullName>Způsob hospodaření</fullName>
+                <default>false</default>
+                <label>Způsob hospodaření</label>
+            </value>
+            <value>
+                <fullName>Pozemkové úpravy</fullName>
+                <default>false</default>
+                <label>Pozemkové úpravy</label>
+            </value>
+            <value>
+                <fullName>PÚ + změna hospodaření</fullName>
+                <default>false</default>
+                <label>PÚ + změna hospodaření</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

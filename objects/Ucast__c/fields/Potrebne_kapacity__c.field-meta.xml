@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potrebne_kapacity__c</fullName>
+    <externalId>false</externalId>
+    <label>Potřebné kapacity</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Celý areál</fullName>
+                <default>false</default>
+                <label>Celý areál</label>
+            </value>
+            <value>
+                <fullName>Sál</fullName>
+                <default>false</default>
+                <label>Sál</label>
+            </value>
+            <value>
+                <fullName>Velká zasedačka</fullName>
+                <default>false</default>
+                <label>Velká zasedačka</label>
+            </value>
+            <value>
+                <fullName>Malá zasedačka</fullName>
+                <default>false</default>
+                <label>Malá zasedačka</label>
+            </value>
+            <value>
+                <fullName>Otevřená zahrada</fullName>
+                <default>false</default>
+                <label>Otevřená zahrada</label>
+            </value>
+            <value>
+                <fullName>Boromejská zahrada</fullName>
+                <default>false</default>
+                <label>Boromejská zahrada</label>
+            </value>
+            <value>
+                <fullName>Venkovní kuchyně</fullName>
+                <default>false</default>
+                <label>Venkovní kuchyně</label>
+            </value>
+            <value>
+                <fullName>Gril/Pec/Udírna</fullName>
+                <default>false</default>
+                <label>Gril/Pec/Udírna</label>
+            </value>
+            <value>
+                <fullName>Pergola u bistra</fullName>
+                <default>false</default>
+                <label>Pergola u bistra</label>
+            </value>
+            <value>
+                <fullName>Pergola u oveček</fullName>
+                <default>false</default>
+                <label>Pergola u oveček</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

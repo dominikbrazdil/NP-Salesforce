@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dluh_po_uhrade__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Dluh_v_dobe_uhrady__c == 0,
+
+IF(    Castka__c &lt; Castka_plneni_pri_uhrade__c,   Castka_plneni_pri_uhrade__c  -    Castka__c,     Castka_plneni_pri_uhrade__c  -  Castka__c    )
+
+,
+
+Dluh_v_dobe_uhrady__c - Castka__c
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Dluh po úhradě</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

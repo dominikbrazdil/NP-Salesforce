@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kontakt_Fundraising</fullName>
+    <fields>OtherAddress</fields>
+    <fields>OtherPhone</fields>
+    <fields>Birthdate</fields>
+    <label>Kontakt - Fundraising</label>
+</CompactLayout>

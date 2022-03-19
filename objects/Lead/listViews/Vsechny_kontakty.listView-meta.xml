@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vsechny_kontakty</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>Rok_ucasti__c</columns>
+    <columns>Program__c</columns>
+    <columns>T_m__c</columns>
+    <columns>Akce__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Všechny kontakty</label>
+    <language>cs</language>
+</ListView>

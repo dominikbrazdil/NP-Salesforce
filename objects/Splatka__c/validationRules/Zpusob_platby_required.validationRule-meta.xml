@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zpusob_platby_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>TEXT( Zpusob_platby__c ) == &quot;&quot;</errorConditionFormula>
+    <errorDisplayField>Zpusob_platby__c</errorDisplayField>
+    <errorMessage>Povinná položka.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Splatkovy_kalendar__c</fullName>
+    <externalId>false</externalId>
+    <label>Splátkový kalendář</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Celý rok</fullName>
+                <default>false</default>
+                <label>Celý rok</label>
+            </value>
+            <value>
+                <fullName>Přes rok</fullName>
+                <default>false</default>
+                <label>Přes rok</label>
+            </value>
+            <value>
+                <fullName>Partnerství LS</fullName>
+                <default>false</default>
+                <label>Partnerství LS</label>
+            </value>
+            <value>
+                <fullName>Partnerství MVS</fullName>
+                <default>false</default>
+                <label>Partnerství MVS</label>
+            </value>
+            <value>
+                <fullName>Další objekt CV</fullName>
+                <default>false</default>
+                <label>Další objekt CV</label>
+            </value>
+            <value>
+                <fullName>Zkrácený režim</fullName>
+                <default>false</default>
+                <label>Zkrácený režim</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

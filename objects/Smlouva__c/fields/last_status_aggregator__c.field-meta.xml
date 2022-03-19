@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>last_status_aggregator__c</fullName>
+    <externalId>false</externalId>
+    <formula>(
+YEAR(Platnost_do__c)*10000 
++ 
+MONTH(Platnost_do__c)*100 
++ 
+DAY(Platnost_do__c) 
+) * 10000
+
++ 
+
+IF( Stav__c == &quot;Uzavřená&quot;, 1, 0) 
++ 
+IF( Stav__c == &quot;V přípravě&quot;, 10, 0) 
++ 
+IF( Stav__c == &quot;Připravena&quot;, 100, 0) 
++ 
+IF( Stav__c == &quot;Platná&quot;, 1000, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>_last_status_aggregator</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

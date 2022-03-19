@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>individualni_darce__c</fullName>
+    <description>Položka slouží k dotazům na databázi, zda daná osoba je individuálním dárce či nikoliv (bez vztahu na firmu apod.)</description>
+    <externalId>false</externalId>
+    <label>Individuální dárce (zastaralé)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Není</fullName>
+                <default>true</default>
+                <label>Není</label>
+            </value>
+            <value>
+                <fullName>Je individuálním dárcem</fullName>
+                <default>false</default>
+                <label>Je individuálním dárcem</label>
+            </value>
+            <value>
+                <fullName>Vyjádřil zájem</fullName>
+                <default>false</default>
+                <label>Vyjádřil zájem</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Organ_verejne_spravy__c</fullName>
+    <externalId>false</externalId>
+    <label>Orgán veřejné správy</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Krajský úřad</fullName>
+                <default>false</default>
+                <label>Krajský úřad</label>
+            </value>
+            <value>
+                <fullName>Magistrát města</fullName>
+                <default>false</default>
+                <label>Magistrát města</label>
+            </value>
+            <value>
+                <fullName>Městský úřad</fullName>
+                <default>false</default>
+                <label>Městský úřad</label>
+            </value>
+            <value>
+                <fullName>Městys</fullName>
+                <default>false</default>
+                <label>Městys</label>
+            </value>
+            <value>
+                <fullName>Mikroregion</fullName>
+                <default>false</default>
+                <label>Mikroregion</label>
+            </value>
+            <value>
+                <fullName>Ministerstvo</fullName>
+                <default>false</default>
+                <label>Ministerstvo</label>
+            </value>
+            <value>
+                <fullName>Národní parky a CHKO</fullName>
+                <default>false</default>
+                <label>Národní parky a CHKO</label>
+            </value>
+            <value>
+                <fullName>Obecní úřad</fullName>
+                <default>false</default>
+                <label>Obecní úřad</label>
+            </value>
+            <value>
+                <fullName>Ostatní veřejná správa</fullName>
+                <default>false</default>
+                <label>Ostatní veřejná správa</label>
+            </value>
+            <value>
+                <fullName>Příspěvková organizace</fullName>
+                <default>false</default>
+                <label>Příspěvková organizace</label>
+            </value>
+            <value>
+                <fullName>Úřad městské části</fullName>
+                <default>false</default>
+                <label>Úřad městské části</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

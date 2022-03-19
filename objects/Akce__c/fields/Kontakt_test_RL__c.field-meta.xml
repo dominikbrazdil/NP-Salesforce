@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kontakt_test_RL__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Kontakt test RL</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Akce (Kontakt test RL)</relationshipLabel>
+    <relationshipName>Akce1</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

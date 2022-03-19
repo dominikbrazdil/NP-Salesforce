@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stav_plateb__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( status_aggregator_callback__c &gt;= 100000000 || 
+
+TODAY() &gt;   BLANKVALUE(Pristi_splatka_ocekavana__c  , DATE(2100, 1, 1))  
+
+, 
+&quot;Po splatnosti&quot;,
+IF (  Zbyva_uhradit__c &lt;= 0 , 
+&quot;Uhrazeno&quot;,
+&quot;Neuhrazeno&quot;
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Stav plateb</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

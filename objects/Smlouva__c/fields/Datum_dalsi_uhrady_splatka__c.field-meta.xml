@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Datum_dalsi_uhrady_splatka__c</fullName>
+    <externalId>false</externalId>
+    <label>Datum další úhrady (splátky)</label>
+    <summarizedField>Splatka__c.Predpokladane_datum_splatnosti__c</summarizedField>
+    <summaryFilterItems>
+        <field>Splatka__c.Stav__c</field>
+        <operation>equals</operation>
+        <value>Neuhrazeno</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Splatka__c.Smlouva__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

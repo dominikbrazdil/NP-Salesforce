@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_organizace__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ organizace</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nadace</fullName>
+                <default>false</default>
+                <label>Nadace</label>
+            </value>
+            <value>
+                <fullName>Nadační fond</fullName>
+                <default>false</default>
+                <label>Nadační fond</label>
+            </value>
+            <value>
+                <fullName>Občanské sdružení - org.složka s práv.subj.</fullName>
+                <default>false</default>
+                <label>Občanské sdružení - org.složka s práv.subj.</label>
+            </value>
+            <value>
+                <fullName>Občanské sdružení samostatné</fullName>
+                <default>false</default>
+                <label>Občanské sdružení samostatné</label>
+            </value>
+            <value>
+                <fullName>Obecně prospěšná společnost</fullName>
+                <default>false</default>
+                <label>Obecně prospěšná společnost</label>
+            </value>
+            <value>
+                <fullName>Spolek</fullName>
+                <default>false</default>
+                <label>Spolek</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

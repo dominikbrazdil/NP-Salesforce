@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obchod_OZ</fullName>
+    <active>true</active>
+    <label>Pronájmy v OZ</label>
+    <picklistValues>
+        <picklist>Feasibility_vice__c</picklist>
+        <values>
+            <fullName>dobrovolník</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>opinion leader</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>otevírač dveří</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>potencionální člen kabinetu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>potenciální dárce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interview_klasifikace_priorit__c</picklist>
+        <values>
+            <fullName>Možný kandidát %28C%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slibný kandidát %28B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Top kandidát %28A%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Kategorie_projektu__c</picklist>
+        <values>
+            <fullName>Náš domov</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pracovní prostředí</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volná krajina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zastavěná území</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Komunikace_s_darcem__c</picklist>
+        <values>
+            <fullName>Přijato</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trvalý dárce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zasláno poděkování</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Kraj_realizace_DoProstory__c</picklist>
+        <values>
+            <fullName>Jihomoravský</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jihočeský</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Karlovarský</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Královehradecký</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Liberecký</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moravskoslezský</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Olomoucký</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardubický</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plzeňský</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Praha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Středočeský</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vysočina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zlínský</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>nevíme</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ústecký</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Politicke_naladeni__c</picklist>
+        <values>
+            <fullName>1 nám nakloněno</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2 víceméně nakloněno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 neutrální</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 špatné</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>nevím</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Potrebne_kapacity__c</picklist>
+        <values>
+            <fullName>Boromejská zahrada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Celý areál</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gril%2FPec%2FUdírna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malá zasedačka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Otevřená zahrada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pergola u bistra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pergola u oveček</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sál</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Velká zasedačka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venkovní kuchyně</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Predmet__c</picklist>
+        <values>
+            <fullName>Pachtovní smlouva</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pozemkové úpravy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PÚ %2B změna hospodaření</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Způsob hospodaření</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Produkt_OZ__c</picklist>
+        <values>
+            <fullName>Den v OZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duel vinařů</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engagement v OZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jen pronájem prostor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rodinný den</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tajemství ukryté v OZ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Víno z blízka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinář</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinář %28-50%25%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>bylinková dílna</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>firemní večírek</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>konference</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>seminář</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>soukromá oslava</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>team-building</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rozhodovani_o_rozpoctu__c</picklist>
+        <values>
+            <fullName>jaro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>nezjištěno</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>podzim</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stav_jednani_s_darcem__c</picklist>
+        <values>
+            <fullName>Dárce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Návrh</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Návrh na schůzku</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prověřen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Přislíben dar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Schůzka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Smlouva</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vyhodnocen jako prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ztracen</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stav_nominovan_ho_projektu__c</picklist>
+        <values>
+            <fullName>Odeslaná přihláška</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rozpracovaná přihláška</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vybrán pro soutěž</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vítěz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zamítnut porotou</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stav_zp__c</picklist>
+        <values>
+            <fullName>Neúspěch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>V procesu</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vyřízeno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Změna dosažena</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Změna není nutná</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Typ_d_rce__c</picklist>
+        <values>
+            <fullName>Firemní</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individuální</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Typ_objektu__c</picklist>
+        <values>
+            <fullName>Kempy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Přírodní památka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stravování</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turistický cíl</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ubytovací</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Typ_opatreni__c</picklist>
+        <values>
+            <fullName>Administrativní budovy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biodiverzita</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Eroze půdy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Extrémní vítr</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Městská zeleň</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nedostatek vody a sucho</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Povodně a přívalové srážky</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Protipovodňové opatření</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Revitalizace vodních prvku</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rodinné a bytové domy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stínění</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Veřejné budovy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vlny horka a tepelný ostrov</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vytápění</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Využití dešťové vody</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Výrobní areál</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zelená energie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zelená střecha</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zeleň v krajině</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zemědělská krajina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Úspory energie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Čištění a recyklace vody</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Typ_podlicence__c</picklist>
+        <values>
+            <fullName>Basic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Typ_pron_jmu__c</picklist>
+        <values>
+            <fullName>Firemní</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individualni</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kurz</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Svatba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Školní</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Typ_ucastnika__c</picklist>
+        <values>
+            <fullName>Fotograf</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Novinář</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Odborný dozor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panelista</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sázející</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Uroven_spoluprace__c</picklist>
+        <values>
+            <fullName>Nabídka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Objednávka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Osobní schůzka</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Příležitost%2FNekontaktováno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Realizováno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zamítnuto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zrušeno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zrušeno %28Covid%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ztraceno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ztraceno %28Covid%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zájem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Žádost o schůzku</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Zdroj__c</picklist>
+        <values>
+            <fullName>Běžná účast na programu</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Doporučení od známého</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-mailing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Historicky_kontakt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Konference%2FSeminář</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Našli si nás sami</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nezjištěno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Osobní kontakt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reklamní kampaň</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Socialni_site</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Zdroj_kontaktu__c</picklist>
+        <values>
+            <fullName>Jiné</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poradna %28formulář%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poradna %28mail%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rádce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

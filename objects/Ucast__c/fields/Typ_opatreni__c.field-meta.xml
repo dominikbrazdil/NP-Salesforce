@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_opatreni__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ opatření</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Administrativní budovy</fullName>
+                <default>false</default>
+                <label>Administrativní budovy</label>
+            </value>
+            <value>
+                <fullName>Biodiverzita</fullName>
+                <default>false</default>
+                <label>Biodiverzita</label>
+            </value>
+            <value>
+                <fullName>Čištění a recyklace vody</fullName>
+                <default>false</default>
+                <label>Čištění a recyklace vody</label>
+            </value>
+            <value>
+                <fullName>Eroze půdy</fullName>
+                <default>false</default>
+                <label>Eroze půdy</label>
+            </value>
+            <value>
+                <fullName>Extrémní vítr</fullName>
+                <default>false</default>
+                <label>Extrémní vítr</label>
+            </value>
+            <value>
+                <fullName>Městská zeleň</fullName>
+                <default>false</default>
+                <label>Městská zeleň</label>
+            </value>
+            <value>
+                <fullName>Nedostatek vody a sucho</fullName>
+                <default>false</default>
+                <label>Nedostatek vody a sucho</label>
+            </value>
+            <value>
+                <fullName>Povodně a přívalové srážky</fullName>
+                <default>false</default>
+                <label>Povodně a přívalové srážky</label>
+            </value>
+            <value>
+                <fullName>Protipovodňové opatření</fullName>
+                <default>false</default>
+                <label>Protipovodňové opatření</label>
+            </value>
+            <value>
+                <fullName>Revitalizace vodních prvku</fullName>
+                <default>false</default>
+                <label>Revitalizace vodních prvku</label>
+            </value>
+            <value>
+                <fullName>Rodinné a bytové domy</fullName>
+                <default>false</default>
+                <label>Rodinné a bytové domy</label>
+            </value>
+            <value>
+                <fullName>Stínění</fullName>
+                <default>false</default>
+                <label>Stínění</label>
+            </value>
+            <value>
+                <fullName>Úspory energie</fullName>
+                <default>false</default>
+                <label>Úspory energie</label>
+            </value>
+            <value>
+                <fullName>Veřejné budovy</fullName>
+                <default>false</default>
+                <label>Veřejné budovy</label>
+            </value>
+            <value>
+                <fullName>Vlny horka a tepelný ostrov</fullName>
+                <default>false</default>
+                <label>Vlny horka a tepelný ostrov</label>
+            </value>
+            <value>
+                <fullName>Výrobní areál</fullName>
+                <default>false</default>
+                <label>Výrobní areál</label>
+            </value>
+            <value>
+                <fullName>Vytápění</fullName>
+                <default>false</default>
+                <label>Vytápění</label>
+            </value>
+            <value>
+                <fullName>Využití dešťové vody</fullName>
+                <default>false</default>
+                <label>Využití dešťové vody</label>
+            </value>
+            <value>
+                <fullName>Zelená energie</fullName>
+                <default>false</default>
+                <label>Zelená energie</label>
+            </value>
+            <value>
+                <fullName>Zelená střecha</fullName>
+                <default>false</default>
+                <label>Zelená střecha</label>
+            </value>
+            <value>
+                <fullName>Zeleň v krajině</fullName>
+                <default>false</default>
+                <label>Zeleň v krajině</label>
+            </value>
+            <value>
+                <fullName>Zemědělská krajina</fullName>
+                <default>false</default>
+                <label>Zemědělská krajina</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

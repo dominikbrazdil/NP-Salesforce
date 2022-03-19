@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obdobi_zaplaceno_do_splatky__c</fullName>
+    <externalId>false</externalId>
+    <label>Období zaplaceno do (splátky)</label>
+    <summarizedField>Splatka__c.Placene_obdobi_do__c</summarizedField>
+    <summaryFilterItems>
+        <field>Splatka__c.Posun_obdobi__c</field>
+        <operation>equals</operation>
+        <value>Ano</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Splatka__c.Smlouva__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

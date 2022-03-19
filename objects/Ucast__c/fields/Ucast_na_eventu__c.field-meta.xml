@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ucast_na_eventu__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Účast na eventu</description>
+    <externalId>false</externalId>
+    <label>Účast na eventu</label>
+    <referenceTo>Eventy__c</referenceTo>
+    <relationshipLabel>Účasti</relationshipLabel>
+    <relationshipName>asti</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dluh_callback__c</fullName>
+    <externalId>false</externalId>
+    <label>_dluh_callback</label>
+    <summarizedField>Splatka__c.dluh_aggregator__c</summarizedField>
+    <summaryFilterItems>
+        <field>Splatka__c.Stav__c</field>
+        <operation>equals</operation>
+        <value>Uhrazeno</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Splatka__c.Smlouva__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

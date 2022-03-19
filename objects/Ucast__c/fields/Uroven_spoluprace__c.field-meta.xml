@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uroven_spoluprace__c</fullName>
+    <externalId>false</externalId>
+    <label>Stav jednání</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Příležitost/Nekontaktováno</fullName>
+                <default>true</default>
+                <label>Příležitost/Nekontaktováno</label>
+            </value>
+            <value>
+                <fullName>Žádost o schůzku</fullName>
+                <default>false</default>
+                <label>Žádost o schůzku</label>
+            </value>
+            <value>
+                <fullName>Osobní schůzka</fullName>
+                <default>false</default>
+                <label>Osobní schůzka</label>
+            </value>
+            <value>
+                <fullName>Nabídka</fullName>
+                <default>false</default>
+                <label>Nabídka</label>
+            </value>
+            <value>
+                <fullName>Objednávka</fullName>
+                <default>false</default>
+                <label>Objednávka</label>
+            </value>
+            <value>
+                <fullName>Realizováno</fullName>
+                <default>false</default>
+                <label>Realizováno</label>
+            </value>
+            <value>
+                <fullName>Zrušeno</fullName>
+                <default>false</default>
+                <label>Zrušeno</label>
+            </value>
+            <value>
+                <fullName>Ztraceno</fullName>
+                <default>false</default>
+                <label>Ztraceno</label>
+            </value>
+            <value>
+                <fullName>Příležitost</fullName>
+                <default>false</default>
+                <label>Příležitost</label>
+            </value>
+            <value>
+                <fullName>Zájem</fullName>
+                <default>false</default>
+                <label>Zájem</label>
+            </value>
+            <value>
+                <fullName>Zamítnuto</fullName>
+                <default>false</default>
+                <label>Zamítnuto</label>
+            </value>
+            <value>
+                <fullName>Ztraceno (Covid)</fullName>
+                <default>false</default>
+                <label>Ztraceno (Covid)</label>
+            </value>
+            <value>
+                <fullName>Zrušeno (Covid)</fullName>
+                <default>false</default>
+                <label>Zrušeno (Covid)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

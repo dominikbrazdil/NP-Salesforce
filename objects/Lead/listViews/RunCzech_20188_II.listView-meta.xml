@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RunCzech_20188_II</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>T_m__c</columns>
+    <columns>Program__c</columns>
+    <columns>Rok_ucasti__c</columns>
+    <columns>Jazyk__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Program__c</field>
+        <operation>equals</operation>
+        <value>RunCzech</value>
+    </filters>
+    <filters>
+        <field>Rok_ucasti__c</field>
+        <operation>includes</operation>
+        <value>2018 - II</value>
+    </filters>
+    <filters>
+        <field>Rok_ucasti__c</field>
+        <operation>excludes</operation>
+        <value>2018</value>
+    </filters>
+    <filters>
+        <field>Jazyk__c</field>
+        <operation>equals</operation>
+        <value>CZ</value>
+    </filters>
+    <label>RunCzech - 2018 VW CZ</label>
+    <language>cs</language>
+</ListView>

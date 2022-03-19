@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cislo_smlouvy__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISBLANK( Cislo_smlouvy_manual__c ),
+
+IF (ISBLANK(  Ucast__r.ID_Objektu__c  ),
+VALUE(   ID_cislo_del__c +  TEXT(FLOOR(VALUE(ID_cislo_del__c) / 3) )  )
+,
+
+  IF( Ucast__r.Cislo_navazujici_ucasti__c &gt; 0,
+     VALUE(TEXT( Ucast__r.ID_Objektu__c ) + TEXT(YEAR(  DATEVALUE(CreatedDate ))) + TEXT(Ucast__r.Cislo_navazujici_ucasti__c))
+        ,
+      VALUE(TEXT( Ucast__r.ID_Objektu__c ) + TEXT(YEAR(  DATEVALUE(CreatedDate ))))
+  )
+
+)
+
+, 
+
+Cislo_smlouvy_manual__c
+
+)</formula>
+    <label>Číslo smlouvy (variabilní symbol)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

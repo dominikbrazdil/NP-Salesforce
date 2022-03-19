@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stav_nominovan_ho_projektu__c</fullName>
+    <externalId>false</externalId>
+    <label>Stav nominovaného projektu</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Rozpracovaná přihláška</fullName>
+                <default>false</default>
+                <label>Rozpracovaná přihláška</label>
+            </value>
+            <value>
+                <fullName>Odeslaná přihláška</fullName>
+                <default>false</default>
+                <label>Odeslaná přihláška</label>
+            </value>
+            <value>
+                <fullName>Zamítnut porotou</fullName>
+                <default>false</default>
+                <label>Zamítnut porotou</label>
+            </value>
+            <value>
+                <fullName>Vybrán pro soutěž</fullName>
+                <default>false</default>
+                <label>Vybrán pro soutěž</label>
+            </value>
+            <value>
+                <fullName>Vítěz</fullName>
+                <default>false</default>
+                <label>Vítěz</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

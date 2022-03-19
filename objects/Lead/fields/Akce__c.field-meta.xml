@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Akce__c</fullName>
+    <externalId>false</externalId>
+    <label>Akce</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2015 - FOS Jaro</fullName>
+                <default>false</default>
+                <label>2015 - FOS Jaro</label>
+            </value>
+            <value>
+                <fullName>2015 - FOS Podzim</fullName>
+                <default>false</default>
+                <label>2015 - FOS Podzim</label>
+            </value>
+            <value>
+                <fullName>2016 - FOS Jaro</fullName>
+                <default>false</default>
+                <label>2016 - FOS Jaro</label>
+            </value>
+            <value>
+                <fullName>2016 - FOS Podzim</fullName>
+                <default>false</default>
+                <label>2016 - FOS Podzim</label>
+            </value>
+            <value>
+                <fullName>2017 - FOS Jaro</fullName>
+                <default>false</default>
+                <label>2017 - FOS Jaro</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Na kole vinohrady</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Na kole vinohrady</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Lichtenštejnské stezky</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Lichtenštejnské stezky</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Májové putování</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Májové putování</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Strážnicko</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Strážnicko</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Velkomoravské stezky</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Velkomoravské stezky</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Letní putování Mikulovsko</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Letní putování Mikulovsko</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Putování za burčákem MH</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Putování za burčákem MH</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Tour de burčák</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Tour de burčák</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Uzavírání Licht Stezek</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Uzavírání Licht Stezek</label>
+            </value>
+            <value>
+                <fullName>2015 - MVS - Na kole vinohrady Podzim</fullName>
+                <default>false</default>
+                <label>2015 - MVS - Na kole vinohrady Podzim</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Na kole vinohrady Jaro</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Na kole vinohrady Jaro</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Májové putování MH</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Májové putování MH</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Otevírání Licht stezek</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Otevírání Licht stezek</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Krajem kvetoucí révy</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Krajem kvetoucí révy</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Putování Kyjovsko</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Putování Kyjovsko</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Hudba na kole</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Hudba na kole</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Stezky Mikulovsko</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Stezky Mikulovsko</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Putování za burčákem MH</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Putování za burčákem MH</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Tour de burčák</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Tour de burčák</label>
+            </value>
+            <value>
+                <fullName>2016 - MVS - Na kole vinohrady Podzim</fullName>
+                <default>false</default>
+                <label>2016 - MVS - Na kole vinohrady Podzim</label>
+            </value>
+            <value>
+                <fullName>2017 - MVS - Na kole vinohrady Jaro</fullName>
+                <default>false</default>
+                <label>2017 - MVS - Na kole vinohrady Jaro</label>
+            </value>
+            <value>
+                <fullName>2017 - MVS - Májové putování</fullName>
+                <default>false</default>
+                <label>2017 - MVS - Májové putování</label>
+            </value>
+            <value>
+                <fullName>2017 - MVS - Krajem kvetoucí révy</fullName>
+                <default>false</default>
+                <label>2017 - MVS - Krajem kvetoucí révy</label>
+            </value>
+            <value>
+                <fullName>2017 - MVS - Strážnicko</fullName>
+                <default>false</default>
+                <label>2017 - MVS - Strážnicko</label>
+            </value>
+            <value>
+                <fullName>2017 - MVS - Stezky Mikulovsko</fullName>
+                <default>false</default>
+                <label>2017 - MVS - Stezky Mikulovsko</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Vinaři z Chvalovic</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Vinaři z Chvalovic</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Piálek-Jäger</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Piálek-Jäger</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Lahofer-Košut</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Lahofer-Košut</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Vinaři z Bavor</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Vinaři z Bavor</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Gotberg-Krásná Hora</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Gotberg-Krásná Hora</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Hort-Maňák</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Hort-Maňák</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Kolby-Špalek</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Kolby-Špalek</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Aliance V8</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Aliance V8</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Dolní Dunajovice-Březí</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Dolní Dunajovice-Březí</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Vinaři z Bzence</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Vinaři z Bzence</label>
+            </value>
+            <value>
+                <fullName>2015 - VZB - Zima</fullName>
+                <default>false</default>
+                <label>2015 - VZB - Zima</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Víno z Čejkovic</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Víno z Čejkovic</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Tři šlechtitelky</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Tři šlechtitelky</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Nechorští-Prušánky</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Nechorští-Prušánky</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Vinaři Strážnicka</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Vinaři Strážnicka</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Vinitores Palaviensis</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Vinitores Palaviensis</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Vinaři jižně pod Brnem</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Vinaři jižně pod Brnem</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Búdy mutěnice</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Búdy mutěnice</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Vinaři z Rakvic</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Vinaři z Rakvic</label>
+            </value>
+            <value>
+                <fullName>2016 - VZB - Zima</fullName>
+                <default>false</default>
+                <label>2016 - VZB - Zima</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Horní Dolní Věstonice</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Horní Dolní Věstonice</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Miroslav Volařík</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Miroslav Volařík</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Velké Pavlovice</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Velké Pavlovice</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Miloš Michlovský</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Miloš Michlovský</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Moravská Nová Ves</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Moravská Nová Ves</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Pavel Vajčner</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Pavel Vajčner</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Nový Šaldorf - Sedlešovice</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Nový Šaldorf - Sedlešovice</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Jan Stávek</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Jan Stávek</label>
+            </value>
+            <value>
+                <fullName>2017 - VZB - Dolnokounicko</fullName>
+                <default>false</default>
+                <label>2017 - VZB - Dolnokounicko</label>
+            </value>
+            <value>
+                <fullName>Jarní probuzení - 12.4.2018</fullName>
+                <default>false</default>
+                <label>Jarní probuzení - 12.4.2018</label>
+            </value>
+            <value>
+                <fullName>Vítr ve vlasech 26. 7. 2018</fullName>
+                <default>false</default>
+                <label>Vítr ve vlasech 26. 7. 2018</label>
+            </value>
+            <value>
+                <fullName>Růžová 19. 6. 2018</fullName>
+                <default>false</default>
+                <label>Růžová 19. 6. 2018</label>
+            </value>
+            <value>
+                <fullName>Krásná Šeherezáda 17. 5. 2018</fullName>
+                <default>false</default>
+                <label>Krásná Šeherezáda 17. 5. 2018</label>
+            </value>
+            <value>
+                <fullName>Jarní probuzení 23.3.2017</fullName>
+                <default>false</default>
+                <label>Jarní probuzení 23.3.2017</label>
+            </value>
+            <value>
+                <fullName>Zpátky ke kořenům 6.4.2017</fullName>
+                <default>false</default>
+                <label>Zpátky ke kořenům 6.4.2017</label>
+            </value>
+            <value>
+                <fullName>Čistá krása 20.4.2017</fullName>
+                <default>false</default>
+                <label>Čistá krása 20.4.2017</label>
+            </value>
+            <value>
+                <fullName>Čarodějná dílna 27.4.2017</fullName>
+                <default>false</default>
+                <label>Čarodějná dílna 27.4.2017</label>
+            </value>
+            <value>
+                <fullName>Kosmetika pro miminka 23.5.2017</fullName>
+                <default>false</default>
+                <label>Kosmetika pro miminka 23.5.2017</label>
+            </value>
+            <value>
+                <fullName>Mýdlařská dílna 25.5.2017</fullName>
+                <default>false</default>
+                <label>Mýdlařská dílna 25.5.2017</label>
+            </value>
+            <value>
+                <fullName>Svatojánská noc 23.6.2017</fullName>
+                <default>false</default>
+                <label>Svatojánská noc 23.6.2017</label>
+            </value>
+            <value>
+                <fullName>V záři slunce 11.7.2017</fullName>
+                <default>false</default>
+                <label>V záři slunce 11.7.2017</label>
+            </value>
+            <value>
+                <fullName>Bylinkářské mazání 29.8.2017</fullName>
+                <default>false</default>
+                <label>Bylinkářské mazání 29.8.2017</label>
+            </value>
+            <value>
+                <fullName>Vítr ve vlasech 6.9.2017</fullName>
+                <default>false</default>
+                <label>Vítr ve vlasech 6.9.2017</label>
+            </value>
+            <value>
+                <fullName>Zpomalit 30.11.2017</fullName>
+                <default>false</default>
+                <label>Zpomalit 30.11.2017</label>
+            </value>
+            <value>
+                <fullName>Sluneční lázně - 18.8.2016</fullName>
+                <default>false</default>
+                <label>Sluneční lázně - 18.8.2016</label>
+            </value>
+            <value>
+                <fullName>Vítr ve vlasech - 21.7.2016</fullName>
+                <default>false</default>
+                <label>Vítr ve vlasech - 21.7.2016</label>
+            </value>
+            <value>
+                <fullName>Svatojánská noc - 23.6.2016</fullName>
+                <default>false</default>
+                <label>Svatojánská noc - 23.6.2016</label>
+            </value>
+            <value>
+                <fullName>Růžová dílna - 21.5.2016</fullName>
+                <default>false</default>
+                <label>Růžová dílna - 21.5.2016</label>
+            </value>
+            <value>
+                <fullName>Čistá krása - 21.4.2016</fullName>
+                <default>false</default>
+                <label>Čistá krása - 21.4.2016</label>
+            </value>
+            <value>
+                <fullName>Otakar má svátek - 26.8.2015</fullName>
+                <default>false</default>
+                <label>Otakar má svátek - 26.8.2015</label>
+            </value>
+            <value>
+                <fullName>Za úplňku - 2.7.2015</fullName>
+                <default>false</default>
+                <label>Za úplňku - 2.7.2015</label>
+            </value>
+            <value>
+                <fullName>Na svatého Ferdinanda - 30.5.2015</fullName>
+                <default>false</default>
+                <label>Na svatého Ferdinanda - 30.5.2015</label>
+            </value>
+            <value>
+                <fullName>Bylinková dílna I - 26.8.2014</fullName>
+                <default>false</default>
+                <label>Bylinková dílna I - 26.8.2014</label>
+            </value>
+            <value>
+                <fullName>Adventní bylinková dílna - 8.12.2016</fullName>
+                <default>false</default>
+                <label>Adventní bylinková dílna - 8.12.2016</label>
+            </value>
+            <value>
+                <fullName>2018 - StS Dárci</fullName>
+                <default>false</default>
+                <label>2018 - StS Dárci</label>
+            </value>
+            <value>
+                <fullName>Barvy a vůně podzimu 22.11.2018</fullName>
+                <default>false</default>
+                <label>Barvy a vůně podzimu 22.11.2018</label>
+            </value>
+            <value>
+                <fullName>Bylinky do podzimních plískanic 25.10.2018</fullName>
+                <default>false</default>
+                <label>Bylinky do podzimních plískanic 25.10.2018</label>
+            </value>
+            <value>
+                <fullName>Podzimní mazání 20.9.2018</fullName>
+                <default>false</default>
+                <label>Podzimní mazání 20.9.2018</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

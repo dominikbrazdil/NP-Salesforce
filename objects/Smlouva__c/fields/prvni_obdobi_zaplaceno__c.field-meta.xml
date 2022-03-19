@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>prvni_obdobi_zaplaceno__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (ISBLANK(Castka_plneni_1__c),
+IF( Uhrazena_castka__c &gt;=    Castka_plneni__c ,&quot;Ano&quot;, &quot;Ne&quot;)
+,
+IF( Uhrazena_castka__c &gt;=    Castka_plneni_1__c,&quot;Ano&quot;, &quot;Ne&quot;)
+)</formula>
+    <label>1. období zaplaceno</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

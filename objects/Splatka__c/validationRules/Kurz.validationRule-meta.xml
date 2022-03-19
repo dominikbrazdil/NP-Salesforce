@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kurz</fullName>
+    <active>true</active>
+    <errorConditionFormula>Mena__c != &quot;CZK&quot; &amp;&amp;  ISBLANK(Kurz__c)</errorConditionFormula>
+    <errorDisplayField>Kurz__c</errorDisplayField>
+    <errorMessage>Kurz měny je nutné vyplnit, protože měna splátek není Kč.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_ucasti__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ účasti</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1.místo</fullName>
+                <default>false</default>
+                <label>1.místo</label>
+            </value>
+            <value>
+                <fullName>2.místo</fullName>
+                <default>false</default>
+                <label>2.místo</label>
+            </value>
+            <value>
+                <fullName>3.místo</fullName>
+                <default>false</default>
+                <label>3.místo</label>
+            </value>
+            <value>
+                <fullName>Budova</fullName>
+                <default>false</default>
+                <label>Budova</label>
+            </value>
+            <value>
+                <fullName>Město</fullName>
+                <default>false</default>
+                <label>Město</label>
+            </value>
+            <value>
+                <fullName>Krajina</fullName>
+                <default>false</default>
+                <label>Krajina</label>
+            </value>
+            <value>
+                <fullName>Finalista</fullName>
+                <default>false</default>
+                <label>Finalista</label>
+            </value>
+            <value>
+                <fullName>přihlášený</fullName>
+                <default>false</default>
+                <label>přihlášený</label>
+            </value>
+            <value>
+                <fullName>Workshop Od nápadu k realizaci 16.12.</fullName>
+                <default>false</default>
+                <label>Workshop Od nápadu k realizaci 16.12.</label>
+            </value>
+            <value>
+                <fullName>Workshop Prezentace 8.4.</fullName>
+                <default>false</default>
+                <label>Workshop Prezentace 8.4.</label>
+            </value>
+            <value>
+                <fullName>Workshop Prezentace 27.2.</fullName>
+                <default>false</default>
+                <label>Workshop Prezentace 27.2.</label>
+            </value>
+            <value>
+                <fullName>Workshop od nápadu k realiazci 13.10.</fullName>
+                <default>false</default>
+                <label>Workshop od nápadu k realiazci 13.10.</label>
+            </value>
+            <value>
+                <fullName>zvláštní cena do 20 let</fullName>
+                <default>false</default>
+                <label>zvláštní cena do 20 let</label>
+            </value>
+            <value>
+                <fullName>Workshop Mám nápad 30.11.</fullName>
+                <default>false</default>
+                <label>Workshop Mám nápad 30.11.</label>
+            </value>
+            <value>
+                <fullName>Uchazeč</fullName>
+                <default>false</default>
+                <label>Uchazeč</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nabidka_stav__c</fullName>
+    <externalId>false</externalId>
+    <label>Stav nabídky</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nabídnuto</fullName>
+                <default>false</default>
+                <label>Nabídnuto</label>
+            </value>
+            <value>
+                <fullName>Objednáno</fullName>
+                <default>false</default>
+                <label>Objednáno</label>
+            </value>
+            <value>
+                <fullName>Dodáno</fullName>
+                <default>false</default>
+                <label>Dodáno</label>
+            </value>
+            <value>
+                <fullName>Nezájem</fullName>
+                <default>false</default>
+                <label>Nezájem</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

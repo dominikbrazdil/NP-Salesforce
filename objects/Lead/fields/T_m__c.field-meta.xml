@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_m__c</fullName>
+    <externalId>false</externalId>
+    <label>Tým</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Greenways</fullName>
+                <default>false</default>
+                <label>Greenways</label>
+            </value>
+            <value>
+                <fullName>Stromy</fullName>
+                <default>false</default>
+                <label>Stromy</label>
+            </value>
+            <value>
+                <fullName>Mobilita</fullName>
+                <default>false</default>
+                <label>Mobilita</label>
+            </value>
+            <value>
+                <fullName>Otevřená zahrada</fullName>
+                <default>false</default>
+                <label>Otevřená zahrada</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

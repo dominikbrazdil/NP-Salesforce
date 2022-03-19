@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reagovat_znovu_do__c</fullName>
+    <description>Kdy je nutné se kontaktu znovu ozvat.</description>
+    <externalId>false</externalId>
+    <label>Reagovat znovu do</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Politicke_naladeni__c</fullName>
+    <externalId>false</externalId>
+    <label>Politické naladění</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>nevím</fullName>
+                <default>true</default>
+                <label>nevím</label>
+            </value>
+            <value>
+                <fullName>1 nám nakloněno</fullName>
+                <default>false</default>
+                <label>1 nám nakloněno</label>
+            </value>
+            <value>
+                <fullName>2 víceméně nakloněno</fullName>
+                <default>false</default>
+                <label>2 víceméně nakloněno</label>
+            </value>
+            <value>
+                <fullName>3 neutrální</fullName>
+                <default>false</default>
+                <label>3 neutrální</label>
+            </value>
+            <value>
+                <fullName>4 špatné</fullName>
+                <default>false</default>
+                <label>4 špatné</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

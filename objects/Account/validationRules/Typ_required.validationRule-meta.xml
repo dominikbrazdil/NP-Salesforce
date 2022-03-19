@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_required</fullName>
+    <active>false</active>
+    <errorConditionFormula>($RecordType.DeveloperName == &quot;Media&quot;) &amp;&amp; (TEXT(Typ_media__c) == &quot;&quot;)</errorConditionFormula>
+    <errorDisplayField>Typ_media__c</errorDisplayField>
+    <errorMessage>Typ média musí být určen.</errorMessage>
+</ValidationRule>

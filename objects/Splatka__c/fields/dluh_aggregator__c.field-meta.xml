@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>dluh_aggregator__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (Dluh_po_uhrade__c &lt; 0,
+
+(VALUE( Name ) * 100000000 + 10000000 + (-Dluh_po_uhrade__c))
+,
+VALUE( Name ) * 100000000 +  Dluh_po_uhrade__c 
+
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>_dluh_aggregator</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Komunikace_s_darcem__c</fullName>
+    <externalId>false</externalId>
+    <label>Komunikace s dárcem</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Přijato</fullName>
+                <default>false</default>
+                <label>Přijato</label>
+            </value>
+            <value>
+                <fullName>Zasláno poděkování</fullName>
+                <default>false</default>
+                <label>Zasláno poděkování</label>
+            </value>
+            <value>
+                <fullName>Trvalý dárce</fullName>
+                <default>false</default>
+                <label>Trvalý dárce</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

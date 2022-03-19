@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>VIP_partner__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  INCLUDES(Extra_komunikace__c, &quot;Je VIP partner&quot;), &quot;Ano&quot;,
+IF(  INCLUDES(Extra_komunikace__c, &quot;Je VIP partner, když účet splňuje VIP&quot;) , Account.VIP_partner__c,
+
+IF(  INCLUDES(Extra_komunikace__c, &quot;Není VIP partner&quot;), &quot;Ne&quot;,
+
+IF ( ISPICKVAL(Statutarni_organ__c , &quot;Dozorčí rada Nadace Partnerství&quot;) 
+|| ISPICKVAL(Statutarni_organ__c , &quot;Správní rada Nadace Partnerství&quot;) 
+
+, &quot;Ano&quot; ,
+
+
+IF ( Account.VIP_partner__c = &quot;Ano&quot; &amp;&amp; (
+LOWER(Funkce_ve_firme__c) = &quot;velvyslanec&quot;
+||  LOWER(Funkce_ve_firme__c)  = &quot;ředitel&quot;
+||  CONTAINS( LOWER(Funkce_ve_firme__c), &quot;generální ředitel&quot;)
+||  CONTAINS( LOWER(Funkce_ve_firme__c), &quot;jednatel&quot;)
+     ),  &quot;Ano&quot; , &quot;Ne&quot; )
+
+
+)
+)
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>VIP partner</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

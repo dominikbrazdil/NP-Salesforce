@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Typ_vzdelavaci_instituce__c</fullName>
+    <externalId>false</externalId>
+    <label>Typ vzdělávací instituce</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Čtyřleté gymnázium</fullName>
+                <default>false</default>
+                <label>Čtyřleté gymnázium</label>
+            </value>
+            <value>
+                <fullName>Dětský domov</fullName>
+                <default>false</default>
+                <label>Dětský domov</label>
+            </value>
+            <value>
+                <fullName>Gymnázium</fullName>
+                <default>false</default>
+                <label>Gymnázium</label>
+            </value>
+            <value>
+                <fullName>Jiné</fullName>
+                <default>false</default>
+                <label>Jiné</label>
+            </value>
+            <value>
+                <fullName>Konzervatoř</fullName>
+                <default>false</default>
+                <label>Konzervatoř</label>
+            </value>
+            <value>
+                <fullName>Mateřská škola</fullName>
+                <default>false</default>
+                <label>Mateřská škola</label>
+            </value>
+            <value>
+                <fullName>Obchodní akademie</fullName>
+                <default>false</default>
+                <label>Obchodní akademie</label>
+            </value>
+            <value>
+                <fullName>Osmileté gymnázium</fullName>
+                <default>false</default>
+                <label>Osmileté gymnázium</label>
+            </value>
+            <value>
+                <fullName>Šestileté gymnázium</fullName>
+                <default>false</default>
+                <label>Šestileté gymnázium</label>
+            </value>
+            <value>
+                <fullName>Střední odborná škola</fullName>
+                <default>false</default>
+                <label>Střední odborná škola</label>
+            </value>
+            <value>
+                <fullName>Střední škola</fullName>
+                <default>false</default>
+                <label>Střední škola</label>
+            </value>
+            <value>
+                <fullName>Vysoká škola</fullName>
+                <default>false</default>
+                <label>Vysoká škola</label>
+            </value>
+            <value>
+                <fullName>Vyšší odborná škola</fullName>
+                <default>false</default>
+                <label>Vyšší odborná škola</label>
+            </value>
+            <value>
+                <fullName>Základní škola</fullName>
+                <default>false</default>
+                <label>Základní škola</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

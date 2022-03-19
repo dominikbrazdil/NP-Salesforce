@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Datum_podpisu_posledni_smlouvy__c</fullName>
+    <externalId>false</externalId>
+    <formula>Ucast__r.Datum_podpisu_smlouvy_o_certifikaci_CV__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Datum podpisu smlouvy o certifikaci CV</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

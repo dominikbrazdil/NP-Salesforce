@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zdroj__c</fullName>
+    <externalId>false</externalId>
+    <label>Zdroj</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Běžná účast na programu</fullName>
+                <default>false</default>
+                <label>Běžná účast na programu</label>
+            </value>
+            <value>
+                <fullName>E-mailing</fullName>
+                <default>false</default>
+                <label>E-mailing</label>
+            </value>
+            <value>
+                <fullName>Socialni_site</fullName>
+                <default>false</default>
+                <label>Sociální sítě</label>
+            </value>
+            <value>
+                <fullName>Konference/Seminář</fullName>
+                <default>false</default>
+                <label>Konference/Seminář</label>
+            </value>
+            <value>
+                <fullName>Našli si nás sami</fullName>
+                <default>false</default>
+                <label>Našli si nás sami</label>
+            </value>
+            <value>
+                <fullName>Reklamní kampaň</fullName>
+                <default>false</default>
+                <label>Reklamní kampaň</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>Doporučení od známého</fullName>
+                <default>false</default>
+                <label>Doporučení od známého</label>
+            </value>
+            <value>
+                <fullName>Osobní kontakt</fullName>
+                <default>false</default>
+                <label>Osobní kontakt</label>
+            </value>
+            <value>
+                <fullName>Nezjištěno</fullName>
+                <default>false</default>
+                <label>Nezjištěno</label>
+            </value>
+            <value>
+                <fullName>Historicky_kontakt</fullName>
+                <default>false</default>
+                <label>Historický kontakt</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

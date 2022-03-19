@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expertyza__c</fullName>
+    <externalId>false</externalId>
+    <label>Expertíza</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>CSR - společenská odpovědnost</fullName>
+                <default>false</default>
+                <label>CSR - společenská odpovědnost</label>
+            </value>
+            <value>
+                <fullName>doprava, cyklistika</fullName>
+                <default>false</default>
+                <label>doprava, cyklistika</label>
+            </value>
+            <value>
+                <fullName>ekonomika, cirkulární ekonomika</fullName>
+                <default>false</default>
+                <label>ekonomika, cirkulární ekonomika</label>
+            </value>
+            <value>
+                <fullName>energetika, obnovitelné zdroje</fullName>
+                <default>false</default>
+                <label>energetika, obnovitelné zdroje</label>
+            </value>
+            <value>
+                <fullName>facility management, zelené stavění</fullName>
+                <default>false</default>
+                <label>facility management, zelené stavění</label>
+            </value>
+            <value>
+                <fullName>fotografie, film</fullName>
+                <default>false</default>
+                <label>fotografie, film</label>
+            </value>
+            <value>
+                <fullName>fundraising</fullName>
+                <default>false</default>
+                <label>fundraising</label>
+            </value>
+            <value>
+                <fullName>investice, finance</fullName>
+                <default>false</default>
+                <label>investice, finance</label>
+            </value>
+            <value>
+                <fullName>IT, programování</fullName>
+                <default>false</default>
+                <label>IT, programování</label>
+            </value>
+            <value>
+                <fullName>lidské zdroje, personalistika</fullName>
+                <default>false</default>
+                <label>lidské zdroje, personalistika</label>
+            </value>
+            <value>
+                <fullName>management, krizové řízení</fullName>
+                <default>false</default>
+                <label>management, krizové řízení</label>
+            </value>
+            <value>
+                <fullName>odpady, recyklace</fullName>
+                <default>false</default>
+                <label>odpady, recyklace</label>
+            </value>
+            <value>
+                <fullName>PR, média, marketing, komunikace</fullName>
+                <default>false</default>
+                <label>PR, média, marketing, komunikace</label>
+            </value>
+            <value>
+                <fullName>půda, zemědělství, lesnictví</fullName>
+                <default>false</default>
+                <label>půda, zemědělství, lesnictví</label>
+            </value>
+            <value>
+                <fullName>tlumočení, překlady</fullName>
+                <default>false</default>
+                <label>tlumočení, překlady</label>
+            </value>
+            <value>
+                <fullName>urbanismus, architektura, zelené stavění</fullName>
+                <default>false</default>
+                <label>urbanismus, architektura, zelené stavění</label>
+            </value>
+            <value>
+                <fullName>veřejná správa</fullName>
+                <default>false</default>
+                <label>veřejná správa</label>
+            </value>
+            <value>
+                <fullName>vodní hospodářství</fullName>
+                <default>false</default>
+                <label>vodní hospodářství</label>
+            </value>
+            <value>
+                <fullName>Žádná</fullName>
+                <default>false</default>
+                <label>Žádná</label>
+            </value>
+            <value>
+                <fullName>zdravotnictví</fullName>
+                <default>false</default>
+                <label>zdravotnictví</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

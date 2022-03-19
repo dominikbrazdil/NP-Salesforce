@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Navazuje_na_ucast__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Vyplňte v případě, kdy účast prodlužuje nebo bezprostředně navazuje na jinou účast.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Vyplňte v případě, kdy účast prodlužuje nebo bezprostředně navazuje na jinou účast.</inlineHelpText>
+    <label>Navazuje na účast</label>
+    <referenceTo>Ucast__c</referenceTo>
+    <relationshipLabel>Navazující účasti</relationshipLabel>
+    <relationshipName>Navazujici_ucasti</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

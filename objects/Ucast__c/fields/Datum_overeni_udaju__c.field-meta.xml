@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Datum_overeni_udaju__c</fullName>
+    <description>Zapište datum, kdy došlo k ověření údajů v databázi.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Zapište datum, kdy došlo k ověření údajů v databázi.</inlineHelpText>
+    <label>Datum ověření údajů</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

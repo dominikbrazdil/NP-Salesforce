@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zpusob_platby__c</fullName>
+    <externalId>false</externalId>
+    <label>Způsob platby</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Převodem</fullName>
+                <default>true</default>
+                <label>Převodem</label>
+            </value>
+            <value>
+                <fullName>Hotovostně</fullName>
+                <default>false</default>
+                <label>Hotovostně</label>
+            </value>
+            <value>
+                <fullName>Inkaso</fullName>
+                <default>false</default>
+                <label>Inkaso</label>
+            </value>
+            <value>
+                <fullName>Platební brána</fullName>
+                <default>false</default>
+                <label>Platební brána</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

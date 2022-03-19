@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zapojeni_do_programu__c</fullName>
+    <externalId>false</externalId>
+    <label>Zapojení do programu</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Nadace Partnerství</fullName>
+                <default>false</default>
+                <label>Nadace Partnerství</label>
+            </value>
+            <value>
+                <fullName>Sázíme budoucnost</fullName>
+                <default>false</default>
+                <label>Sázíme budoucnost</label>
+            </value>
+            <value>
+                <fullName>Obnova Moravy</fullName>
+                <default>false</default>
+                <label>Obnova Moravy</label>
+            </value>
+            <value>
+                <fullName>Otevřená zahrada</fullName>
+                <default>false</default>
+                <label>Otevřená zahrada</label>
+            </value>
+            <value>
+                <fullName>Cena Josefa Vavrouška</fullName>
+                <default>false</default>
+                <label>Cena Josefa Vavrouška</label>
+            </value>
+            <value>
+                <fullName>re-Generátor</fullName>
+                <default>false</default>
+                <label>re-Generátor</label>
+            </value>
+            <value>
+                <fullName>Jak na živou a zdravou krajinu</fullName>
+                <default>false</default>
+                <label>Jak na živou a zdravou krajinu</label>
+            </value>
+            <value>
+                <fullName>Strom roku</fullName>
+                <default>false</default>
+                <label>Strom roku</label>
+            </value>
+            <value>
+                <fullName>Adapterra Awards</fullName>
+                <default>false</default>
+                <label>Adapterra Awards</label>
+            </value>
+            <value>
+                <fullName>Živá půda</fullName>
+                <default>false</default>
+                <label>Živá půda</label>
+            </value>
+            <value>
+                <fullName>Dražba 30 let NAP</fullName>
+                <default>false</default>
+                <label>Dražba 30 let NAP</label>
+            </value>
+            <value>
+                <fullName>Zelené stavění</fullName>
+                <default>false</default>
+                <label>Zelené stavění</label>
+            </value>
+            <value>
+                <fullName>Greenways</fullName>
+                <default>false</default>
+                <label>Greenways</label>
+            </value>
+            <value>
+                <fullName>Výsadbové granty</fullName>
+                <default>false</default>
+                <label>Výsadbové granty</label>
+            </value>
+            <value>
+                <fullName>Potenciální spolupráce</fullName>
+                <default>false</default>
+                <label>Potenciální spolupráce</label>
+            </value>
+            <value>
+                <fullName>ETY</fullName>
+                <default>false</default>
+                <label>ETY</label>
+            </value>
+            <value>
+                <fullName>Rádce pro vlastníky půdy</fullName>
+                <default>false</default>
+                <label>Rádce pro vlastníky půdy</label>
+            </value>
+            <value>
+                <fullName>Stromy svobody</fullName>
+                <default>false</default>
+                <label>Stromy svobody</label>
+            </value>
+            <value>
+                <fullName>Festival otevřených sklepů</fullName>
+                <default>false</default>
+                <label>Festival otevřených sklepů</label>
+            </value>
+            <value>
+                <fullName>Víno z blízka</fullName>
+                <default>false</default>
+                <label>Víno z blízka</label>
+            </value>
+            <value>
+                <fullName>Monitoring a sčítání cyklistů</fullName>
+                <default>false</default>
+                <label>Monitoring a sčítání cyklistů</label>
+            </value>
+            <value>
+                <fullName>Labská stezka</fullName>
+                <default>false</default>
+                <label>Labská stezka</label>
+            </value>
+            <value>
+                <fullName>Zelené oázy</fullName>
+                <default>false</default>
+                <label>Zelené oázy</label>
+            </value>
+            <value>
+                <fullName>Do práce na kole</fullName>
+                <default>false</default>
+                <label>Do práce na kole</label>
+            </value>
+            <value>
+                <fullName>Soutěž pro vodu</fullName>
+                <default>false</default>
+                <label>Soutěž pro vodu</label>
+            </value>
+            <value>
+                <fullName>Ekofilm</fullName>
+                <default>false</default>
+                <label>Ekofilm</label>
+            </value>
+            <value>
+                <fullName>Jiné</fullName>
+                <default>false</default>
+                <label>Jiné</label>
+            </value>
+            <value>
+                <fullName>PIM</fullName>
+                <default>false</default>
+                <label>PIM</label>
+            </value>
+            <value>
+                <fullName>Grantys</fullName>
+                <default>false</default>
+                <label>Grantys</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interview_klasifikace_priorit__c</fullName>
+    <externalId>false</externalId>
+    <label>Interview - klasifikace priorit</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Top kandidát (A)</fullName>
+                <default>false</default>
+                <label>Top kandidát (A)</label>
+            </value>
+            <value>
+                <fullName>Slibný kandidát (B)</fullName>
+                <default>false</default>
+                <label>Slibný kandidát (B)</label>
+            </value>
+            <value>
+                <fullName>Možný kandidát (C)</fullName>
+                <default>false</default>
+                <label>Možný kandidát (C)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

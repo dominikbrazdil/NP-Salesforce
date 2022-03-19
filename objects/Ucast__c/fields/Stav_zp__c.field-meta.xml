@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stav_zp__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>v procesu - po KPÚ dojde ke změně pachtýře, vypovězení pachtovní smlouvy
+vyřízeno	teoretický dotaz, stručný dotaz, který nevede ke změně hospodaření
+změna dosažena - propachtováno, změna pachtýře, změna podmínek pachtu
+změna není nutná -	současné hospodaření je OK, jenom doplňující dotaz
+neúspěch - změna nedosažena na straně vlastníka, nedomluvy se zemědělcem atd.</inlineHelpText>
+    <label>Stav</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>V procesu</fullName>
+                <default>false</default>
+                <label>V procesu</label>
+            </value>
+            <value>
+                <fullName>Vyřízeno</fullName>
+                <default>false</default>
+                <label>Vyřízeno</label>
+            </value>
+            <value>
+                <fullName>Změna dosažena</fullName>
+                <default>false</default>
+                <label>Změna dosažena</label>
+            </value>
+            <value>
+                <fullName>Změna není nutná</fullName>
+                <default>false</default>
+                <label>Změna není nutná</label>
+            </value>
+            <value>
+                <fullName>Neúspěch</fullName>
+                <default>false</default>
+                <label>Neúspěch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

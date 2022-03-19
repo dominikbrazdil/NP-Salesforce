@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Kraj__c</fullName>
+    <externalId>false</externalId>
+    <label>Kraj</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hlavní město Praha</fullName>
+                <default>false</default>
+                <label>Hlavní město Praha</label>
+            </value>
+            <value>
+                <fullName>Středočeský kraj</fullName>
+                <default>false</default>
+                <label>Středočeský kraj</label>
+            </value>
+            <value>
+                <fullName>Jihočeský kraj</fullName>
+                <default>false</default>
+                <label>Jihočeský kraj</label>
+            </value>
+            <value>
+                <fullName>Plzeňský kraj</fullName>
+                <default>false</default>
+                <label>Plzeňský kraj</label>
+            </value>
+            <value>
+                <fullName>Karlovarský kraj</fullName>
+                <default>false</default>
+                <label>Karlovarský kraj</label>
+            </value>
+            <value>
+                <fullName>Ústecký kraj</fullName>
+                <default>false</default>
+                <label>Ústecký kraj</label>
+            </value>
+            <value>
+                <fullName>Liberecký kraj</fullName>
+                <default>false</default>
+                <label>Liberecký kraj</label>
+            </value>
+            <value>
+                <fullName>Královéhradecký kraj</fullName>
+                <default>false</default>
+                <label>Královéhradecký kraj</label>
+            </value>
+            <value>
+                <fullName>Pardubický kraj</fullName>
+                <default>false</default>
+                <label>Pardubický kraj</label>
+            </value>
+            <value>
+                <fullName>Kraj Vysočina</fullName>
+                <default>false</default>
+                <label>Kraj Vysočina</label>
+            </value>
+            <value>
+                <fullName>Jihomoravský kraj</fullName>
+                <default>false</default>
+                <label>Jihomoravský kraj</label>
+            </value>
+            <value>
+                <fullName>Olomoucký kraj</fullName>
+                <default>false</default>
+                <label>Olomoucký kraj</label>
+            </value>
+            <value>
+                <fullName>Zlínský kraj</fullName>
+                <default>false</default>
+                <label>Zlínský kraj</label>
+            </value>
+            <value>
+                <fullName>Moravskoslezský kraj</fullName>
+                <default>false</default>
+                <label>Moravskoslezský kraj</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
