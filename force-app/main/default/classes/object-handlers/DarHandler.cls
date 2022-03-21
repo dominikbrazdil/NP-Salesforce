@@ -1,20 +1,76 @@
 public without sharing class DarHandler {
+
+    private String receivedDate; // YYYY-MM-DD format
+    private Integer darovanaCastka;
+    private Integer prijataCastka;
+    private Integer transactionId;
+    private Boolean pravidelnyDar;
+    private Boolean pozadujePotvrzeni;
+    private Boolean darovanoNaVyzvu;
+    private Integer capmaignId;
+    private String donorEmail; 
 	
-    public static Dar__c build(Contact contact, DarujmeTransaction tr) {
-        Campaign campaign = new Campaign(Darujme_Id__c = tr.pledge.projectId);
+    public Dar__c build() {
+        Campaign campaign = new Campaign(Darujme_Id__c = this.capmaignId);
+        Contact donor = new Contact(Email_External_Id__c = this.donorEmail);
 
         return new Dar__c(
-            Name = tr.receivedAt.left(10), // YYYY-MM-DD format
-            Datum__c = Date.valueOf(tr.receivedAt.left(10)),
-            Darovana_castka__c = tr.sentAmount.cents / 100,
-            Prijata_castka__c = tr.outgoingAmount.cents / 100,
-            Transaction_Id__c = tr.transactionId,
-            Pravidelny_dar__c = tr.pledge.isRecurrent,
+            Name = this.receivedDate,
+            Datum__c = Date.valueOf(this.receivedDate),
+            Darovana_castka__c = this.darovanaCastka,
+            Prijata_castka__c = this.prijataCastka,
+            Transaction_Id__c = this.transactionId,
+            Pravidelny_dar__c = this.pravidelnyDar,
             Kampan__r = campaign,
-            Pozaduje_potvrzeni__c = tr.pledge.wantDonationCertificate,
-            Darovano_na_vyzvu__c = tr.pledge.promotionId != null,
-            Darce__c = contact.Id
+            Pozaduje_potvrzeni__c = this.pozadujePotvrzeni,
+            Darovano_na_vyzvu__c = this.darovanoNaVyzvu,
+            Darce__r = donor
         );
+    }
+
+    public DarHandler setReceivedDate(String receivedDate) {
+        this.receivedDate = receivedDate;
+        return this;
+    }
+
+    public DarHandler setDarovanaCastka(Integer darovanaCastka) {
+        this.darovanaCastka = darovanaCastka;
+        return this;
+    }
+
+    public DarHandler setPrijataCastka(Integer prijataCastka) {
+        this.prijataCastka = prijataCastka;
+        return this;
+    }
+
+    public DarHandler setTransactionId(Integer transactionId) {
+        this.transactionId = transactionId;
+        return this;
+    }
+
+    public DarHandler setPravidelnyDar(Boolean pravidelnyDar) {
+        this.pravidelnyDar = pravidelnyDar;
+        return this;
+    }
+
+    public DarHandler setPozadujePotvrzeni(Boolean pozadujePotvrzeni) {
+        this.pozadujePotvrzeni = pozadujePotvrzeni;
+        return this;
+    }
+
+    public DarHandler setDarovanoNaVyzvu(Boolean darovanoNaVyzvu) {
+        this.darovanoNaVyzvu = darovanoNaVyzvu;
+        return this;
+    }
+
+    public DarHandler setCampaignId(Integer capmaignId) {
+        this.capmaignId = capmaignId;
+        return this;
+    }
+
+    public DarHandler setDonorEmail(String donorEmail) {
+        this.donorEmail = donorEmail.toLowerCase();
+        return this;
     }
     
 }

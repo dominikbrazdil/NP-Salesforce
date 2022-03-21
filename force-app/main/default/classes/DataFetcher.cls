@@ -1,0 +1,24 @@
+public abstract class DataFetcher {
+
+    protected final String API_URL;
+    protected final String API_SECRET;
+
+    private Http http = new Http();
+
+
+    protected String fetchData(String endpointString) {
+        HttpRequest r = new HttpRequest();
+        r.setMethod('GET');
+        String endpoint = API_URL
+            + endpointString
+            + (endpointString.contains('?') ? '&' : '?')
+            + getEndpointAuthorisation();
+        r.setEndpoint(endpoint); 
+		HttpResponse res = http.send(r);
+        return replaceReservedWordsInJSON(res.getBody());
+    }
+
+    protected abstract String getEndpointAuthorisation();
+
+    protected abstract String replaceReservedWordsInJSON(String responseJSON);
+ }

@@ -3,6 +3,10 @@ public class TestImportingTransactions {
 
     static DarujmeTransaction tr1, tr2, tr3;
     static DarujmePromotion pr1;
+    static Account account1;
+    static Contact contact1;
+    static Dar__c dar1, dar2;
+
     static Id jobID;
     static Apex_config__c config;
 
@@ -16,6 +20,11 @@ public class TestImportingTransactions {
         tr1 = trs[0];
         tr2 = trs[1];
         tr3 = trs[2];
+
+        account1 = tr1.createAccount();
+        contact1 = tr1.createContact();
+        dar1 = tr1.createDar();
+        dar2 = tr2.createDar();
 
         Campaign campaign = new Campaign(Name = 'testCampaign', Darujme_Id__c = tr1.pledge.projectId);
         insert campaign;
@@ -34,9 +43,9 @@ public class TestImportingTransactions {
         DarujmeLoader.loadTransactions('2022-02-22', null);
         Test.stopTest();
 
-        List<Account> accounts = [SELECT Id, Name FROM Account WHERE Name LIKE :tr1.pledge.donor.getAccountName()];
+        List<Account> accounts = [SELECT Id, Name FROM Account WHERE Name LIKE :tr1.createAccount().Name];
         System.assertEquals(1, accounts.size(), 'Account was not created');
-        List<Contact> contacts = [SELECT Id, Email, MobilePhone, FirstName, LastName, AccountId FROM Contact WHERE Email LIKE :tr1.pledge.donor.email];
+        List<Contact> contacts = [SELECT Id, Email, Email_External_Id__c, MobilePhone, FirstName, LastName, AccountId FROM Contact WHERE Email_External_Id__c LIKE :tr1.pledge.donor.email];
         System.assertEquals(1, contacts.size(), 'Contact was not created');
         List<Dar__c> dary = [SELECT Id, Transaction_id__c, Darce__r.Id, Darce__r.Email, Name, Datum__c, Darovana_castka__c, Prijata_castka__c, Kampan__r.Darujme_Id__c, Pozaduje_potvrzeni__c, Darovano_na_vyzvu__c, Vyzva__c FROM Dar__c WHERE Transaction_Id__c = :tr1.transactionId LIMIT 1];
         System.assert(!dary.isEmpty(), 'Dar was not created');
@@ -51,21 +60,22 @@ public class TestImportingTransactions {
     @isTest static void testImportNewAccountAndContact() {
 
         Test.startTest();
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
+        DarujmeLoader.importTransactions(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
         Logger.closeAndStore();
         Test.stopTest();
 
 
-        List<Account> accounts = [SELECT Id, Name FROM Account WHERE Name LIKE :tr1.pledge.donor.getAccountName()];
+        List<Account> accounts = [SELECT Id, Name FROM Account WHERE Name LIKE :tr1.createAccount().Name];
         System.assertEquals(1, accounts.size(), 'Account was not created');
         Account a = accounts[0];
-        System.assertEquals(tr1.pledge.donor.getAccountName(), a.Name);
+        System.assertEquals(tr1.createAccount().Name, a.Name);
 
-        List<Contact> contacts = [SELECT Id, Email, MobilePhone, FirstName, LastName, AccountId, Ulice_soukrome__c, Mesto_soukrome__c, PSC_soukrome__c FROM Contact WHERE Email LIKE :tr1.pledge.donor.email];
+        List<Contact> contacts = [SELECT Id, Email, Email_External_Id__c, MobilePhone, FirstName, LastName, AccountId, Ulice_soukrome__c, Mesto_soukrome__c, PSC_soukrome__c FROM Contact WHERE Email_External_Id__c LIKE :tr1.pledge.donor.email];
         System.assertEquals(1, contacts.size(), 'Contact was not created');
         Contact c = contacts[0];
         System.assertEquals(a.Id, c.AccountId, 'Account was not assigned to contact');
         System.assertEquals(tr1.pledge.donor.email, c.Email);
+        System.assertEquals(tr1.pledge.donor.email, c.Email_External_Id__c);
         System.assertEquals(tr1.pledge.donor.firstName, c.FirstName);
         System.assertEquals(tr1.pledge.donor.lastName, c.LastName);
         System.assertEquals(tr1.pledge.donor.phone, c.MobilePhone);
@@ -78,11 +88,9 @@ public class TestImportingTransactions {
 
 
     @isTest static void testImportNewDar() {
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
-
 
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
+        DarujmeLoader.importTransactions(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
         Logger.closeAndStore();
         Test.stopTest();
 
@@ -106,11 +114,10 @@ public class TestImportingTransactions {
     }
 
     @isTest static void testImportDuplicateTransaction() {
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>());
+        DarujmeLoader.importTransactions(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
         
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>());
+        Importer.insertDary(new List<Dar__c>{tr1.createDar()});
         Logger.closeAndStore();
         Test.stopTest();
 
@@ -126,7 +133,7 @@ public class TestImportingTransactions {
     @isTest static void testInsertDarWithNonExistingContact() {
         
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>());
+        Importer.insertDary(new List<Dar__c>{dar1});
         Logger.closeAndStore();
         Test.stopTest();
 
@@ -140,10 +147,11 @@ public class TestImportingTransactions {
     }
 
     @isTest static void testImportTwoTransactionsToOneContact() {
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
+        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
+
         
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1, tr2}, new Map<Integer, DarujmePromotion>());
+        Importer.insertDary(new List<Dar__c>{dar1, dar2});
         Test.stopTest();
 
 
@@ -179,12 +187,11 @@ public class TestImportingTransactions {
     }
 
     @isTest static void testTryImportTransactionToNonExistingProject() {
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
         tr1.pledge.projectId = 123;
         
         
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>());
+        DarujmeLoader.importTransactions(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
         Logger.closeAndStore();
         Test.stopTest();
 
@@ -198,44 +205,44 @@ public class TestImportingTransactions {
     }
 
     @isTest static void testMarkingRecurrentDonors() {
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
+        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
 
-        tr2.pledge.isRecurrent = false;
+        dar2.Pravidelny_dar__c = false;
 
-        Contact contact = [SELECT Id, Email, Pravidelny_darce__c FROM Contact WHERE Email LIKE :tr1.pledge.donor.email LIMIT 1];
+        Contact contact = [SELECT Id, Email_External_Id__c, Pravidelny_darce__c FROM Contact WHERE Email_External_Id__c LIKE :tr1.pledge.donor.email LIMIT 1];
         System.assert(!contact.Pravidelny_darce__c, 'Contact was marked recurrent as default');
 
 
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>());
+        Importer.insertDary(new List<Dar__c>{dar1});
 
-        contact = [SELECT Id, Email, Pravidelny_darce__c FROM Contact WHERE Id=:contact.Id LIMIT 1];
+        contact = [SELECT Id, Email_External_Id__c, Pravidelny_darce__c FROM Contact WHERE Id=:contact.Id LIMIT 1];
         System.assert(contact.Pravidelny_darce__c, 'Contact was not marked as recurrent');
 
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr2}, new Map<Integer, DarujmePromotion>());
+        Importer.insertDary(new List<Dar__c>{dar2});
         Logger.closeAndStore();
         Test.stopTest();
 
 
-        contact = [SELECT Id, Email, Pravidelny_darce__c FROM Contact WHERE Id=:contact.Id LIMIT 1];
+        contact = [SELECT Id, Email_External_Id__c, Pravidelny_darce__c FROM Contact WHERE Id=:contact.Id LIMIT 1];
         System.assert(contact.Pravidelny_darce__c, 'Contact was set back to not-recurrent');
         System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
     }
 
 
     @isTest static void testAddingDonorsToCampaigns() {
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
+        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
 
         
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1, tr2}, new Map<Integer, DarujmePromotion>());
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr3}, new Map<Integer, DarujmePromotion>());
+        Importer.insertDary(new List<Dar__c>{dar1, dar2});
+        Importer.insertDary(new List<Dar__c>{tr3.createDar()});
         Logger.closeAndStore();
         Test.stopTest();
 
 
         List<CampaignMember> members = [SELECT ContactId, CampaignId FROM CampaignMember 
-                                        WHERE Contact.Email = :tr1.pledge.donor.email AND Campaign.Darujme_Id__c = :tr1.pledge.projectId];
+                                        WHERE Contact.Email_External_Id__c = :tr1.pledge.donor.email AND Campaign.Darujme_Id__c = :tr1.pledge.projectId];
 
         System.assertEquals(1, members.size(), 'Donor was not assigned to campaign correctly');
         System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
@@ -245,19 +252,19 @@ public class TestImportingTransactions {
     @isTest static void testCreateOpportunityFromContactAmountRule() {
         Integer amountOfDaryLimit = (Integer)config.Lead_amount_of_donations_limit__c;
 
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
+        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
 
-        tr1.sentAmount.cents = amountOfDaryLimit*100-1;
-        tr2.sentAmount.cents = amountOfDaryLimit*100;
+        dar1.Darovana_castka__c = amountOfDaryLimit-1;
+        dar2.Darovana_castka__c = amountOfDaryLimit;
 
 
         Test.startTest();
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>());
-        List<Opportunity> opps = [SELECT Id, Kontaktniosoba__r.Email FROM Opportunity WHERE Kontaktniosoba__r.Email=:tr1.pledge.donor.email];
+        Importer.insertDary(new List<Dar__c>{dar1});
+        List<Opportunity> opps = [SELECT Id, Kontaktniosoba__r.Email_External_Id__c FROM Opportunity WHERE Kontaktniosoba__r.Email_External_Id__c=:tr1.pledge.donor.email];
         System.assert(opps.isEmpty(), 'Opportunity was created despite the rule');
 
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr2}, new Map<Integer, DarujmePromotion>());
-        opps = [SELECT Id, Kontaktniosoba__r.Email FROM Opportunity WHERE Kontaktniosoba__r.Email=:tr1.pledge.donor.email];
+        Importer.insertDary(new List<Dar__c>{dar2});
+        opps = [SELECT Id, Kontaktniosoba__r.Email_External_Id__c FROM Opportunity WHERE Kontaktniosoba__r.Email_External_Id__c=:tr1.pledge.donor.email];
         Logger.closeAndStore();
         Test.stopTest();
 
@@ -269,18 +276,23 @@ public class TestImportingTransactions {
     @isTest static void testCreateOpportunityFromContactNumberRule() {
         Integer numberOfDaryLimit = (Integer)config.Lead_number_of_donations_limit__c;
 
-        DarujmeImporter.insertNonExistingContactsWithAccounts(new List<DarujmeTransaction>{tr1});
-        tr1.sentAmount.cents = 0;
-        List<DarujmeTransaction> trs = TestUtils.getClonedTransactions(tr1, numberOfDaryLimit-1, 2);
+        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
+        dar1.Darovana_castka__c = 0;
+        List<Dar__c> dary = new List<Dar__c>();
+        for (Integer i = 0; i < numberOfDaryLimit-1; i++) {
+            Dar__c d = dar1.clone();
+            d.Transaction_Id__c = i+1000;
+            dary.add(d);
+        }
 
 
         Test.startTest();
-        DarujmeImporter.insertDary(trs, new Map<Integer, DarujmePromotion>());
-        List<Opportunity> opps = [SELECT Id, Kontaktniosoba__r.Email FROM Opportunity WHERE Kontaktniosoba__r.Email=:tr1.pledge.donor.email];
+        Importer.insertDary(dary);
+        List<Opportunity> opps = [SELECT Id, Kontaktniosoba__r.Email_External_Id__c FROM Opportunity WHERE Kontaktniosoba__r.Email_External_Id__c=:tr1.pledge.donor.email];
         System.assert(opps.isEmpty(), 'Opportunity was created despite the rule');
 
-        DarujmeImporter.insertDary(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>());
-        opps = [SELECT Id, Kontaktniosoba__r.Email FROM Opportunity WHERE Kontaktniosoba__r.Email=:tr1.pledge.donor.email];
+        Importer.insertDary(new List<Dar__c>{dar1});
+        opps = [SELECT Id, Kontaktniosoba__r.Email_External_Id__c FROM Opportunity WHERE Kontaktniosoba__r.Email_External_Id__c=:tr1.pledge.donor.email];
         Logger.closeAndStore();
         Test.stopTest();
 

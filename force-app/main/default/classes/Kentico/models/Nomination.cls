@@ -4,8 +4,9 @@
 
 public class Nomination {
 
+
 	public class Category {
-		public Integer id;
+		public String id;
 		public String name;
 	}
 

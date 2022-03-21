@@ -1,26 +1,78 @@
 public without sharing class ContactHandler {
 
-	public static Contact build(DarujmeTransaction tr, Id accountId) {
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String phone;
+    private String street;
+    private String city;
+    private String postCode;
+    private String description;
+    private Id accountId;
+
+	public Contact build() {
         return new Contact(
-        	FirstName = tr.pledge.donor.firstName.left(20),
-            LastName = tr.pledge.donor.lastName.left(20),
-            Email = tr.pledge.donor.email.toLowerCase(),
-            MobilePhone = tr.pledge.donor.phone,
-            Ulice_soukrome__c = tr.pledge.donor.address.street,
-            Mesto_soukrome__c = tr.pledge.donor.address.city,
-            PSC_soukrome__c = tr.pledge.donor.address.postCode,
-            AccountId = accountId,
-            Description = 'Created from Darujme.cz import'
+        	FirstName = this.firstName,
+            LastName = this.lastName,
+            Email_External_Id__c = this.email,
+            MobilePhone = this.phone,
+            Ulice_soukrome__c = this.street,
+            Mesto_soukrome__c = this.city,
+            PSC_soukrome__c = this.postCode,
+            AccountId = this.accountId,
+            Description = this.description
         );
     }
+
     
-    public static List<Contact> retrieveContactsWithEmails(Set<String> contactEmailsToSearch) {
-        List<String> searchStrings = new List<String>();
-        for (String email: contactEmailsToSearch) {
-            searchStrings.add('%'+email+'%');
-        }
+    public static List<Contact> retrieveContactsWithEmails(List<String> contactEmailsToSearch) {
         
-        List<Contact> foundList = [SELECT Id, Email FROM Contact WHERE Email LIKE :searchStrings WITH SECURITY_ENFORCED];
+        List<Contact> foundList = [SELECT Id, Email_External_Id__c FROM Contact WHERE Email_External_Id__c IN :contactEmailsToSearch WITH SECURITY_ENFORCED];
         return foundList;
+    }
+
+    public ContactHandler setFirstName(String firstName) {
+        this.firstName = firstName.left(20);
+        return this;
+    }
+
+    public ContactHandler setLastName(String lastName) {
+        this.lastName = lastName.left(20);
+        return this;
+    }
+
+    public ContactHandler setEmail(String email) {
+        this.email = email.toLowerCase();
+        return this;
+    }
+
+    public ContactHandler setPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public ContactHandler setStreet(String street) {
+        this.street = street;
+        return this;
+    }
+
+    public ContactHandler setCity(String city) {
+        this.city = city;
+        return this;
+    }
+
+    public ContactHandler setPostCode(String postCode) {
+        this.postCode = postCode;
+        return this;
+    }
+
+    public ContactHandler setDescription(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public ContactHandler setAccountId(String accountId) {
+        this.accountId = accountId;
+        return this;
     }
 }

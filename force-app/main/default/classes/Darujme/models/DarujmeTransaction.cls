@@ -41,10 +41,6 @@ public class DarujmeTransaction {
 		public String email;
 		public Address address;
 		public String phone;
-
-		public String getAccountName() {
-			return this.firstName + ' ' + this.lastName;
-		}
 	}
 
 	public class Pledge {
@@ -72,8 +68,38 @@ public class DarujmeTransaction {
 		USD
 	}
 
-	
-	public static DarujmeTransaction parse(String json) {
-		return (DarujmeTransaction) System.JSON.deserialize(json, DarujmeTransaction.class);
+
+	public Contact createContact() {
+		return new ContactHandler()
+		.setEmail(this.pledge.donor.email)
+		.setFirstName(this.pledge.donor.firstName)
+		.setLastName(this.pledge.donor.lastName)
+		.setPhone(this.pledge.donor.phone)
+		.setCity(this.pledge.donor.address.city)
+		.setStreet(this.pledge.donor.address.street)
+		.setPostCode(this.pledge.donor.address.postCode)
+		.setDescription('Imported from Darujme.cz')
+		.build();
+	}
+
+	public Account createAccount() {
+		return new AccountHandler()
+		.setName(this.pledge.donor.firstName + ' ' + this.pledge.donor.lastName)
+		.setDescription('Imported from Darujme.cz')
+		.build();
+	}
+
+	public Dar__c createDar() {
+		return new DarHandler()
+		.setReceivedDate(this.receivedAt.left(10))
+		.setDarovanaCastka(this.sentAmount.cents / 100)
+		.setPrijataCastka(this.outgoingAmount.cents / 100)
+		.setPozadujePotvrzeni(this.pledge.wantDonationCertificate)
+		.setDarovanoNaVyzvu(this.pledge.promotionId != null)
+		.setPravidelnyDar(this.pledge.isRecurrent)
+		.setTransactionId(this.transactionId)
+		.setCampaignId(this.pledge.projectId)
+		.setDonorEmail(this.pledge.donor.email)
+		.build();
 	}
 }

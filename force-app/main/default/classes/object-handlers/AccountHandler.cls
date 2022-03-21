@@ -1,8 +1,22 @@
 public without sharing class AccountHandler {
-    public static Account build(DarujmeTransaction tr) {
+    
+    private String name;
+    private String description;
+
+    public Account build() {
         return new Account(
-        	Name = tr.pledge.donor.getAccountName().left(30),
-            Description = 'Created from Darujme.cz import'
+        	Name = this.name,
+            Description = this.description
         );
+    }
+
+    public AccountHandler setName(String name) {
+        this.name = name.left(30);
+        return this;
+    }
+
+    public AccountHandler setDescription(String description) {
+        this.description = description;
+        return this;
     }
 }

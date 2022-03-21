@@ -36,8 +36,4 @@ public class DarujmePromotion {
 		public String currencyUsed;
 	}
 
-	
-	public static DarujmePromotion parse(String json) {
-		return (DarujmePromotion) System.JSON.deserialize(json, DarujmePromotion.class);
-	}
 }
