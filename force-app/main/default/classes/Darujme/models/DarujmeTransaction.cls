@@ -91,7 +91,8 @@ public class DarujmeTransaction {
 
 	public Dar__c createDar() {
 		return new DarHandler()
-		.setReceivedDate(this.receivedAt.left(10))
+		.setName(this.receivedAt.left(10))
+		.setDatum(Date.valueOf(this.receivedAt.left(10)))
 		.setDarovanaCastka(this.sentAmount.cents / 100)
 		.setPrijataCastka(this.outgoingAmount.cents / 100)
 		.setPozadujePotvrzeni(this.pledge.wantDonationCertificate)

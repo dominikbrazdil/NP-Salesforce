@@ -16,7 +16,6 @@ public class AdapterraFetcher extends DataFetcher {
     public List<Nomination> getNominations() {
         String endpoint = 'api-prihlasky';
         String response = fetchData(endpoint);
-        System.debug(response);
         return Nomination.parse(response);
     }
 }

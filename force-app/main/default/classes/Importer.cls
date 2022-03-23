@@ -46,4 +46,27 @@ public class Importer {
 
         DatabaseManager.insertListPartialEnabled(daryToAdd);
     }
+
+
+    public static void insertNominations(List<Nominace__c> nominations) {
+
+        Set<String> nominationsEmails = new Set<String>();
+        nominationsEmails.addAll(Utils.mapToString(Utils.mapToSObject(nominations, Nominace__c.Nominovany__c), Contact.Email_External_Id__c));
+        nominationsEmails.addAll(Utils.mapToString(Utils.mapToSObject(nominations, Nominace__c.Nominujici__c), Contact.Email_External_Id__c));
+
+        List<String> existingContactsEmails = Utils.mapToString(ContactHandler.retrieveContactsWithEmails(new List<String>(nominationsEmails)), Contact.Email_External_Id__c);
+        List<Nominace__c> nomsToAdd = new List<Nominace__c>();
+
+        for (Nominace__c n: nominations) {
+            if (!existingContactsEmails.contains(n.Nominujici__r.Email_external_Id__c)) {
+                Logger.log(LoggingLevel.ERROR, System.StatusCode.INVALID_FIELD + ': Nomination cannot be created, contact with email ' + n.Nominujici__r.Email_external_Id__c + ' does not exist.');
+            } else if (!existingContactsEmails.contains(n.Nominovany__r.Email_external_Id__c)){
+                Logger.log(LoggingLevel.ERROR, System.StatusCode.INVALID_FIELD + ': Nomination cannot be created, contact with email ' + n.Nominovany__r.Email_external_Id__c + ' does not exist.');
+            } else {
+                nomsToAdd.add(n);
+            }
+        }
+
+        DatabaseManager.insertListPartialEnabled(nomsToAdd);
+    }
 }

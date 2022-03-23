@@ -17,7 +17,7 @@ public class DarujmeLoader {
         
         List<DarujmeTransaction> transactions = fetcher.getTransactions(fromDate, toDate);
         List<DarujmeTransaction> transactionsToImport = filterTransactionsForImport(transactions);
-        Logger.log('Transactions to be inserted: ' + transactionsToImport);
+        Logger.log(transactionsToImport.size() + ' Transactions to be inserted: ' + transactionsToImport);
 
         Map<Integer,DarujmePromotion> promotions = loadAssociatedPromotions(transactionsToImport);
 

@@ -14,6 +14,7 @@ public abstract class DataFetcher {
             + (endpointString.contains('?') ? '&' : '?')
             + getEndpointAuthorisation();
         r.setEndpoint(endpoint); 
+        r.setTimeout(20000);
 		HttpResponse res = http.send(r);
         return replaceReservedWordsInJSON(res.getBody());
     }

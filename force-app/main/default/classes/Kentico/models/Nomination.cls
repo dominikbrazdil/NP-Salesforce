@@ -4,6 +4,17 @@
 
 public class Nomination {
 
+	public Integer id;
+	public String name;
+	public Category category;
+	public String location;
+	public String gps;
+	public String description;
+	public List<Category> climateRisks;
+	public String created;
+	public NominationContact contact;
+	public Nominating nominating;
+
 
 	public class Category {
 		public String id;
@@ -17,17 +28,6 @@ public class Nomination {
 		public String email;
 	}
 
-	public Integer id;
-	public String name;
-	public Category category;
-	public String location;
-	public String gps;
-	public String description;
-	public List<Category> climateRisks;
-	public String created;
-	public Contact contact;
-	public Nominating nominating;
-
 	public class ContactPerson {
 		public String fullName;
 		public String firstName;
@@ -36,9 +36,50 @@ public class Nomination {
 		public String phone;
 	}
 
-	public class Contact {
+	public class NominationContact {
 		public String organization;
 		public ContactPerson contaktPerson;
+	}
+
+	public Nominace__c createNomination() {
+		return new NominationHandler()
+		.setName(this.name)
+		.setNominatingEmail(this.nominating.email)
+		.setNominatedEmail(this.contact.contaktPerson.email)
+		.build();
+	}
+
+	public Account createNominatingAccount() {
+		return new AccountHandler()
+		.setName(this.nominating.firstName + ' ' + this.nominating.lastName)
+		.setDescription('Imported from Kentico')
+		.build();
+	}
+
+	public Contact createNominatingContact() {
+		return new ContactHandler()
+		.setEmail(this.nominating.email)
+		.setFirstName(this.nominating.firstName)
+		.setLastName(this.nominating.lastName)
+		.setDescription('Imported from Kentico')
+		.build();
+	}
+
+	public Account createNominatedAccount() {
+		return new AccountHandler()
+		.setName(this.contact.contaktPerson.firstName + ' ' + this.contact.contaktPerson.lastName)
+		.setDescription('Imported from Kentico')
+		.build();
+	}
+
+	public Contact createNominatedContact() {
+		return new ContactHandler()
+		.setEmail(this.contact.contaktPerson.email)
+		.setFirstName(this.contact.contaktPerson.firstName)
+		.setLastName(this.contact.contaktPerson.lastName)
+		.setPhone(this.contact.contaktPerson.phone)
+		.setDescription('Imported from Kentico')
+		.build();
 	}
 
 	

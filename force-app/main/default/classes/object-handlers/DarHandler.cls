@@ -1,6 +1,7 @@
 public without sharing class DarHandler {
 
-    private String receivedDate; // YYYY-MM-DD format
+    private String name;
+    private Date datum;
     private Integer darovanaCastka;
     private Integer prijataCastka;
     private Integer transactionId;
@@ -15,8 +16,8 @@ public without sharing class DarHandler {
         Contact donor = new Contact(Email_External_Id__c = this.donorEmail);
 
         return new Dar__c(
-            Name = this.receivedDate,
-            Datum__c = Date.valueOf(this.receivedDate),
+            Name = this.name,
+            Datum__c = this.datum,
             Darovana_castka__c = this.darovanaCastka,
             Prijata_castka__c = this.prijataCastka,
             Transaction_Id__c = this.transactionId,
@@ -28,8 +29,13 @@ public without sharing class DarHandler {
         );
     }
 
-    public DarHandler setReceivedDate(String receivedDate) {
-        this.receivedDate = receivedDate;
+    public DarHandler setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public DarHandler setDatum(Date datum) {
+        this.datum = datum;
         return this;
     }
 

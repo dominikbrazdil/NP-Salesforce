@@ -1,4 +1,4 @@
-public without sharing class DatabaseManager {
+public class DatabaseManager {
    
     public static void insertListPartialEnabled(List<SObject> objects) {
         Database.SaveResult[] srList = Database.insert(objects,false);
@@ -23,9 +23,31 @@ public without sharing class DatabaseManager {
             }
         }
 
-        successful += insertDetectedDuplicates(detectedDuplicates);
+        if (detectedDuplicates.size() > 0) {
+            successful += insertDetectedDuplicates(detectedDuplicates);
+        }
+        
 
         Logger.log('Successfuly inserted ' + successful + ' out of ' + objects.size() + ' ' + objects.getSObjectType());
+    }
+
+
+    public static void updateListPartialEnabled(List<SObject> objects) {
+        Database.SaveResult[] srList = Database.update(objects,false);
+
+        Integer successful = 0;
+
+        for (Integer i = 0; i < objects.size(); i++) {
+            if (!srList[i].isSuccess()) {
+                for(Database.Error err : srList[i].getErrors()) {
+                    Logger.log(LoggingLevel.ERROR, err.getStatusCode() + ': ' + err.getMessage() + ' Inserted entity: ' + objects[i]);
+                }
+            } else {
+                successful += 1;
+            }
+        }
+
+        Logger.log('Successfuly updated ' + successful + ' out of ' + objects.size() + ' ' + objects.getSObjectType());
     }
 
 

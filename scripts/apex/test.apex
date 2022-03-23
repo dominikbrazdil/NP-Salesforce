@@ -6,8 +6,9 @@
 
 // Database.upsert(new List<Contact>{c}, Contact.Email);
 
-// Logger.init('001xa000003DIlo');
+Logger.init('001xa000003DIlo');
 // DarujmeLoader.loadTransactions('2022-03-21', null);
-// Logger.closeAndStore();
 
-System.debug(new AdapterraFetcher().getNominations());
+
+AdapterraLoader.loadNominations();
+Logger.closeAndStore();
