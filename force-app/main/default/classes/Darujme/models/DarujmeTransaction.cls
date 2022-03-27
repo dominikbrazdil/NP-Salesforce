@@ -99,6 +99,7 @@ public class DarujmeTransaction {
 		.setDarovanoNaVyzvu(this.pledge.promotionId != null)
 		.setPravidelnyDar(this.pledge.isRecurrent)
 		.setTransactionId(this.transactionId)
+		.setZdroj('DARUJME')
 		.setCampaignId(this.pledge.projectId)
 		.setDonorEmail(this.pledge.donor.email)
 		.build();

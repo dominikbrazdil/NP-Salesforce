@@ -14,7 +14,9 @@ public without sharing class Utils {
     public static List<SObject> mapToSObject(List<SObject> objects, SObjectField field) {
         List<SObject> mappedValues = new List<SObject>();
         for (SObject o: objects){
-            mappedValues.add(o.getSObject(field));
+            if (o.getSObject(field) != null) {
+                mappedValues.add(o.getSObject(field));
+            }
         }
         return mappedValues;
     }

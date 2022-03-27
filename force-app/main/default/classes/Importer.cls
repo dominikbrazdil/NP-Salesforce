@@ -60,7 +60,7 @@ public class Importer {
         for (Nominace__c n: nominations) {
             if (!existingContactsEmails.contains(n.Nominujici__r.Email_external_Id__c)) {
                 Logger.log(LoggingLevel.ERROR, System.StatusCode.INVALID_FIELD + ': Nomination cannot be created, contact with email ' + n.Nominujici__r.Email_external_Id__c + ' does not exist.');
-            } else if (!existingContactsEmails.contains(n.Nominovany__r.Email_external_Id__c)){
+            } else if (n.Nominovany__r.Email_external_Id__c != null && !existingContactsEmails.contains(n.Nominovany__r.Email_external_Id__c)){
                 Logger.log(LoggingLevel.ERROR, System.StatusCode.INVALID_FIELD + ': Nomination cannot be created, contact with email ' + n.Nominovany__r.Email_external_Id__c + ' does not exist.');
             } else {
                 nomsToAdd.add(n);

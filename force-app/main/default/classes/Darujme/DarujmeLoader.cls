@@ -13,7 +13,7 @@ public class DarujmeLoader {
      * fromDate - YYYY-MM-DD
      */
     public static void loadTransactions(String fromDate, String toDate) {
-        Logger.log('Importing transactions from ' + fromDate + ' to ' + (toDate == null ? System.today().format() : toDate));
+        Logger.log('Importing transactions from ' + Date.valueOf(fromDate) + ' to ' + (toDate == null ? System.today().format() : toDate));
         
         List<DarujmeTransaction> transactions = fetcher.getTransactions(fromDate, toDate);
         List<DarujmeTransaction> transactionsToImport = filterTransactionsForImport(transactions);

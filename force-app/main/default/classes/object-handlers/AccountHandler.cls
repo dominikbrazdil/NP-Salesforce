@@ -11,7 +11,9 @@ public without sharing class AccountHandler {
     }
 
     public AccountHandler setName(String name) {
-        this.name = name.left(30);
+        if (!String.isEmpty(name)) {
+            this.name = name.left(30);
+        }
         return this;
     }
 

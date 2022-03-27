@@ -32,17 +32,23 @@ public without sharing class ContactHandler {
     }
 
     public ContactHandler setFirstName(String firstName) {
-        this.firstName = firstName.left(20);
+        if (!String.isEmpty(firstName)) {
+            this.firstName = firstName.left(20);
+        }
         return this;
     }
 
     public ContactHandler setLastName(String lastName) {
-        this.lastName = lastName.left(20);
+        if (!String.isEmpty(lastName)) {
+            this.lastName = lastName.left(20);
+        }
         return this;
     }
 
     public ContactHandler setEmail(String email) {
-        this.email = email.toLowerCase();
+        if (!String.isEmpty(email)) {
+            this.email = email.toLowerCase();
+        }
         return this;
     }
 

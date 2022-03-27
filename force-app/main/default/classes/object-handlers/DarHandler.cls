@@ -8,6 +8,7 @@ public without sharing class DarHandler {
     private Boolean pravidelnyDar;
     private Boolean pozadujePotvrzeni;
     private Boolean darovanoNaVyzvu;
+    private String zdroj;
     private Integer capmaignId;
     private String donorEmail; 
 	
@@ -25,6 +26,7 @@ public without sharing class DarHandler {
             Kampan__r = campaign,
             Pozaduje_potvrzeni__c = this.pozadujePotvrzeni,
             Darovano_na_vyzvu__c = this.darovanoNaVyzvu,
+            Zdroj__c = this.zdroj,
             Darce__r = donor
         );
     }
@@ -69,13 +71,20 @@ public without sharing class DarHandler {
         return this;
     }
 
+    public DarHandler setZdroj(String zdroj) {
+        this.zdroj = zdroj;
+        return this;
+    }
+
     public DarHandler setCampaignId(Integer capmaignId) {
         this.capmaignId = capmaignId;
         return this;
     }
 
     public DarHandler setDonorEmail(String donorEmail) {
-        this.donorEmail = donorEmail.toLowerCase();
+        if (!String.isEmpty(donorEmail)) {
+            this.donorEmail = donorEmail.toLowerCase();
+        }
         return this;
     }
     

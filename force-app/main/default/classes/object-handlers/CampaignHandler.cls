@@ -19,7 +19,9 @@ public without sharing class CampaignHandler {
     }
 
     public CampaignHandler setName(String name) {
-        this.name = name;
+        if (!String.isEmpty(name)) {
+            this.name = name;
+        }
         return this;
     }
 

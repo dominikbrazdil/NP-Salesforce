@@ -7,7 +7,6 @@
 
 delete [SELECT Id FROM Log__c];
 delete [SELECT Id FROM Opportunity];
-delete [SELECT Id FROM Nominace__c];
 delete [SELECT Id FROM Account];
 delete [SELECT Id FROM Contact];
 System.debug('done');
