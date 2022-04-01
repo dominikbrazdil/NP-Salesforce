@@ -40,7 +40,7 @@ public class TestImportingTransactions {
         Test.setMock(HttpCalloutMock.class, new MockDarujmeEndpoint(new List<DarujmeTransaction>{tr1}, pr1));
 
         Test.startTest();
-        DarujmeLoader.loadTransactions('2022-02-22', null);
+        DarujmeLoader.loadTransactions(Date.today(), null);
         Test.stopTest();
 
         List<Account> accounts = [SELECT Id, Name FROM Account WHERE Name LIKE :tr1.createAccount().Name];
@@ -176,7 +176,7 @@ public class TestImportingTransactions {
         Test.setMock(HttpCalloutMock.class, new MockDarujmeEndpoint(trs, pr1));
         
         Test.startTest();
-        DarujmeLoader.loadTransactions('2022-02-01', null);
+        DarujmeLoader.loadTransactions(Date.today(), null);
         Logger.closeAndStore();
         Test.stopTest();
 

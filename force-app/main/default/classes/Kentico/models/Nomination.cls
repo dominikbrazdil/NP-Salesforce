@@ -43,6 +43,7 @@ public class Nomination {
 
 	public Nominace__c createNomination() {
 		return new NominationHandler()
+		.setId(this.id)
 		.setName(this.name)
 		.setKategorie(this.category.name)
 		.setZamereni(this.getZamereni())
@@ -102,7 +103,7 @@ public class Nomination {
 	}
 
 	private String getLastName(String fullName) {
-		return fullName.contains(' ') ? fullName.split(' ')[1]: fullName;
+		return fullName.contains(' ') ? fullName.split(' ', 2)[1]: fullName;
 	}
 	
 	public static List<Nomination> parse(String json) {

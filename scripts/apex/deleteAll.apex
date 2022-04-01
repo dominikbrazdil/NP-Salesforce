@@ -10,4 +10,3 @@ delete [SELECT Id FROM Opportunity];
 delete [SELECT Id FROM Account];
 delete [SELECT Id FROM Contact];
 System.debug('done');
-

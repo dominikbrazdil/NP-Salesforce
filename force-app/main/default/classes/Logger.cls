@@ -1,7 +1,7 @@
 public without sharing class Logger {
 
-    private static Id executingJobID;
-    private static List<Log__c> jobLogs;
+    private static Id executingJobID = '000xx000000xxxx'; //default value for future calls
+    private static List<Log__c> jobLogs = new List<Log__c>();
     
     public static void init(Id jobID) {
         executingJobID = jobID;
@@ -22,6 +22,10 @@ public without sharing class Logger {
 
     public static void log(String msg) {
         log(LoggingLevel.DEBUG, msg);
+    }
+
+    public static Id getJobId() {
+        return executingJobID;
     }
 
     public static void closeAndStore() {

@@ -7,9 +7,7 @@ public class ImportPageController {
     }
 
     public PageReference runImport() {
-        DarujmeImportJob job = new DarujmeImportJob(
-            ((DateTime)fromDate).format('yyyy-MM-dd'), 
-            ((toDate != null) ? ((DateTime)toDate).format('yyyy-MM-dd'): null));
+        DarujmeImportJob job = new DarujmeImportJob(fromDate, toDate);
         Id jobId = System.enqueueJob(job);
         PageReference page = new PageReference('/lightning/o/Log__c/list');
         page.setRedirect(true);

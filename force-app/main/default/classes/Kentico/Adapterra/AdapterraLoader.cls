@@ -5,10 +5,10 @@ public without sharing class AdapterraLoader {
     private static AdapterraFetcher fetcher = new AdapterraFetcher();
     
     
-    public static void loadNominations() {
-        Logger.log('Importing nominations from Adapterra Awards');
+    public static void loadNominations(Date fromDate, Date toDate) {
+        Logger.log('Importing nominations from Adapterra Awards from ' + fromDate.format() + ' to ' + (toDate == null ? System.today().format() : toDate.format()));
         
-        List<Nomination> nominations = fetcher.getNominations();
+        List<Nomination> nominations = fetcher.getNominations(fromDate, toDate);
         
         Logger.log(nominations.size() + ' Nominations to be inserted: ' + nominations);
 

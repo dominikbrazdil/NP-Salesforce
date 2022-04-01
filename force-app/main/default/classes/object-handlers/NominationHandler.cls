@@ -1,5 +1,6 @@
 public without sharing class NominationHandler {
     
+    private Integer id;
     private String name;
     private String nominatedEmail;
     private String nominatingEmail;
@@ -14,12 +15,18 @@ public without sharing class NominationHandler {
         Contact nominating = new Contact(Email_External_Id__c=this.nominatingEmail);
 
         return new Nominace__c(
+            External_Id__c=this.id,
             Name=this.name,
             Kategorie__c=this.kategorie,
             Zamereni__c=this.zamereni,
             Nominovany__r=nominated,
             Nominujici__r=nominating
         );
+    }
+
+    public NominationHandler setId(Integer id) {
+        this.id = id;
+        return this;
     }
 
     public NominationHandler setName(String name) {

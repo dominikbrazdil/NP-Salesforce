@@ -16,8 +16,8 @@ public class DarujmeFetcher extends DataFetcher {
         return responseJSON.replace('currency', 'usedCurrency');
     }
 
-    public List<DarujmeTransaction> getTransactions(String fromDate, String toDate) {
-        String endpoint = 'organization/' + ORGANIZATION_ID + '/transactions-by-filter?fromReceivedDate=' + fromDate + (toDate==null ? '' : '&toReceivedDate='+toDate);
+    public List<DarujmeTransaction> getTransactions(Date fromDate, Date toDate) {
+        String endpoint = 'organization/' + ORGANIZATION_ID + '/transactions-by-filter?fromReceivedDate=' + ((Datetime)fromDate).format('yyyy-MM-dd') + (toDate==null ? '' : '&toReceivedDate='+((Datetime)toDate).format('yyyy-MM-dd'));
         String response = fetchData(endpoint);
         return TransactionsAPIResponse.parse(response).transactions;
     }

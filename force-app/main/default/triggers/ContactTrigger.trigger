@@ -1,4 +1,3 @@
-trigger ContactTrigger on Contact (after insert, after update) {
+trigger ContactTrigger on Contact (after insert) {
     
-    ContactTriggerHandler.createOpportunitiesFromReamrkableDonors(Trigger.New);
 }
