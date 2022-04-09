@@ -250,7 +250,7 @@ public class TestImportingTransactions {
 
 
     @isTest static void testCreateOpportunityFromContactAmountRule() {
-        Integer amountOfDaryLimit = (Integer)config.Lead_amount_of_donations_limit__c;
+        Integer amountOfDaryLimit = 0;//(Integer)config.Lead_amount_of_donations_limit__c;
 
         Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
 
@@ -274,7 +274,7 @@ public class TestImportingTransactions {
     }
 
     @isTest static void testCreateOpportunityFromContactNumberRule() {
-        Integer numberOfDaryLimit = (Integer)config.Lead_number_of_donations_limit__c;
+        Integer numberOfDaryLimit = 0;//(Integer)config.Lead_number_of_donations_limit__c;
 
         Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
         dar1.Darovana_castka__c = 0;

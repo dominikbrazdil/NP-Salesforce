@@ -2,8 +2,8 @@ public without sharing class DarHandler {
 
     private String name;
     private Date datum;
-    private Integer darovanaCastka;
-    private Integer prijataCastka;
+    private Decimal darovanaCastka;
+    private Decimal prijataCastka;
     private Integer transactionId;
     private Boolean pravidelnyDar;
     private Boolean pozadujePotvrzeni;
@@ -41,12 +41,12 @@ public without sharing class DarHandler {
         return this;
     }
 
-    public DarHandler setDarovanaCastka(Integer darovanaCastka) {
+    public DarHandler setDarovanaCastka(Decimal darovanaCastka) {
         this.darovanaCastka = darovanaCastka;
         return this;
     }
 
-    public DarHandler setPrijataCastka(Integer prijataCastka) {
+    public DarHandler setPrijataCastka(Decimal prijataCastka) {
         this.prijataCastka = prijataCastka;
         return this;
     }

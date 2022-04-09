@@ -2,8 +2,8 @@
 public class TestUtils {
 
     public static Apex_config__c config = new Apex_config__c(
-        Lead_amount_of_donations_limit__c = 2000,
-        Lead_number_of_donations_limit__c = 5
+        // Lead_amount_of_donations_limit__c = 2000,
+        // Lead_number_of_donations_limit__c = 5
     );
 
     public static List<Log__c> getErrorLogs(Id jobId) {

@@ -3,13 +3,13 @@ public class DarTriggerHandler {
     /**
      * Adds contact to campaign to which the new donation was donated
      */
-    public static void addDonorsToCampaigns(List<Dar__c> dary) {
+    public static void addDonorsToDonationCampaigns(List<Dar__c> dary) {
         Set<CampaignMember> membersToAdd = new Set<CampaignMember>();
 
-        Map<Id, List<Id>> contactToCampaigns = CampaignMemberHandler.getContactsCampaignsMap(Utils.mapToId(dary, Dar__c.Darce__c));
+        Map<Id, Map<Id, Id>> contactToCampaigns = CampaignMemberHandler.getContactIdsToCampaignsIdsToMemberIdMap(Utils.mapToId(dary, Dar__c.Darce__c));
 
         for (Dar__c dar: dary) {
-            if (!contactToCampaigns.containsKey(dar.Darce__c) || !contactToCampaigns.get(dar.Darce__c).contains(dar.Kampan__c)) {
+            if (!CampaignMemberHandler.isContactInCampaign(dar.Darce__c, dar.Kampan__c, contactToCampaigns)) {
                 membersToAdd.add(new CampaignMemberHandler()
                     .setCampaignId(dar.Kampan__c)
                     .setContactId(dar.Darce__c)
@@ -46,8 +46,8 @@ public class DarTriggerHandler {
     public static void createOpportunitiesFromRemarkableDonors(List<Id> donorIds, Id jobID) {
         Logger.init(jobID);
 
-        Integer numberOfDaryLimit = (Integer)Apex_config__c.getInstance().Lead_number_of_donations_limit__c;
-        Integer amountOfDaryLimit = (Integer)Apex_config__c.getInstance().Lead_amount_of_donations_limit__c;
+        Integer numberOfDaryLimit = 0;//(Integer)Apex_config__c.getInstance().Lead_number_of_donations_limit__c;
+        Integer amountOfDaryLimit = 0;//(Integer)Apex_config__c.getInstance().Lead_amount_of_donations_limit__c;
         
         List<Opportunity> oppsToAdd = new List<Opportunity>();
 

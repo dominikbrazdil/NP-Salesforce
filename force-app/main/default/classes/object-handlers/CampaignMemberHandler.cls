@@ -11,20 +11,24 @@ public class CampaignMemberHandler {
     }
 
     public static List<CampaignMember> getMembersByContactIds(List<Id> contactIds) {
-        return [SELECT ContactId, CampaignId FROM CampaignMember WHERE ContactId IN :contactIds];
+        return [SELECT Id, ContactId, CampaignId FROM CampaignMember WHERE ContactId IN :contactIds];
     }
 
-    public static Map<Id, List<Id>> getContactsCampaignsMap(List<Id> contactIds) {
-        Map<Id, List<Id>> contactToCampaigns = new Map<Id, List<Id>>();
+    public static Map<Id, Map<Id, Id>> getContactIdsToCampaignsIdsToMemberIdMap(List<Id> contactIds) {
+        Map<Id, Map<Id, Id>> contactToCampaigns = new Map<Id, Map<Id, Id>>();
 
         for(CampaignMember m: getMembersByContactIds(contactIds)) {
             if (contactToCampaigns.containsKey(m.ContactId)) {
-                contactToCampaigns.get(m.ContactId).add(m.CampaignId);
+                contactToCampaigns.get(m.ContactId).put(m.CampaignId, m.Id);
             } else {
-                contactToCampaigns.put(m.ContactId, new List<Id>{m.CampaignId});
+                contactToCampaigns.put(m.ContactId, new Map<Id, Id>{m.CampaignId => m.Id});
             }
         }
         return contactToCampaigns;
+    }
+
+    public static Boolean isContactInCampaign(Id contactId, Id campaignId, Map<Id, Map<Id, Id>> contactToCampaigns) {
+        return (contactToCampaigns.containsKey(contactId) && contactToCampaigns.get(contactId).containsKey(campaignId));
     }
 
     public CampaignMemberHandler setCampaignId(Id campaignId) {

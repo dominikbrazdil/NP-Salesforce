@@ -24,11 +24,40 @@ public without sharing class ContactHandler {
         );
     }
 
+    public static final Id LARGE_DONORS_CAMPAIGN_ID = Id.valueOf(Apex_config__c.getInstance().Large_donors_campaign_id__c);
+    public static final Id MEDIUM_DONORS_CAMPAIGN_ID = Id.valueOf(Apex_config__c.getInstance().Medium_donors_campaign_id__c);
+    public static final Id SMALL_DONORS_CAMPAIGN_ID = Id.valueOf(Apex_config__c.getInstance().Small_donors_campaign_id__c);
+    public static final Id RECURRENT_DONORS_CAMPAIGN_ID = Id.valueOf(Apex_config__c.getInstance().Recurrent_donors_campaign_id__c);
+    public static final Decimal LARGE_DONORS_AMOUNT_OF_DONATIONS_LIMIT = (Decimal)Apex_config__c.getInstance().Large_donor_amount_of_donations_limit__c;
+    public static final Decimal MEDIUM_DONORS_AMOUNT_OF_DONATIONS_LIMIT = (Decimal)Apex_config__c.getInstance().Medium_donor_amount_of_donations_limit__c;
+
     
     public static List<Contact> retrieveContactsWithEmails(List<String> contactEmailsToSearch) {
         
         List<Contact> foundList = [SELECT Id, Email_External_Id__c FROM Contact WHERE Email_External_Id__c IN :contactEmailsToSearch WITH SECURITY_ENFORCED];
         return foundList;
+    }
+
+    public static List<Id>  getRelevantDonorCampaignIds(Contact donor) {
+        List<Id> campaignIds = new List<Id>();
+
+        if (0 < donor.Dary_suma__c && donor.Dary_suma__c < MEDIUM_DONORS_AMOUNT_OF_DONATIONS_LIMIT) {
+            campaignIds.add(SMALL_DONORS_CAMPAIGN_ID);
+        }
+
+        if (MEDIUM_DONORS_AMOUNT_OF_DONATIONS_LIMIT <= donor.Dary_suma__c && donor.Dary_suma__c < LARGE_DONORS_AMOUNT_OF_DONATIONS_LIMIT) {
+            campaignIds.add(MEDIUM_DONORS_CAMPAIGN_ID);
+        }
+
+        if (LARGE_DONORS_AMOUNT_OF_DONATIONS_LIMIT <= donor.Dary_suma__c) {
+            campaignIds.add(LARGE_DONORS_CAMPAIGN_ID);
+        } 
+
+        if (donor.Pravidelny_darce__c) {
+            campaignIds.add(RECURRENT_DONORS_CAMPAIGN_ID);
+        }
+
+        return campaignIds;
     }
 
     public ContactHandler setFirstName(String firstName) {

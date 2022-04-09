@@ -1,3 +1,3 @@
-trigger ContactTrigger on Contact (after insert) {
-    
+trigger ContactTrigger on Contact (after update) {
+    ContactTriggerHandler.addDonorsToDonorCampaigns(Trigger.New, Trigger.Old);
 }
