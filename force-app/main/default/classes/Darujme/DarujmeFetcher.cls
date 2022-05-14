@@ -7,7 +7,7 @@ public class DarujmeFetcher extends DataFetcher {
     private final Integer ORGANIZATION_ID = 1200442;
 
     public DarujmeFetcher() {
-        this.API_SECRET = 'ekkzdy6n424qlnxts0siqp1v2quzyihk18lawj2e';
+        this.API_SECRET = Credentials__c.getInstance().darujme_API_secret__c;
         this.API_URL = 'https://www.darujme.cz/api/v1/';
     }
 

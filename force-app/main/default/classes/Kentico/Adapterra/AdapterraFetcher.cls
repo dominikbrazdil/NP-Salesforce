@@ -4,7 +4,7 @@
 public class AdapterraFetcher extends DataFetcher {
     
     public AdapterraFetcher() {
-        this.API_SECRET = 'gbp!dxq8UPD1krx_wkw';
+        this.API_SECRET = Credentials__c.getInstance().Adapterra_API_secret__c;
         this.API_URL ='https://www.adapterraawards.cz/cs/Specialni-stranky/';
     }
 
