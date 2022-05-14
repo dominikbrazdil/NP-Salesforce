@@ -1,3 +1,6 @@
+/**
+ * Queable asynchronous job for importing data from Adapterra
+ */
 public class AdapterraImportJob implements Queueable, Database.AllowsCallouts {
     private Date fromDate, toDate;
 

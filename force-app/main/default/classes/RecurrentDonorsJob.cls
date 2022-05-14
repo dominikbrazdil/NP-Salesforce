@@ -1,3 +1,6 @@
+/**
+ * Queable asynchronous job for checking recurrent donors
+ */
 public class RecurrentDonorsJob implements Queueable {
 
     public void execute(QueueableContext context) {
@@ -8,6 +11,9 @@ public class RecurrentDonorsJob implements Queueable {
         Logger.closeAndStore();
     }
     
+    /**
+     * Checks if all recurrent donors sent a recurring donations in a last month and marks those who did not
+     */
     public static void reportAndUnmarkLostRecurrentDonors() {
         Date monthAgo = Date.today().addMonths(-1);
         List<Contact> recurrentDonors = [SELECT Id, Pravidelny_darce__c, Email, (SELECT Id, Datum__c, Pravidelny_dar__c FROM Dary__r WHERE Datum__c >= :monthAgo) FROM Contact WHERE Pravidelny_darce__c = true WITH SECURITY_ENFORCED];

@@ -1,3 +1,6 @@
+/**
+ * Implmementation of DataFetcher interface for Adapterra
+ */
 public class AdapterraFetcher extends DataFetcher {
     
     public AdapterraFetcher() {

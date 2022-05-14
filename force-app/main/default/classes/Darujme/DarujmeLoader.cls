@@ -1,3 +1,6 @@
+/**
+ * Class collecting, filtering and mapping all Darujme transactions for the specified timespan
+ */
 public class DarujmeLoader {
 
     private static DarujmeFetcher fetcher = new DarujmeFetcher();
@@ -9,8 +12,9 @@ public class DarujmeLoader {
     };
 
     /**
-     * 
+     * Main method representing class public interface - loading transactions between defined timespan
      * fromDate - YYYY-MM-DD
+     * toDate - YYYY-MM-DD
      */
     public static void loadTransactions(Date fromDate, Date toDate) {
         Logger.log('Importing transactions from ' + fromDate.format() + ' to ' + (toDate == null ? System.today().format() : toDate.format()));
@@ -24,6 +28,9 @@ public class DarujmeLoader {
         importTransactions(transactionsToImport, promotions);
     }
 
+    /**
+     * Invokes importing of preprocessed transactions and promotions
+     */
     @TestVisible
     private static void importTransactions(List<DarujmeTransaction> transactions, Map<Integer,DarujmePromotion> promotions) {
         Importer.insertNonExistingContactsWithAccounts(mapToAccounts(transactions), mapToContacts(transactions));
@@ -58,7 +65,9 @@ public class DarujmeLoader {
         return dary;
     }
 
-
+    /**
+     * Loads all promotions specified in given transactions from endpoint
+     */
     private static Map<Integer, DarujmePromotion> loadAssociatedPromotions(List<DarujmeTransaction> transactions) {
         Map<Integer, DarujmePromotion> loadedPromotions = new Map<Integer, DarujmePromotion>();
 
@@ -74,6 +83,9 @@ public class DarujmeLoader {
         return loadedPromotions;
     }
 
+    /**
+     * Filters those transactions that are meant to be imported by given rules
+     */
     private static List<DarujmeTransaction> filterTransactionsForImport(List<DarujmeTransaction> transactions) {
         List<DarujmeTransaction> transactionsToImport = new List<DarujmeTransaction>();
         for (DarujmeTransaction tr: transactions) {

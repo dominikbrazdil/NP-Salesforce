@@ -1,3 +1,6 @@
+/**
+ * Queable asynchronous job for importing data from Darujme.cz
+ */
 public class DarujmeImportJob implements Queueable, Database.AllowsCallouts {
     private Date fromDate, toDate;
 

@@ -1,3 +1,6 @@
+/**
+ * Controller of VF page for invoking data import manually
+ */
 public class ImportPageController {
     public Date fromDate {get;set;}
     public Date toDate {get;set;}

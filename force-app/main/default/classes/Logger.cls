@@ -1,8 +1,14 @@
+/**
+ * Utility for logging events into custom SObject
+ */
 public without sharing class Logger {
 
-    private static Id executingJobID = '000xx000000xxxx'; //default value for future calls
+    private static Id executingJobID = '000xx000000xxxx'; //default value
     private static List<Log__c> jobLogs = new List<Log__c>();
     
+    /**
+     * Starts assigning log to particular jobID
+     */
     public static void init(Id jobID) {
         executingJobID = jobID;
         jobLogs = new List<Log__c>();
@@ -32,6 +38,9 @@ public without sharing class Logger {
         return executingJobID;
     }
 
+    /**
+     * Saves all logs from this job to database
+     */
     public static void closeAndStore() {
         Database.SaveResult[] srList = Database.insert(jobLogs,false);
 

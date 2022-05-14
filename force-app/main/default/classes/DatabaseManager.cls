@@ -1,5 +1,11 @@
+/**
+ * Class encapsulating all DML operations
+ */
 public class DatabaseManager {
    
+    /**
+     * Inserts list of objects omitting those producing an error and tries to insert those with potential duplicates errors
+     */
     public static void insertListPartialEnabled(List<SObject> objects) {
         if (!objects.isEmpty()) {
             Database.SaveResult[] srList = Database.insert(objects,false);
@@ -29,6 +35,9 @@ public class DatabaseManager {
     }
 
 
+    /**
+     * Updates list of objects omitting those producing an error
+     */
     public static void updateListPartialEnabled(List<SObject> objects) {
         if (!objects.isEmpty()) {
             Database.SaveResult[] srList = Database.update(objects,false);
@@ -49,6 +58,9 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Deletes list of objects omitting those producing an error
+     */
     public static void deleteListPartialEnabled(List<SObject> objects) {
         if (!objects.isEmpty()) {
             Database.DeleteResult[] srList = Database.delete(objects,false);
@@ -70,6 +82,9 @@ public class DatabaseManager {
     }
 
 
+    /**
+     * Inserts list of objects including those having a potential duplicate
+     */
     private static Integer insertDetectedDuplicates(List<SObject> detectedDuplicates) {
         Integer successful = 0;
 

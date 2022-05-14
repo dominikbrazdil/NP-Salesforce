@@ -14,6 +14,9 @@ public class CampaignMemberHandler {
         return [SELECT Id, ContactId, CampaignId FROM CampaignMember WHERE ContactId IN :contactIds];
     }
 
+    /**
+     * Queries Map of Camapign IDs related to specified Contact ID with CampaignMember ID also mapped
+     */
     public static Map<Id, Map<Id, Id>> getContactIdsToCampaignsIdsToMemberIdMap(List<Id> contactIds) {
         Map<Id, Map<Id, Id>> contactToCampaigns = new Map<Id, Map<Id, Id>>();
 

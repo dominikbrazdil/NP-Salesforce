@@ -42,12 +42,15 @@ public class DarTriggerHandler {
     }
 
 
+    /**
+     * Creates opportunities from donors meeting predefined donation criteria
+     */
     @future // so Roll-up fields are already updated
     public static void createOpportunitiesFromRemarkableDonors(List<Id> donorIds, Id jobID) {
         Logger.init(jobID);
 
-        Integer numberOfDaryLimit = 0;//(Integer)Apex_config__c.getInstance().Lead_number_of_donations_limit__c;
-        Integer amountOfDaryLimit = 0;//(Integer)Apex_config__c.getInstance().Lead_amount_of_donations_limit__c;
+        (Integer)Apex_config__c.getInstance().Lead_number_of_donations_limit__c;
+        (Integer)Apex_config__c.getInstance().Lead_amount_of_donations_limit__c;
         
         List<Opportunity> oppsToAdd = new List<Opportunity>();
 

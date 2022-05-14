@@ -1,3 +1,6 @@
+/**
+ * Interface class predefining common functionality for fetching data from endpoint
+ */
 public abstract class DataFetcher {
 
     protected final String API_URL;

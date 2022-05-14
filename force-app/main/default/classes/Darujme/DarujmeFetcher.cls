@@ -1,3 +1,6 @@
+/**
+ * Implementation of DataFetcher interface for Darujme.cz
+ */
 public class DarujmeFetcher extends DataFetcher {
 
     private final Integer API_ID = 74234201;

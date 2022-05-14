@@ -1,3 +1,6 @@
+/**
+ * Class representing data response coming from Darujme transaction endpoint
+ */
 public class TransactionsAPIResponse {
 	public List<DarujmeTransaction> transactions;
 

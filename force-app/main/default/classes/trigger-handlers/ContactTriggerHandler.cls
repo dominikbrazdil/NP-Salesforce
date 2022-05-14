@@ -1,5 +1,8 @@
 public class ContactTriggerHandler {
     
+    /**
+     * Adds donors with changed donations to correct campaigns and removes them from not actual ones
+     */
     public static void addDonorsToDonorCampaigns(List<Contact> updatedDonors, List<Contact> oldDonors) {
         
         
@@ -18,11 +21,11 @@ public class ContactTriggerHandler {
                     membersToAdd.add(new CampaignMemberHandler()
                         .setCampaignId(updatedCampaignId)
                         .setContactId(donorId)
-                        .build()
+                        .build() 
                     );
                 }
             }
-
+ 
             for (Id oldCampaignId: oldDonorCampaigns) {
                 if (!updatedDonorCampaigns.contains(oldCampaignId) && CampaignMemberHandler.isContactInCampaign(donorId, oldCampaignId, contactToCampaigns)) {
                     membersToRemove.add(new CampaignMember(Id = contactToCampaigns.get(donorId).get(oldCampaignId)));

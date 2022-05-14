@@ -1,5 +1,11 @@
+/**
+ * Class preprocessing lists of SObjects before importing them
+ */
 public class Importer {
     
+    /**
+     * Inserts only contacts not already present in database and maps account to each one of them
+     */
     public static void insertNonExistingContactsWithAccounts(List<Account> accounts, List<Contact> contacts) {
 
         if (accounts.size() != contacts.size()) {

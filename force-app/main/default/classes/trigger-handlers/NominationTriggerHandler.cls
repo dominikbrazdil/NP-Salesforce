@@ -1,14 +1,15 @@
 public class NominationTriggerHandler {
     
+    /**
+     * Adds nominated contacts to campaigns of their nomination
+     */
     public static void addNominatedContactsToCampaigns(List<Nominace__c> nominations) {
         Set<CampaignMember> membersToAdd = new Set<CampaignMember>();
 
-        Map<Id, List<Id>> existingContactToCampaigns = CampaignMemberHandler.getContactsCampaignsMap(Utils.mapToId(nominations, Nominace__c.Nominovany__c));
+        Map<Id, Map<Id, Id>> existingContactToCampaigns = CampaignMemberHandler.getContactIdsToCampaignsIdsToMemberIdMap(Utils.mapToId(nominations, Nominace__c.Nominovany__c));
 
         for (Nominace__c n: nominations) {
-            if (n.Nominovany__c != null &&
-                (!existingContactToCampaigns.containsKey(n.Nominovany__c) || 
-                !existingContactToCampaigns.get(n.Nominovany__c).contains(n.Kampan__c))) {
+            if (n.Nominovany__c != null && (!CampaignMemberHandler.isContactInCampaign(n.Nominovany__c, n.Kampan__c, existingContactToCampaigns))) {
                 membersToAdd.add(new CampaignMemberHandler()
                     .setCampaignId(n.Kampan__c)
                     .setContactId(n.Nominovany__c)

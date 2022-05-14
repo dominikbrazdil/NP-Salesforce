@@ -1,3 +1,6 @@
+/**
+ * Class collecting, filtering and mapping all Adapterra nominations for the specified timespan
+ */
 public without sharing class AdapterraLoader {
 
     private static final Integer PROGRAM_ID = 1;

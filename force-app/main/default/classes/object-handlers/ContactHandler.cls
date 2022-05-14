@@ -38,6 +38,9 @@ public without sharing class ContactHandler {
         return foundList;
     }
 
+    /**
+     * Decides which campaign should be contact assigned to based on his donations and predefined limits
+     */
     public static List<Id>  getRelevantDonorCampaignIds(Contact donor) {
         List<Id> campaignIds = new List<Id>();
 
