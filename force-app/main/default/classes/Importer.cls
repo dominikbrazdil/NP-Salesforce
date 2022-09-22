@@ -46,4 +46,15 @@ public class Importer {
 
         DatabaseManager.insertListPartialEnabled(nominations);
     }
+
+
+    public static void insertContracts(List<Contract__c> contracts) {
+
+        DatabaseManager.insertListPartialEnabled(contracts);
+    }
+
+    public static void insertGrounds(List<Ground__c> grounds) {
+
+        DatabaseManager.insertListPartialEnabled(grounds);
+    }
 }

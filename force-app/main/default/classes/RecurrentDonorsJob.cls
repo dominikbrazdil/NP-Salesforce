@@ -16,7 +16,7 @@ public class RecurrentDonorsJob implements Queueable {
      */
     public static void reportAndUnmarkLostRecurrentDonors() {
         Date monthAgo = Date.today().addMonths(-1);
-        List<Contact> recurrentDonors = [SELECT Id, Pravidelny_darce__c, Email, (SELECT Id, Datum__c, Pravidelny_dar__c FROM Dary__r WHERE Datum__c >= :monthAgo) FROM Contact WHERE Pravidelny_darce__c = true WITH SECURITY_ENFORCED];
+        List<Contact> recurrentDonors = [SELECT Id, Pravidelny_darce__c, Email, (SELECT Id, Datum__c, Pravidelny_dar__c FROM Dary__r WHERE Datum__c >= :monthAgo) FROM Contact WHERE Pravidelny_darce__c = true];
 
         List<Contact> lostDonors = new List<Contact>();
 
@@ -28,8 +28,6 @@ public class RecurrentDonorsJob implements Queueable {
                     break;
                 }
             }
-
-            System.debug(donor.Email + ' ' + paidInLastMonth);
 
             if (!paidInLastMonth) {
                 donor.Pravidelny_darce__c = false;

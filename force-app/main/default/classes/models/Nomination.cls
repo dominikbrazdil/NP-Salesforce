@@ -13,19 +13,12 @@ public class Nomination {
 	public List<Category> climateRisks;
 	public String created;
 	public NominationContact contact;
-	public Nominating nominating;
+	public ContactPerson nominating;
 
 
 	public class Category {
 		public String id;
 		public String name;
-	}
-
-	public class Nominating {
-		public String fullName;
-		public String firstName;
-		public String lastName;
-		public String email;
 	}
 
 	public class ContactPerson {

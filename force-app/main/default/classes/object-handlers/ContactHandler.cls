@@ -34,7 +34,7 @@ public without sharing class ContactHandler {
     
     public static List<Contact> retrieveContactsWithEmails(List<String> contactEmailsToSearch) {
         
-        List<Contact> foundList = [SELECT Id, Email_External_Id__c FROM Contact WHERE Email_External_Id__c IN :contactEmailsToSearch WITH SECURITY_ENFORCED];
+        List<Contact> foundList = [SELECT Id, Email_External_Id__c FROM Contact WHERE Email_External_Id__c IN :contactEmailsToSearch];
         return foundList;
     }
 

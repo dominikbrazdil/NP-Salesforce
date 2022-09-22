@@ -49,13 +49,12 @@ public class DarTriggerHandler {
     public static void createOpportunitiesFromRemarkableDonors(List<Id> donorIds, Id jobID) {
         Logger.init(jobID);
 
-        (Integer)Apex_config__c.getInstance().Lead_number_of_donations_limit__c;
-        (Integer)Apex_config__c.getInstance().Lead_amount_of_donations_limit__c;
+        Integer largeDonorsLimit = (Integer)Apex_config__c.getInstance().Large_donor_amount_of_donations_limit__c;
         
         List<Opportunity> oppsToAdd = new List<Opportunity>();
 
         for (Contact c: [SELECT Id, Email, FirstName, LastName, AccountId, Dary_suma__c, Celkovy_pocet_daru__c, (SELECT Id FROM Prilezitosti__r) FROM Contact WHERE Id IN :donorIds]) {
-            if ((c.Dary_suma__c >= amountOfDaryLimit || c.Celkovy_pocet_daru__c >= numberOfDaryLimit)
+            if ((c.Dary_suma__c >= largeDonorsLimit)
                 & c.Prilezitosti__r.isEmpty()) {
                 oppsToAdd.add(new Opportunity(
                     Name = c.FirstName + ' ' + c.LastName,

@@ -14,6 +14,7 @@ public class TestImportingTransactions {
     static {
 
         jobID = Id.valueOf('001xa000003DIlo');
+        config = TestUtils.initializeConfig();
 
         pr1 = TestUtils.getPromotion();
         List<DarujmeTransaction> trs = TestUtils.getClonedTransactions(3, 1);
@@ -28,9 +29,6 @@ public class TestImportingTransactions {
 
         Campaign campaign = new Campaign(Name = 'testCampaign', Darujme_Id__c = tr1.pledge.projectId);
         insert campaign;
-
-        config = TestUtils.config;
-        insert config;
 
         Logger.init(jobID);
     }
@@ -107,17 +105,17 @@ public class TestImportingTransactions {
         System.assertEquals(tr1.outgoingAmount.cents, dar.Prijata_castka__c * 100);
         System.assertEquals(tr1.pledge.projectId, dar.Kampan__r.Darujme_Id__c);
         System.assertEquals(tr1.pledge.wantDonationCertificate, dar.Pozaduje_potvrzeni__c);
-        System.assert(dar.Darovano_na_vyzvu__c);
+        System.assertEquals(tr1.pledge.promotionId != null, dar.Darovano_na_vyzvu__c);
         System.assertEquals(pr1.title.cs, dar.Vyzva__c);
 
         System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
     }
 
     @isTest static void testImportDuplicateTransaction() {
-        DarujmeLoader.importTransactions(new List<DarujmeTransaction>{tr1}, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
+
         
         Test.startTest();
-        Importer.insertDary(new List<Dar__c>{tr1.createDar()});
+        DarujmeLoader.importTransactions(new List<DarujmeTransaction>{tr1, tr1}, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
         Logger.closeAndStore();
         Test.stopTest();
 
@@ -230,32 +228,65 @@ public class TestImportingTransactions {
     }
 
 
-    @isTest static void testAddingDonorsToCampaigns() {
-        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
+    @isTest static void testAddingDonorsToDonationCampaigns() {
+        List<DarujmeTransaction> trs = TestUtils.getClonedTransactions(3, 1);
+        Campaign camp = new Campaign(Name = 'testCampaign', Darujme_Id__c = 12345);
+        insert camp;
+        trs[2].pledge.projectId = (Integer)camp.Darujme_Id__c;
 
         
         Test.startTest();
-        Importer.insertDary(new List<Dar__c>{dar1, dar2});
-        Importer.insertDary(new List<Dar__c>{tr3.createDar()});
+        DarujmeLoader.importTransactions(trs, new Map<Integer, DarujmePromotion>{pr1.promotionId => pr1});
         Logger.closeAndStore();
         Test.stopTest();
 
 
-        List<CampaignMember> members = [SELECT ContactId, CampaignId FROM CampaignMember 
-                                        WHERE Contact.Email_External_Id__c = :tr1.pledge.donor.email AND Campaign.Darujme_Id__c = :tr1.pledge.projectId];
+        List<CampaignMember> members = [SELECT ContactId, CampaignId, Campaign.Darujme_Id__c FROM CampaignMember 
+                                        WHERE Contact.Email_External_Id__c = :tr1.pledge.donor.email];
 
-        System.assertEquals(1, members.size(), 'Donor was not assigned to campaign correctly');
+        System.assert(Utils.mapToDecimal(Utils.mapToSObject(members, CampaignMember.CampaignId), Campaign.Darujme_Id__c).contains((Decimal)trs[0].pledge.projectId), 'Donor was not added to donation campaign');
+        System.assert(Utils.mapToDecimal(Utils.mapToSObject(members, CampaignMember.CampaignId), Campaign.Darujme_Id__c).contains((Decimal)trs[2].pledge.projectId), 'Donor was not added to donation campaign');
         System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
     }
 
 
-    @isTest static void testCreateOpportunityFromContactAmountRule() {
-        Integer amountOfDaryLimit = 0;//(Integer)config.Lead_amount_of_donations_limit__c;
+    @isTest static void testAddingDonorsToCategorisationCampaigns() {
+        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
+
+        dar1.Darovana_castka__c = (Integer)config.Medium_donor_amount_of_donations_limit__c;
+        dar2.Darovana_castka__c = (Integer)config.Large_donor_amount_of_donations_limit__c;
+
+
+        Test.startTest();
+        Importer.insertDary(new List<Dar__c>{dar1});
+
+        List<CampaignMember> campaignIDs = [SELECT CampaignId FROM CampaignMember 
+                                    WHERE Contact.Email_External_Id__c = :tr1.pledge.donor.email];
+        System.assertEquals(3, campaignIDs.size(), 'Donor was not added to correct nuber of campaigns');
+        System.assert(Utils.mapToId(campaignIDs, CampaignMember.CampaignId).contains((ID)config.Medium_donors_campaign_id__c), 'Donors was not assigned to medium donors campaign');
+        System.assert(Utils.mapToId(campaignIDs, CampaignMember.CampaignId).contains((ID)config.Recurrent_donors_campaign_id__c), 'Donors was not assigned to recurrent donors campaign');
+        
+        Importer.insertDary(new List<Dar__c>{dar2});
+        Logger.closeAndStore();
+        Test.stopTest();
+
+
+        campaignIDs = [SELECT CampaignId FROM CampaignMember 
+                                    WHERE Contact.Email_External_Id__c = :tr1.pledge.donor.email];
+        System.assertEquals(3, campaignIDs.size(), 'Donor was not added to correct nuber of campaigns');
+        System.assert(!Utils.mapToId(campaignIDs, CampaignMember.CampaignId).contains((ID)config.Medium_donors_campaign_id__c), 'Donors was not removed from medium donors campaign');
+        System.assert(Utils.mapToId(campaignIDs, CampaignMember.CampaignId).contains((ID)config.Large_donors_campaign_id__c), 'Donors was not assigned to large donors campaign');
+        System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
+    }
+
+
+    @isTest static void testCreateOpportunityFromContact() {
+        Integer amountOfDaryLimit = (Integer)config.Large_donor_amount_of_donations_limit__c;
 
         Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
 
         dar1.Darovana_castka__c = amountOfDaryLimit-1;
-        dar2.Darovana_castka__c = amountOfDaryLimit;
+        dar2.Darovana_castka__c = 1;
 
 
         Test.startTest();
@@ -264,39 +295,11 @@ public class TestImportingTransactions {
         System.assert(opps.isEmpty(), 'Opportunity was created despite the rule');
 
         Importer.insertDary(new List<Dar__c>{dar2});
-        opps = [SELECT Id, Kontaktniosoba__r.Email_External_Id__c FROM Opportunity WHERE Kontaktniosoba__r.Email_External_Id__c=:tr1.pledge.donor.email];
         Logger.closeAndStore();
         Test.stopTest();
 
 
-        System.assertEquals(1, opps.size(), 'Opportunity was not created');
-        System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
-    }
-
-    @isTest static void testCreateOpportunityFromContactNumberRule() {
-        Integer numberOfDaryLimit = 0;//(Integer)config.Lead_number_of_donations_limit__c;
-
-        Importer.insertNonExistingContactsWithAccounts(new List<Account>{account1}, new List<Contact>{contact1});
-        dar1.Darovana_castka__c = 0;
-        List<Dar__c> dary = new List<Dar__c>();
-        for (Integer i = 0; i < numberOfDaryLimit-1; i++) {
-            Dar__c d = dar1.clone();
-            d.Transaction_Id__c = i+1000;
-            dary.add(d);
-        }
-
-
-        Test.startTest();
-        Importer.insertDary(dary);
-        List<Opportunity> opps = [SELECT Id, Kontaktniosoba__r.Email_External_Id__c FROM Opportunity WHERE Kontaktniosoba__r.Email_External_Id__c=:tr1.pledge.donor.email];
-        System.assert(opps.isEmpty(), 'Opportunity was created despite the rule');
-
-        Importer.insertDary(new List<Dar__c>{dar1});
         opps = [SELECT Id, Kontaktniosoba__r.Email_External_Id__c FROM Opportunity WHERE Kontaktniosoba__r.Email_External_Id__c=:tr1.pledge.donor.email];
-        Logger.closeAndStore();
-        Test.stopTest();
-
-
         System.assertEquals(1, opps.size(), 'Opportunity was not created');
         System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
     }

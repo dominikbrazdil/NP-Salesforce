@@ -3,7 +3,7 @@
  */
 public without sharing class AdapterraLoader {
 
-    private static final Integer PROGRAM_ID = 1;
+    private static final Integer PROGRAM_ID = (Integer)Apex_config__c.getInstance().Adapterra_Program_ID__c;
 
     private static AdapterraFetcher fetcher = new AdapterraFetcher();
     
