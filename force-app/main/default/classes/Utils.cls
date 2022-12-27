@@ -59,36 +59,49 @@ public without sharing class Utils {
     }
 
     /**
-     * Parses date from string format to Date object
-     * Assumes 4-digit year, 2-digit months and days
-     * format - y, M, d values separated by same separator, e.g. 'y.M.d' or 'd-Y-M'
+     * Parses date from string format to DateTime object
+     * Assumes 4-digit year, 2-digit months, days, hours, minutes and seconds
+     * format - y, M, d, h, m, s values separated by some separator, e.g. 'y.M.d h:m:s' or 'd-Y-M'
      */
-    public static Date parseDate(String dateString, String format) {
-        String separator = format.substring(1, 2);
-        List<String> codes = format.split('\\'+separator);
-        List<String> parts = dateString.split('\\'+separator);
+    public static DateTime parseDate(String dateString, String format) {
 
-        Integer years, months, days;
+        Integer years, months, days, hours, minutes, seconds;
 
-        for(Integer i = 0; i < codes.size(); i++) {
-            String datePart = parts[i];
-            switch on codes[i] {
+        for(Integer i = 0; i < format.length(); i++) {
+            String character = format.substring(i, i+1);
+            switch on character {
                 when 'y' {
-                    years = Integer.valueOf(datePart.left(4));
+                    years = Integer.valueOf(dateString.left(4));
+                    dateString = dateString.substring(4);
                 }
                 when 'M' {
-                    months = Integer.valueOf(datePart.left(2));
+                    months = Integer.valueOf(dateString.left(2));
+                    dateString = dateString.substring(2);
                 }
                 when 'd' {
-                    days = Integer.valueOf(datePart.left(2));
+                    days = Integer.valueOf(dateString.left(2));
+                    dateString = dateString.substring(2);
+                }
+                when 'h' {
+                    Integer hoursLength = dateString.left(2).isNumeric() ? 2 : 1; 
+                    hours = Integer.valueOf(dateString.left(hoursLength));
+                    dateString = dateString.substring(hoursLength);
+                }
+                when 'm' {
+                    minutes = Integer.valueOf(dateString.left(2));
+                    dateString = dateString.substring(2);
+                }
+                when 's' {
+                    seconds = Integer.valueOf(dateString.left(2));
+                    dateString = dateString.substring(2);
                 }
                 when else {
-                    return null;
+                    dateString = dateString.substring(1);
                 }
             }
         }
 
-        return Date.newInstance(years, months, days);
+        return DateTime.newInstance(years, months, days, hours, minutes, seconds);
     }
 
 }

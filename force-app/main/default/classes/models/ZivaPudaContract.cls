@@ -92,7 +92,7 @@ public class ZivaPudaContract {
 		.setLesseeName(lessee.name)
 		.setLesseeICO(lessee.ICO)
 		.setLesseeAddress(lessee.headquarters)
-		.setSigningDate(Utils.parseDate(signingDate, 'd.M.y'))
+		.setSigningDate(Utils.parseDate(signingDate, 'd.M.y h:m:s'))
 		.setOtherOwners(this.getOwners())
 		.setRent(rent)
 		.setRentPeriod(leasePeriod.howLong)

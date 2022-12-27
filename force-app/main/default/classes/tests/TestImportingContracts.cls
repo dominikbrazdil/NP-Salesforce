@@ -76,7 +76,7 @@ public class TestImportingContracts {
         System.assertEquals(c.Najemnik_adresa__c, contract.lessee.headquarters, 'Lessee address did not match');
         System.assertEquals(c.Vlastnik_Adresa__c, contract.owners[0].address, 'Owner address did not match');
         System.assertEquals(c.Dalsi_vlastnici__c, String.join(contract.getOwners(), '\n'), 'Owners did not match');
-        System.assertEquals(c.Datum__c, Utils.parseDate(contract.signingDate, 'd.M.y'), 'Date did not match');
+        System.assertEquals(c.Datum__c, Utils.parseDate(contract.signingDate, 'd.M.y h:m:s'), 'Date did not match');
         System.assertEquals(c.Doba__c, contract.leasePeriod.howLong, 'Period did not match');
         System.assertEquals(c.Najemnik_ICO__c, contract.lessee.ICO, 'ICO did not match');
         System.assertEquals(c.Najemnik_jmeno__c, contract.lessee.name, 'Lessee name did not match');
