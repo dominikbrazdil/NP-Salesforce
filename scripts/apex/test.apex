@@ -8,8 +8,11 @@
 
 // Database.upsert(new List<Contact>{c}, Contact.Email);
 
-Logger.init('001xa000003DIlo');
-ZivaPudaLoader.loadContracts(Date.today().addYears(-2), null);
 
-// AdapterraLoader.loadNominations(Date.today().addDays(-120), null);
-Logger.closeAndStore();
+Date fromDate = Date.today().addDays(-4);
+Date toDate = Date.today().addDays(-4);
+List<String> logsToFilter = new List<String>{'DUPLICATE_VALUE'};
+
+DarujmeLoader.loadTransactions(fromDate, toDate);
+
+Logger.closeAndStore(logsToFilter);

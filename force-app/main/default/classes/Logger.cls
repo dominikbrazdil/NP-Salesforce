@@ -50,4 +50,29 @@ public without sharing class Logger {
             }
         }
     }
+
+    public static void closeAndStore(List<String> messagesToFilter) {
+        if (messagesToFilter == null) {
+            closeAndStore();
+            return;
+        }
+
+        List<Log__c> filteredLogs = new List<Log__c>();
+
+        for (Integer i = 0; i < jobLogs.size(); i++) {
+            Boolean contains = false;
+            for (Integer j = 0; j < messagesToFilter.size(); j++) {
+                if (jobLogs[i].Message__c.contains(messagesToFilter[j])) {
+                    contains = true;
+                }
+            }
+            
+            if (!contains) {
+                filteredLogs.add(jobLogs[i]);
+            }
+        }
+
+        jobLogs = filteredLogs;
+        closeAndStore();
+    }
 }
