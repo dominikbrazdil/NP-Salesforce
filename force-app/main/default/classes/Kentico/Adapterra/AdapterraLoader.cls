@@ -29,9 +29,6 @@ public without sharing class AdapterraLoader {
 
         for (Nomination n: nominations) {
             acs.add(n.createNominatingAccount());
-            if (n.contact.contaktPerson.email != n.nominating.email && n.isNominatedValid()) {
-                acs.add(n.createNominatedAccount());
-            }
         }
         return acs;
     }
@@ -41,9 +38,6 @@ public without sharing class AdapterraLoader {
 
         for (Nomination n: nominations) {
             contats.add(n.createNominatingContact());
-            if (n.contact.contaktPerson.email != n.nominating.email && n.isNominatedValid()) {
-                contats.add(n.createNominatedContact());
-            }
         }
         return contats;
     }

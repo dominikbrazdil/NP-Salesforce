@@ -45,9 +45,9 @@ public class TestImportingNominations {
 
 
         List<Account> accounts = [SELECT Id, Name FROM Account WHERE Name IN :(new List<String>{nom1.createNominatingAccount().Name, nom1.createNominatedAccount().Name})];
-        System.assertEquals(2, accounts.size(), 'Accounts were not created');
+        System.assertEquals(1, accounts.size(), 'Accounts were not created');
         List<Contact> contacts = [SELECT Id, Email FROM Contact WHERE Email_External_Id__c IN :(new List<String>{nom1.Nominating.Email, nom1.contact.contaktPerson.Email})];
-        System.assertEquals(2, contacts.size(), 'Contacts were not created');
+        System.assertEquals(1, contacts.size(), 'Contacts were not created');
         List<Nominace__c> noms = [SELECT Id, External_Id__c FROM Nominace__c WHERE External_Id__c = :nom1.Id LIMIT 1];
         System.assertEquals(1, noms.size(), 'Nomination was not created');
 
@@ -89,10 +89,9 @@ public class TestImportingNominations {
         System.assertEquals(nom1.name, nom.Name, 'Name did not match');
         System.assertEquals(nom1.createNomination().Zamereni__c, nom.Zamereni__c, 'Zamereni did not match');
         System.assertEquals(nom1.nominating.email, nom.Nominujici__r.Email, 'Nominating did not match');
-        System.assertEquals(nom1.contact.contaktPerson.email, nom.Nominovany__r.Email, 'Nominated did not match');
     }
     
-    @isTest static void testAddingNominatedToCampaigns() {
+    @isTest static void testAddingNominatingToCampaigns() {
 
         
         Test.startTest();
@@ -102,10 +101,10 @@ public class TestImportingNominations {
 
 
         List<CampaignMember> members = [SELECT ContactId, CampaignId, Campaign.Name FROM CampaignMember 
-                                        WHERE Contact.Email_External_Id__c = :nom1.contact.contaktPerson.email];
+                                        WHERE Contact.Email_External_Id__c = :nom1.nominating.email];
 
-        System.assertEquals(1, members.size(), 'Nominated was not added to campaign');
-        System.assertEquals(members[0].Campaign.name, campaign.Name, 'Nominated was added to wrong campaign');
+        System.assertEquals(1, members.size(), 'Nominating was not added to campaign');
+        System.assertEquals(members[0].Campaign.name, campaign.Name, 'Nominating was added to wrong campaign');
         System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
     }
 

@@ -41,7 +41,6 @@ public class Nomination {
 		.setKategorie(this.category.name)
 		.setZamereni(this.getZamereni())
 		.setNominatingEmail(this.nominating.email)
-		.setNominatedEmail(this.isNominatedValid() ? this.contact.contaktPerson.email : null)
 		.build();
 	}
 
