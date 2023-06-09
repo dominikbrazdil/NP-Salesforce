@@ -25,7 +25,7 @@ public class TestMarkingRecurrentDonors {
         
         DatabaseManager.insertListPartialEnabled(new List<Contact>{donor});
 
-        Date monthAndDayAgo = Date.today().addMonths(-1).addDays(-1);
+        Date monthAndDayAgo = Date.today().addDays(-41);
         Dar__c dar1 = tr.createDar();
         dar1.Datum__c = monthAndDayAgo;
         dar1.Pravidelny_dar__c = true;
@@ -37,7 +37,7 @@ public class TestMarkingRecurrentDonors {
         DatabaseManager.insertListPartialEnabled(new List<Dar__c>{dar1, dar2});
 
         Test.startTest();
-        RecurrentDonorsJob.reportAndUnmarkLostRecurrentDonors();
+        RecurrentDonorsJob.markLostRecurrentDonorsAndRenewRestoredOnes();
         Logger.closeAndStore();
         Test.stopTest();
 
@@ -53,7 +53,7 @@ public class TestMarkingRecurrentDonors {
     @isTest static void testDoNotUnmarkRecurrentDonorWithDonation() {
         DatabaseManager.insertListPartialEnabled(new List<Contact>{donor});
 
-        Date monthAgo = Date.today().addMonths(-1);
+        Date monthAgo = Date.today().addDays(-40);
         Dar__c dar = tr.createDar();
         dar.Datum__c = monthAgo;
         dar.Pravidelny_dar__c = true;
@@ -61,12 +61,34 @@ public class TestMarkingRecurrentDonors {
         DatabaseManager.insertListPartialEnabled(new List<Dar__c>{dar});
 
         Test.startTest();
-        RecurrentDonorsJob.reportAndUnmarkLostRecurrentDonors();
+        RecurrentDonorsJob.markLostRecurrentDonorsAndRenewRestoredOnes();
         Logger.closeAndStore();
         Test.stopTest();
 
         Contact c = [SELECT Id, Email, Pravidelny_darce__c, Ztraceny_pravidelny_darce__c FROM Contact WHERE Email =:donor.Email_External_Id__c];
         System.assert(c.Pravidelny_darce__c, 'Donor was unmarked from recurrent donors');
+        System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
+    }
+
+    @isTest static void testRenewRecurrentDonorWithDonation() {
+        donor.Ztraceny_pravidelny_darce__c = true;
+        DatabaseManager.insertListPartialEnabled(new List<Contact>{donor});
+
+        Date monthAgo = Date.today().addDays(-2);
+        Dar__c dar = tr.createDar();
+        dar.Datum__c = monthAgo;
+        dar.Pravidelny_dar__c = true;
+
+        DatabaseManager.insertListPartialEnabled(new List<Dar__c>{dar});
+
+        Test.startTest();
+        RecurrentDonorsJob.markLostRecurrentDonorsAndRenewRestoredOnes();
+        Logger.closeAndStore();
+        Test.stopTest();
+
+        Contact c = [SELECT Id, Email, Pravidelny_darce__c, Ztraceny_pravidelny_darce__c FROM Contact WHERE Email =:donor.Email_External_Id__c];
+        System.assert(c.Pravidelny_darce__c, 'Donor was not marked as recurrent donor');
+        System.assert(!c.Ztraceny_pravidelny_darce__c, 'Donor was not unmarked from lost recurrent donor');
         System.assert(TestUtils.getErrorLogs(jobId).isEmpty(), 'Error logs were not empty: ' + TestUtils.getErrorLogs(jobId));
     }
 }
