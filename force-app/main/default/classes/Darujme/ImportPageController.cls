@@ -9,8 +9,16 @@ public class ImportPageController {
         // Can retrieve existing Dary in here
     }
 
-    public PageReference runImport() {
+    public PageReference runDonationsImport() {
         DarujmeImportJob job = new DarujmeImportJob(fromDate, toDate);
+        Id jobId = System.enqueueJob(job);
+        PageReference page = new PageReference('/lightning/o/Log__c/list');
+        page.setRedirect(true);
+        return page;
+    }
+
+    public PageReference runNominationsImport() {
+        AdapterraImportJob job = new AdapterraImportJob(fromDate, toDate);
         Id jobId = System.enqueueJob(job);
         PageReference page = new PageReference('/lightning/o/Log__c/list');
         page.setRedirect(true);
