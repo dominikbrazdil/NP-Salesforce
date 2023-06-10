@@ -6,6 +6,7 @@
 .sf/
 .sfdx/
 .localdevserver/
+.apexlink/
 deploy-options.json
 
 # LWC VSCode autocomplete
