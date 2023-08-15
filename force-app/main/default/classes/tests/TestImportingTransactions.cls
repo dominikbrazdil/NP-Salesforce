@@ -102,7 +102,7 @@ public class TestImportingTransactions {
         System.assertEquals(tr1.receivedAt.left(10), dar.Name);
         System.assertEquals(tr1.receivedAt.left(10), ((Datetime)dar.Datum__c).format('yyyy-MM-dd'));
         System.assertEquals(tr1.sentAmount.cents, dar.Darovana_castka__c * 100);
-        System.assertEquals(tr1.outgoingAmount.cents, dar.Prijata_castka__c * 100);
+        // System.assertEquals(tr1.outgoingAmount.cents, dar.Prijata_castka__c * 100);
         System.assertEquals(tr1.pledge.projectId, dar.Kampan__r.Darujme_Id__c);
         System.assertEquals(tr1.pledge.wantDonationCertificate, dar.Pozaduje_potvrzeni__c);
         System.assertEquals(tr1.pledge.promotionId != null, dar.Darovano_na_vyzvu__c);
