@@ -19,7 +19,8 @@ public abstract class DataFetcher {
         r.setEndpoint(endpoint); 
         r.setTimeout(20000);
 		HttpResponse res = http.send(r);
-        return replaceReservedWordsInJSON(res.getBody());
+        String resBody = res.getBody().replaceAll('\\p{Cc}', ''); // remove structural chars
+        return replaceReservedWordsInJSON(resBody);
     }
 
     protected abstract String getEndpointAuthorisation();
