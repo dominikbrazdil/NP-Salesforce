@@ -24,4 +24,12 @@ public class ImportPageController {
         page.setRedirect(true);
         return page;
     }
+
+    public PageReference runContractsImport() {
+        ZivaPudaImportJob job = new ZivaPudaImportJob(fromDate, toDate);
+        Id jobId = System.enqueueJob(job);
+        PageReference page = new PageReference('/lightning/o/Log__c/list');
+        page.setRedirect(true);
+        return page;
+    }
 }
