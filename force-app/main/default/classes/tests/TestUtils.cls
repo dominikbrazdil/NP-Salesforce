@@ -76,22 +76,16 @@ public class TestUtils {
         category.id = '1';
         category.name = 'testCategory';
 
-        Nomination.ContactPerson nominating = new Nomination.ContactPerson();
-        nominating.fullName = 'Jozo Blby';
-        nominating.firstName = 'Jozo';
-        nominating.lastName = 'Blby';
-        nominating.email = 'test@mail.com';
-
-        Nomination.ContactPerson nominated = new Nomination.ContactPerson();
-        nominated.fullName = 'Jaja Paja';
-        nominated.firstName = 'Jaja';
-        nominated.lastName = 'Paja';
-        nominated.email = 'jajaapaja@nevim.com';
-        nominated.phone = '123456789';
+        Nomination.ContactPerson contactPerson = new Nomination.ContactPerson();
+        contactPerson.fullName = 'Jaja Paja';
+        contactPerson.firstName = 'Jaja';
+        contactPerson.lastName = 'Paja';
+        contactPerson.email = 'jajaapaja@nevim.com';
+        contactPerson.phone = '123456789';
 
         Nomination.NominationContact contact = new Nomination.NominationContact();
         contact.organization = 'org234';
-        contact.contaktPerson = nominated;
+        contact.contaktPerson = contactPerson;
 
         Nomination nomination = new Nomination();
         nomination.id = 123;
@@ -100,10 +94,11 @@ public class TestUtils {
         nomination.location = 'Planeta Zeme';
         nomination.gps = '123Z456S';
         nomination.description = 'This nomination is for the most stupid people risking their lives';
-        nomination.climateRisks = new List<Nomination.Category>{category};
+        nomination.category = category;
+        nomination.web = 'seznam.cz';
+        nomination.kraj = 'Vysocina';
         nomination.created = 'Now';
         nomination.contact = contact;
-        nomination.nominating = nominating;
 
         return nomination;
     }

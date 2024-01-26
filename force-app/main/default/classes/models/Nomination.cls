@@ -10,10 +10,10 @@ public class Nomination {
 	public String location;
 	public String gps;
 	public String description;
-	public List<Category> climateRisks;
+	public String web;
+	public String kraj;
 	public String created;
 	public NominationContact contact;
-	public ContactPerson nominating;
 
 
 	public class Category {
@@ -38,41 +38,25 @@ public class Nomination {
 		return new NominationHandler()
 		.setId(this.id)
 		.setName(this.name)
-		.setKategorie(this.category.name)
-		.setZamereni(this.getZamereni())
-		.setNominatingEmail(this.nominating.email)
+		.setCategory(this.category.name)
+		.setLocation(this.location)
+		.setGps(this.gps)
+		.setDescription(this.description)
+		.setKraj(this.kraj)
+		.setWeb(this.web)
+		.setCreated(parseDate(created))
+		.setContactEmail(this.contact.contaktPerson.email)
 		.build();
 	}
 
-	public Account createNominatingAccount() {
-		return new AccountHandler()
-		.setName(this.nominating.fullName)
-		.setDescription('Imported from Kentico')
-		.build();
-	}
-
-	public Contact createNominatingContact() {
-		return new ContactHandler()
-		.setEmail(this.nominating.email)
-		.setFirstName(getFirstName(this.nominating.fullName))
-		.setLastName(getLastName(this.nominating.fullName))
-		.setDescription('Imported from Kentico')
-		.build();
-	}
-
-	public Boolean isNominatedValid() {
-		return !String.isEmpty(this.contact.contaktPerson.email)
-			&& !String.isEmpty(this.contact.contaktPerson.lastName);
-	}
-
-	public Account createNominatedAccount() {
+	public Account createAccount() {
 		return new AccountHandler()
 		.setName(this.contact.contaktPerson.fullName)
 		.setDescription('Imported from Kentico')
 		.build();
 	}
 
-	public Contact createNominatedContact() {
+	public Contact createContact() {
 		return new ContactHandler()
 		.setEmail(this.contact.contaktPerson.email)
 		.setFirstName(getFirstName(this.contact.contaktPerson.fullName))
@@ -82,13 +66,23 @@ public class Nomination {
 		.build();
 	}
 
-	private String getZamereni() {
-		String zamereni = '';
-		for (Category c: this.climateRisks) {
-			zamereni += (String.isEmpty(zamereni) ? '' : ', ') + c.name;
+	private Datetime parseDate(String dateStr) {
+		Pattern dt = Pattern.compile('(?i)(\\d{2}).(\\d{2}).(\\d{4}) (\\d{2}):(\\d{2}):(\\d{2})');
+		Matcher m = dt.matcher(dateStr);
+		DateTime result;
+		if(m.find()) {
+			result = DateTime.newInstance(
+				Integer.valueOf(m.group(3)),
+				Integer.valueOf(m.group(2)),
+				Integer.valueOf(m.group(1)),
+				Integer.valueOf(m.group(4)),
+				Integer.valueOf(m.group(5)),
+				Integer.valueOf(m.group(6))        
+			);
 		}
-		return zamereni;
+		return result;
 	}
+
 
 	private String getFirstName(String fullName) {
 		return fullName.contains(' ') ? fullName.split(' ')[0] : null;

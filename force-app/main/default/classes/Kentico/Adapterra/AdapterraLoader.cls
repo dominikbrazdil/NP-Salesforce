@@ -28,7 +28,7 @@ public without sharing class AdapterraLoader {
         List<Account> acs = new List<Account>();
 
         for (Nomination n: nominations) {
-            acs.add(n.createNominatingAccount());
+            acs.add(n.createAccount());
         }
         return acs;
     }
@@ -37,7 +37,7 @@ public without sharing class AdapterraLoader {
         List<Contact> contats = new List<Contact>();
 
         for (Nomination n: nominations) {
-            contats.add(n.createNominatingContact());
+            contats.add(n.createContact());
         }
         return contats;
     }

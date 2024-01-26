@@ -19,6 +19,12 @@ public abstract class DataFetcher {
         r.setEndpoint(endpoint); 
         r.setTimeout(20000);
 		HttpResponse res = http.send(r);
+        
+        if (res.getStatusCode() != 200) {
+            Logger.log(LoggingLevel.ERROR, 'Failed to fetch data from ' + endpoint + '. Response: ' + res.toString());
+            throw new CalloutException(res.toString());
+        }
+
         String resBody = res.getBody().replaceAll('\\p{Cc}', ''); // remove structural chars
         return replaceReservedWordsInJSON(resBody);
     }

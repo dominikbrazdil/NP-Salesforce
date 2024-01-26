@@ -3,12 +3,16 @@
     {
       "path": "force-app",
       "default": true
+    },
+    {
+      "path": "objects",
+      "default": true
     }
   ],
   "name": "NadacePartnerstvi",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "52.0",
+  "sourceApiVersion": "59.0",
   "plugins": {
     "additionalNamespaces": [
       "unmanaged"

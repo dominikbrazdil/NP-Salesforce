@@ -17,7 +17,7 @@ public class AdapterraFetcher extends DataFetcher {
     }
 
     public List<Nomination> getNominations(Date fromDate, Date toDate) {
-        String endpoint = 'api-prihlasky?fromDate=' + ((Datetime)fromDate).format('dd-MM-yyyy') + (toDate==null ? '' : '&toDate='+((Datetime)toDate).format('dd-MM-yyyy'));
+        String endpoint = 'api-prihlasky?fromDate=' + ((Datetime)fromDate).format('MM-dd-yyyy') + (toDate==null ? '' : '&toDate='+((Datetime)toDate).format('MM-dd-yyyy'));
         String response = fetchData(endpoint);
         return Nomination.parse(response);
     }
