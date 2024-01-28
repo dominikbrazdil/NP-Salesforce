@@ -9,5 +9,5 @@
 // delete [SELECT Id FROM Opportunity];
 // delete [SELECT Id FROM Account];
 // delete [SELECT Id FROM Contact];
-delete [SELECT Id FROM Nominace__c];
+delete [SELECT Id FROM Contract__c];
 System.debug('done');

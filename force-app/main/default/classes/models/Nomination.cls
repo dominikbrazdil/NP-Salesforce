@@ -44,7 +44,7 @@ public class Nomination {
 		.setDescription(this.description)
 		.setKraj(this.kraj)
 		.setWeb(this.web)
-		.setCreated(parseDate(created))
+		.setCreated(Utils.parseDate(created, 'd.M.y h:m:s'))
 		.setContactEmail(this.contact.contaktPerson.email)
 		.build();
 	}
@@ -65,24 +65,6 @@ public class Nomination {
 		.setDescription('Imported from Kentico')
 		.build();
 	}
-
-	private Datetime parseDate(String dateStr) {
-		Pattern dt = Pattern.compile('(?i)(\\d{2}).(\\d{2}).(\\d{4}) (\\d{2}):(\\d{2}):(\\d{2})');
-		Matcher m = dt.matcher(dateStr);
-		DateTime result;
-		if(m.find()) {
-			result = DateTime.newInstance(
-				Integer.valueOf(m.group(3)),
-				Integer.valueOf(m.group(2)),
-				Integer.valueOf(m.group(1)),
-				Integer.valueOf(m.group(4)),
-				Integer.valueOf(m.group(5)),
-				Integer.valueOf(m.group(6))        
-			);
-		}
-		return result;
-	}
-
 
 	private String getFirstName(String fullName) {
 		return fullName.contains(' ') ? fullName.split(' ')[0] : null;

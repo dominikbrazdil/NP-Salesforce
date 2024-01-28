@@ -94,10 +94,9 @@ public class TestUtils {
         nomination.location = 'Planeta Zeme';
         nomination.gps = '123Z456S';
         nomination.description = 'This nomination is for the most stupid people risking their lives';
-        nomination.category = category;
         nomination.web = 'seznam.cz';
         nomination.kraj = 'Vysocina';
-        nomination.created = 'Now';
+        nomination.created = '04.04.2023 13:05:52';
         nomination.contact = contact;
 
         return nomination;

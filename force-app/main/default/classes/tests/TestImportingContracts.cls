@@ -106,6 +106,26 @@ public class TestImportingContracts {
         
     }
 
+    @isTest static void testNotImportingDuplicateGrounds() {
+      
+
+        Test.startTest();
+        
+        ZivaPudaLoader.importContracts(new List<ZivaPudaContract>{contract});
+        Logger.closeAndStore();
+        
+        List<Ground__c> grounds = [SELECT Id, Id_parcely__c FROM Ground__c WHERE Pachtovni_Smlouva__r.Ziva_Puda_ID__c = :contract.Id];
+        
+        System.assertEquals(2, grounds.size(), 'Grounds were not created');
+        Importer.insertGrounds(contract.createGrounds());
+        
+        Test.stopTest();
+
+        grounds = [SELECT Id, Id_parcely__c FROM Ground__c WHERE Pachtovni_Smlouva__r.Ziva_Puda_ID__c = :contract.Id];
+
+        System.assertEquals(2, grounds.size(), 'Grounds number did not match expected');
+    }
+
 
     private class MockZivaPudaEndpoint implements HttpCalloutMock {
 

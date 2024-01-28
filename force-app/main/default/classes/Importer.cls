@@ -55,6 +55,21 @@ public class Importer {
 
     public static void insertGrounds(List<Ground__c> grounds) {
 
-        DatabaseManager.insertListPartialEnabled(grounds);
+        Map<Decimal, List<Ground__c>> existingGrounds = GroundHandler.getGroundsForContractIds(Utils.mapToDecimal(Utils.mapToSObject(grounds, Ground__c.Pachtovni_smlouva__c), Contract__c.Ziva_Puda_ID__c));
+
+        List<Ground__c> groundsToInsert = new List<Ground__c>();
+
+        for (Ground__c ground: grounds) {
+            if (!existingGrounds.containsKey((Integer)ground.Pachtovni_smlouva__r.Ziva_Puda_ID__c)
+             || !Utils.mapToString(existingGrounds.get((Integer)ground.Pachtovni_smlouva__r.Ziva_Puda_ID__c), Ground__c.ID_Parcely__c).contains(ground.ID_Parcely__c)) {
+                groundsToInsert.add(ground);
+            }
+        }
+
+        if (grounds.size() != groundsToInsert.size()) {
+            Logger.log((grounds.size() - groundsToInsert.size()) + ' grounds were omitted from insertion due to duplicities');
+        }
+
+        DatabaseManager.insertListPartialEnabled(groundsToInsert);
     }
 }

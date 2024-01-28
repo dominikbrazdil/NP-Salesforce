@@ -7,6 +7,22 @@ public class GroundHandler {
     private String parcelID;
     private Decimal area;
 
+    public static Map<Decimal, List<Ground__c>> getGroundsForContractIds(List<Decimal> contractIds) {
+        Map<Decimal, List<Ground__c>> contractToGroundsMap = new Map<Decimal, List<Ground__c>>();
+
+        for (Ground__c ground: [SELECT Id, ID_Parcely__c, Pachtovni_smlouva__r.Ziva_Puda_ID__c FROM Ground__c WHERE Pachtovni_smlouva__r.Ziva_Puda_ID__c IN :contractIds]) {
+            Decimal contractId = ground.Pachtovni_smlouva__r.Ziva_Puda_ID__c;
+
+            if (contractToGroundsMap.containsKey(contractId)) {
+                contractToGroundsMap.get(contractId).add(ground);
+            } else {
+                contractToGroundsMap.put(contractId, new List<Ground__c>{ground});
+            }
+        }
+
+        return contractToGroundsMap;
+    }
+
     public Ground__c build() {
         Contract__c contract = new Contract__c(Ziva_Puda_ID__c = this.contractID);
 
